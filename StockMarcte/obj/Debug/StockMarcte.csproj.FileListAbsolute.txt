@@ -1,0 +1,157 @@
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\StockMarcte.exe.config
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\StockMarcte.exe
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\StockMarcte.pdb
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.BonusSkins.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.Desktop.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Drawing.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Printing.v23.1.Core.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Sparkline.v23.1.Core.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Utils.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraEditors.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Core.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Drawing.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.Desktop.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Utils.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Sparkline.v23.1.Core.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraEditors.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Printing.v23.1.Core.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Drawing.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Core.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Drawing.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.AssemblyReference.cache
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.Form1.resources
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.Properties.Resources.resources
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.GenerateResource.cache
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.exe.licenses
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.CoreCompileInputs.cache
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.CopyComplete
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.exe
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.pdb
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraGrid.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraLayout.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraPrinting.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraBars.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.RichEdit.v23.1.Core.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraTreeList.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Office.v23.1.Core.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraGrid.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraLayout.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraPrinting.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraBars.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.RichEdit.v23.1.Core.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraTreeList.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Office.v23.1.Core.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.BillItem.resources
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.DataAccess.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Xpo.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.CodeParser.v23.1.dll
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.DataAccess.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Xpo.v23.1.xml
+C:\Users\rbygs\source\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.Item.resources
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\StockMarcte.exe.config
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\StockMarcte.exe
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\StockMarcte.pdb
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.BonusSkins.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.Desktop.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.DataAccess.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Drawing.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Printing.v23.1.Core.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Sparkline.v23.1.Core.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Utils.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraEditors.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraGrid.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraLayout.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraPrinting.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Xpo.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.CodeParser.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.RichEdit.v23.1.Core.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Office.v23.1.Core.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Core.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Drawing.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraBars.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraTreeList.v23.1.dll
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.Desktop.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Data.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.DataAccess.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Utils.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Sparkline.v23.1.Core.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraEditors.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Printing.v23.1.Core.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Drawing.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraGrid.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraLayout.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraPrinting.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Xpo.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.RichEdit.v23.1.Core.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Office.v23.1.Core.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Core.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Drawing.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraBars.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\bin\Debug\DevExpress.XtraTreeList.v23.1.xml
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csprojAssemblyReference.cache
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.BillItem.resources
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.Form1.resources
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.Item.resources
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.Properties.Resources.resources
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.GenerateResource.cache
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.exe.licenses
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.CoreCompileInputs.cache
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.CopyComplete
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.exe
+C:\Users\rbygs\Desktop\repos\itemStock\StockMarcte\obj\Debug\StockMarcte.pdb
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\StockMarcte.exe.config
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\StockMarcte.exe
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\StockMarcte.pdb
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.BonusSkins.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Data.Desktop.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Data.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.DataAccess.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Drawing.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Printing.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Sparkline.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Utils.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraEditors.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraGrid.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraLayout.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraPrinting.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Xpo.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.CodeParser.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.RichEdit.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Office.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Drawing.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraBars.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraTreeList.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Data.Desktop.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Data.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.DataAccess.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Utils.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Sparkline.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraEditors.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Printing.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Drawing.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraGrid.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraLayout.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraPrinting.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Xpo.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.RichEdit.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Office.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.Pdf.v23.1.Drawing.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraBars.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\bin\Debug\DevExpress.XtraTreeList.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.AssemblyReference.cache
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.BillItem.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.Form1.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.Item.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.Properties.Resources.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.GenerateResource.cache
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.exe.licenses
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.CoreCompileInputs.cache
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.csproj.CopyComplete
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.exe
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.pdb
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.Frm_Billitems.resources

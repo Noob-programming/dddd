@@ -155,3 +155,4 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\Stoc
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.exe
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.pdb
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.Frm_Billitems.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\StockMarcte\obj\Debug\StockMarcte.Fomes.Frm_Item.resources

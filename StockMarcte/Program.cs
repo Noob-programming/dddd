@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockMarcte.Fomes;
+using System;
 using System.Windows.Forms;
 
 namespace StockMarcte
@@ -13,7 +14,7 @@ namespace StockMarcte
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Frm_Billitems());
+			Application.Run(new Frm_Item());
 		}
 	}
 }

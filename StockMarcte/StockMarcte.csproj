@@ -46,6 +46,7 @@
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -81,9 +82,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BillsDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BillsDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillsDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataFill.cs" />
     <Compile Include="DbHelper.cs" />
     <Compile Include="Executable.cs" />
+    <Compile Include="Fomes\Frm_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomes\Frm_Item.Designer.cs">
+      <DependentUpon>Frm_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,9 @@
     <Compile Include="TestData.cs" />
     <EmbeddedResource Include="BillItem.resx">
       <DependentUpon>BillItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomes\Frm_Item.resx">
+      <DependentUpon>Frm_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -163,6 +178,17 @@
     <None Include="BillsDataSet1.xss">
       <DependentUpon>BillsDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="BillsDataSet2.xsc">
+      <DependentUpon>BillsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BillsDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillsDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BillsDataSet2.xss">
+      <DependentUpon>BillsDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -176,6 +202,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

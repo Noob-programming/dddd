@@ -33,3 +33,4 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStoc
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.csproj.CopyComplete
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.exe
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.pdb
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_ItemForms.resources

@@ -31,9 +31,6 @@
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
 			this.treeList1 = new DevExpress.XtraTreeList.TreeList();
-			this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-			this.billsDB1 = new NewStock.BillsDB();
-			this.tB_ItemTableAdapter1 = new NewStock.BillsDBTableAdapters.TB_ItemTableAdapter();
 			this.colitemcode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
 			this.colitemName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
 			this.colitemPrice = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -41,13 +38,16 @@
 			this.colitemPriceMany = new DevExpress.XtraTreeList.Columns.TreeListColumn();
 			this.colISGroup = new DevExpress.XtraTreeList.Columns.TreeListColumn();
 			this.colDateOfInsert = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+			this.billsDB1 = new NewStock.BillsDB();
+			this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+			this.tB_ItemTableAdapter1 = new NewStock.BillsDBTableAdapters.TB_ItemTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
 			this.panelControl3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -72,13 +72,13 @@
 			// treeList1
 			// 
 			this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.colitemcode,
-            this.colitemName,
-            this.colitemPrice,
-            this.colitemPriceSingle,
-            this.colitemPriceMany,
-            this.colISGroup,
-            this.colDateOfInsert});
+			this.colitemcode,
+			this.colitemName,
+			this.colitemPrice,
+			this.colitemPriceSingle,
+			this.colitemPriceMany,
+			this.colISGroup,
+			this.colDateOfInsert});
 			this.treeList1.DataMember = "TB_Item";
 			this.treeList1.DataSource = this.billsDB1;
 			this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,6 +88,68 @@
 			this.treeList1.ParentFieldName = "parentGuid";
 			this.treeList1.Size = new System.Drawing.Size(591, 444);
 			this.treeList1.TabIndex = 0;
+			this.treeList1.DoubleClick += new System.EventHandler(this.treeList1_DoubleClick);
+			// 
+			// colitemcode
+			// 
+			this.colitemcode.FieldName = "itemcode";
+			this.colitemcode.Name = "colitemcode";
+			this.colitemcode.OptionsColumn.AllowEdit = false;
+			this.colitemcode.Visible = true;
+			this.colitemcode.VisibleIndex = 0;
+			// 
+			// colitemName
+			// 
+			this.colitemName.FieldName = "itemName";
+			this.colitemName.Name = "colitemName";
+			this.colitemName.OptionsColumn.AllowEdit = false;
+			this.colitemName.Visible = true;
+			this.colitemName.VisibleIndex = 1;
+			// 
+			// colitemPrice
+			// 
+			this.colitemPrice.FieldName = "itemPrice";
+			this.colitemPrice.Name = "colitemPrice";
+			this.colitemPrice.OptionsColumn.AllowEdit = false;
+			this.colitemPrice.Visible = true;
+			this.colitemPrice.VisibleIndex = 2;
+			// 
+			// colitemPriceSingle
+			// 
+			this.colitemPriceSingle.FieldName = "itemPriceSingle";
+			this.colitemPriceSingle.Name = "colitemPriceSingle";
+			this.colitemPriceSingle.OptionsColumn.AllowEdit = false;
+			this.colitemPriceSingle.Visible = true;
+			this.colitemPriceSingle.VisibleIndex = 3;
+			// 
+			// colitemPriceMany
+			// 
+			this.colitemPriceMany.FieldName = "itemPriceMany";
+			this.colitemPriceMany.Name = "colitemPriceMany";
+			this.colitemPriceMany.OptionsColumn.AllowEdit = false;
+			this.colitemPriceMany.Visible = true;
+			this.colitemPriceMany.VisibleIndex = 4;
+			// 
+			// colISGroup
+			// 
+			this.colISGroup.FieldName = "ISGroup";
+			this.colISGroup.Name = "colISGroup";
+			this.colISGroup.OptionsColumn.AllowEdit = false;
+			this.colISGroup.Visible = true;
+			this.colISGroup.VisibleIndex = 5;
+			// 
+			// colDateOfInsert
+			// 
+			this.colDateOfInsert.FieldName = "DateOfInsert";
+			this.colDateOfInsert.Name = "colDateOfInsert";
+			this.colDateOfInsert.OptionsColumn.AllowEdit = false;
+			this.colDateOfInsert.Visible = true;
+			this.colDateOfInsert.VisibleIndex = 6;
+			// 
+			// billsDB1
+			// 
+			this.billsDB1.DataSetName = "BillsDB";
+			this.billsDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// panelControl2
 			// 
@@ -97,63 +159,9 @@
 			this.panelControl2.Size = new System.Drawing.Size(200, 448);
 			this.panelControl2.TabIndex = 0;
 			// 
-			// billsDB1
-			// 
-			this.billsDB1.DataSetName = "BillsDB";
-			this.billsDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// tB_ItemTableAdapter1
 			// 
 			this.tB_ItemTableAdapter1.ClearBeforeFill = true;
-			// 
-			// colitemcode
-			// 
-			this.colitemcode.FieldName = "itemcode";
-			this.colitemcode.Name = "colitemcode";
-			this.colitemcode.Visible = true;
-			this.colitemcode.VisibleIndex = 0;
-			// 
-			// colitemName
-			// 
-			this.colitemName.FieldName = "itemName";
-			this.colitemName.Name = "colitemName";
-			this.colitemName.Visible = true;
-			this.colitemName.VisibleIndex = 1;
-			// 
-			// colitemPrice
-			// 
-			this.colitemPrice.FieldName = "itemPrice";
-			this.colitemPrice.Name = "colitemPrice";
-			this.colitemPrice.Visible = true;
-			this.colitemPrice.VisibleIndex = 2;
-			// 
-			// colitemPriceSingle
-			// 
-			this.colitemPriceSingle.FieldName = "itemPriceSingle";
-			this.colitemPriceSingle.Name = "colitemPriceSingle";
-			this.colitemPriceSingle.Visible = true;
-			this.colitemPriceSingle.VisibleIndex = 3;
-			// 
-			// colitemPriceMany
-			// 
-			this.colitemPriceMany.FieldName = "itemPriceMany";
-			this.colitemPriceMany.Name = "colitemPriceMany";
-			this.colitemPriceMany.Visible = true;
-			this.colitemPriceMany.VisibleIndex = 4;
-			// 
-			// colISGroup
-			// 
-			this.colISGroup.FieldName = "ISGroup";
-			this.colISGroup.Name = "colISGroup";
-			this.colISGroup.Visible = true;
-			this.colISGroup.VisibleIndex = 5;
-			// 
-			// colDateOfInsert
-			// 
-			this.colDateOfInsert.FieldName = "DateOfInsert";
-			this.colDateOfInsert.Name = "colDateOfInsert";
-			this.colDateOfInsert.Visible = true;
-			this.colDateOfInsert.VisibleIndex = 6;
 			// 
 			// Frm_Item
 			// 
@@ -168,8 +176,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
 			this.panelControl3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
 			this.ResumeLayout(false);
 
 		}

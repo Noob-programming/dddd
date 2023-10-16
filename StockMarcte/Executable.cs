@@ -56,10 +56,12 @@ namespace StockMarcte
 		}
 
 
-		public static void ParameterDelete(Bills bill, SqlCommand cmd) => cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier)
+		public static void ParameterDelete(Bills bill, SqlCommand cmd)
+			=> cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier)
 				.Value = bill.Billguid;
 
-		public static void parmeteterItemDelete(Items stock, SqlCommand cmd) => cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value = stock.itemGuid;
+		public static void parmeteterItemDelete(Items stock, SqlCommand cmd)
+			=> cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value = stock.itemGuid;
 
 	}
 }

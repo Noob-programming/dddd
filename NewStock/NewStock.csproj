@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BillsDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Exten\DataTableHelper.cs" />
     <Compile Include="Forms\Frm_Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,7 +72,10 @@
     <Compile Include="Forms\Frm_ItemForms.Designer.cs">
       <DependentUpon>Frm_ItemForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InterFaces\IItems.cs" />
     <Compile Include="Logic\DbHelper.cs" />
+    <Compile Include="Logic\SaveGuid.cs" />
+    <Compile Include="Logic\Services\ItemService.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

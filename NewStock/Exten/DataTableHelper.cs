@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace NewStock.Exten
 {
 	public static class DataTableHelper
 	{
-		public static T changeForItem<T>(this DataTable soures, Func<DataRow, T> selector)
+		public static T changeForItem<T>
+			(this DataTable soures, Func<DataRow, T> selector)
 		where T : class
 		{
 			foreach (DataRow dr in soures.Rows)
@@ -16,5 +18,21 @@ namespace NewStock.Exten
 
 			return null;
 		}
+
+		public static List<T> ChangeList<T>
+			(this DataTable soures, Func<DataRow, T> selector)
+
+		where T : class
+		{
+			List<T> data = new List<T>();
+			foreach (DataRow dr in soures.Rows)
+			{
+				T item = selector(dr);
+				data.Add(item);
+
+			}
+			return data;
+		}
 	}
+
 }

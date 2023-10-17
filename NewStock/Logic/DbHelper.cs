@@ -8,7 +8,7 @@ namespace NewStock.Logic
 	public static class DbHelper
 	{
 		public static SqlCommand Command;
-
+		public static SqlParameter Parameters;
 		private static SqlConnection Connection()
 		{
 
@@ -29,14 +29,19 @@ namespace NewStock.Logic
 				using (var conntion = Connection())
 				{
 					Command = new SqlCommand(sql, conntion);
+					Parameters = new SqlParameter
+					{
+						Direction = ParameterDirection.ReturnValue
+					};
 					Command.CommandType = CommandType.StoredProcedure;
+
 					action.Invoke();
 
 					conntion.Open();
 					Command.ExecuteNonQuery();
 
 					conntion.Close();
-					return true;
+					return Convert.ToBoolean(Parameters.Value);
 				}
 			}
 			catch (Exception e)
@@ -57,6 +62,11 @@ namespace NewStock.Logic
 					Command = new SqlCommand(sql, conntion);
 
 					Command.CommandType = CommandType.StoredProcedure;
+					Parameters = new SqlParameter
+					{
+						Direction = ParameterDirection.ReturnValue
+					};
+
 					action.Invoke();
 
 					conntion.Open();

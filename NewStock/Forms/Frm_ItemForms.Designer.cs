@@ -30,11 +30,8 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-			this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-			this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-			this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-			this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
 			this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+			this.txtparentguid = new DevExpress.XtraEditors.LookUpEdit();
 			this.Group = new DevExpress.XtraEditors.CheckEdit();
 			this.txtPriceMany = new DevExpress.XtraEditors.TextEdit();
 			this.txtPriceSingle = new DevExpress.XtraEditors.TextEdit();
@@ -49,17 +46,19 @@
 			this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-			this.txtparentguid = new DevExpress.XtraEditors.LookUpEdit();
-			this.tB_ItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.billsDB1 = new NewStock.BillsDB();
-			this.tB_ItemTableAdapter1 = new NewStock.BillsDBTableAdapters.TB_ItemTableAdapter();
+			this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+			this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+			this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+			this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
 			this.tBItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.billsDB1 = new NewStock.BillsDB();
+			this.tB_ItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.tB_ItemTableAdapter1 = new NewStock.BillsDBTableAdapters.TB_ItemTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-			this.panelControl3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
 			this.panelControl2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.txtparentguid.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Group.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtPriceMany.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtPriceSingle.Properties)).BeginInit();
@@ -67,10 +66,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtGuid.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtparentguid.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.tB_ItemBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+			this.panelControl3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tBItemBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tB_ItemBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -83,44 +83,6 @@
 			this.panelControl1.Name = "panelControl1";
 			this.panelControl1.Size = new System.Drawing.Size(886, 538);
 			this.panelControl1.TabIndex = 0;
-			// 
-			// panelControl3
-			// 
-			this.panelControl3.Controls.Add(this.simpleButton3);
-			this.panelControl3.Controls.Add(this.simpleButton2);
-			this.panelControl3.Controls.Add(this.simpleButton1);
-			this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panelControl3.Location = new System.Drawing.Point(2, 2);
-			this.panelControl3.Name = "panelControl3";
-			this.panelControl3.Size = new System.Drawing.Size(195, 534);
-			this.panelControl3.TabIndex = 1;
-			// 
-			// simpleButton3
-			// 
-			this.simpleButton3.Location = new System.Drawing.Point(10, 129);
-			this.simpleButton3.Name = "simpleButton3";
-			this.simpleButton3.Size = new System.Drawing.Size(155, 56);
-			this.simpleButton3.TabIndex = 0;
-			this.simpleButton3.Text = "Delete";
-			this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-			// 
-			// simpleButton2
-			// 
-			this.simpleButton2.Location = new System.Drawing.Point(10, 67);
-			this.simpleButton2.Name = "simpleButton2";
-			this.simpleButton2.Size = new System.Drawing.Size(155, 56);
-			this.simpleButton2.TabIndex = 0;
-			this.simpleButton2.Text = "Add";
-			this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-			// 
-			// simpleButton1
-			// 
-			this.simpleButton1.Location = new System.Drawing.Point(10, 5);
-			this.simpleButton1.Name = "simpleButton1";
-			this.simpleButton1.Size = new System.Drawing.Size(155, 56);
-			this.simpleButton1.TabIndex = 0;
-			this.simpleButton1.Text = "Save";
-			this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
 			// 
 			// panelControl2
 			// 
@@ -144,6 +106,25 @@
 			this.panelControl2.Name = "panelControl2";
 			this.panelControl2.Size = new System.Drawing.Size(687, 534);
 			this.panelControl2.TabIndex = 0;
+			// 
+			// txtparentguid
+			// 
+			this.txtparentguid.EditValue = "";
+			this.txtparentguid.Location = new System.Drawing.Point(37, 308);
+			this.txtparentguid.Name = "txtparentguid";
+			this.txtparentguid.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtparentguid.Properties.Appearance.Options.UseFont = true;
+			this.txtparentguid.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+			this.txtparentguid.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "itemGuid", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemName", "item name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("parentGuid", "parentGuid", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+			this.txtparentguid.Properties.NullText = "ffff";
+			this.txtparentguid.Properties.NullValuePrompt = "0x00";
+			this.txtparentguid.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+			this.txtparentguid.Size = new System.Drawing.Size(243, 28);
+			this.txtparentguid.TabIndex = 9;
 			// 
 			// Group
 			// 
@@ -237,6 +218,7 @@
 			this.txtCode.Name = "txtCode";
 			this.txtCode.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCode.Properties.Appearance.Options.UseFont = true;
+			this.txtCode.Properties.ReadOnly = true;
 			this.txtCode.Size = new System.Drawing.Size(243, 28);
 			this.txtCode.TabIndex = 1;
 			// 
@@ -248,6 +230,7 @@
 			this.txtGuid.Properties.Appearance.Options.UseFont = true;
 			this.txtGuid.Size = new System.Drawing.Size(243, 28);
 			this.txtGuid.TabIndex = 1;
+			this.txtGuid.Visible = false;
 			// 
 			// labelControl3
 			// 
@@ -278,26 +261,55 @@
 			this.labelControl1.Size = new System.Drawing.Size(90, 21);
 			this.labelControl1.TabIndex = 0;
 			this.labelControl1.Text = "item Guid";
+			this.labelControl1.Visible = false;
 			// 
-			// txtparentguid
+			// panelControl3
 			// 
-			this.txtparentguid.Location = new System.Drawing.Point(37, 308);
-			this.txtparentguid.Name = "txtparentguid";
-			this.txtparentguid.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtparentguid.Properties.Appearance.Options.UseFont = true;
-			this.txtparentguid.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-			this.txtparentguid.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "item guid", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemName", "item name"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("parentGuid", "parent guid", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-			this.txtparentguid.Properties.DataSource = this.tBItemBindingSource;
-			this.txtparentguid.Properties.DisplayMember = "itemName";
-			this.txtparentguid.Properties.NullText = "";
-			this.txtparentguid.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-			this.txtparentguid.Properties.ValueMember = "itemGuid";
-			this.txtparentguid.Size = new System.Drawing.Size(243, 28);
-			this.txtparentguid.TabIndex = 9;
+			this.panelControl3.Controls.Add(this.simpleButton3);
+			this.panelControl3.Controls.Add(this.simpleButton2);
+			this.panelControl3.Controls.Add(this.simpleButton1);
+			this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panelControl3.Location = new System.Drawing.Point(2, 2);
+			this.panelControl3.Name = "panelControl3";
+			this.panelControl3.Size = new System.Drawing.Size(195, 534);
+			this.panelControl3.TabIndex = 1;
+			// 
+			// simpleButton3
+			// 
+			this.simpleButton3.Location = new System.Drawing.Point(10, 129);
+			this.simpleButton3.Name = "simpleButton3";
+			this.simpleButton3.Size = new System.Drawing.Size(155, 56);
+			this.simpleButton3.TabIndex = 0;
+			this.simpleButton3.Text = "Delete";
+			this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+			// 
+			// simpleButton2
+			// 
+			this.simpleButton2.Location = new System.Drawing.Point(10, 67);
+			this.simpleButton2.Name = "simpleButton2";
+			this.simpleButton2.Size = new System.Drawing.Size(155, 56);
+			this.simpleButton2.TabIndex = 0;
+			this.simpleButton2.Text = "Add";
+			this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+			// 
+			// simpleButton1
+			// 
+			this.simpleButton1.Location = new System.Drawing.Point(10, 5);
+			this.simpleButton1.Name = "simpleButton1";
+			this.simpleButton1.Size = new System.Drawing.Size(155, 56);
+			this.simpleButton1.TabIndex = 0;
+			this.simpleButton1.Text = "Save";
+			this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+			// 
+			// tBItemBindingSource
+			// 
+			this.tBItemBindingSource.DataMember = "TB_Item";
+			this.tBItemBindingSource.DataSource = this.billsDB1;
+			// 
+			// billsDB1
+			// 
+			this.billsDB1.DataSetName = "BillsDB";
+			this.billsDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// tB_ItemBindingSource
 			// 
@@ -305,19 +317,9 @@
 			this.tB_ItemBindingSource.DataSource = this.billsDB1;
 			this.tB_ItemBindingSource.Sort = "itemcode ASC";
 			// 
-			// billsDB1
-			// 
-			this.billsDB1.DataSetName = "BillsDB";
-			this.billsDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// tB_ItemTableAdapter1
 			// 
 			this.tB_ItemTableAdapter1.ClearBeforeFill = true;
-			// 
-			// tBItemBindingSource
-			// 
-			this.tBItemBindingSource.DataMember = "TB_Item";
-			this.tBItemBindingSource.DataSource = this.billsDB1;
 			// 
 			// Frm_ItemForms
 			// 
@@ -333,11 +335,10 @@
 			this.Load += new System.EventHandler(this.Frm_ItemForms_Load);
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
 			this.panelControl1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-			this.panelControl3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
 			this.panelControl2.ResumeLayout(false);
 			this.panelControl2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.txtparentguid.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Group.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtPriceMany.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtPriceSingle.Properties)).EndInit();
@@ -345,10 +346,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtGuid.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtparentguid.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.tB_ItemBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+			this.panelControl3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.tBItemBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tB_ItemBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}

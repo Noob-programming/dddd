@@ -34,3 +34,15 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStoc
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.exe
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.pdb
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_ItemForms.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.XtraGrid.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.XtraPrinting.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.XtraBars.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.RichEdit.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.Office.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.XtraGrid.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.XtraPrinting.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.XtraBars.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.RichEdit.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.Office.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Bill.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_Bills.resources

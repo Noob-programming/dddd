@@ -8,8 +8,12 @@ namespace NewStock.Logic.Services
 	public static class ItemService
 	{
 
-		private static void ParameterItem(ItemModel item, SqlCommand command)
+		private static void ParameterItem(ItemModel item, SqlCommand command, SqlParameter parameter)
 		{
+			parameter = new SqlParameter("@return", SqlDbType.Bit)
+			{
+				Direction = ParameterDirection.ReturnValue
+			};
 			command.Parameters.Add("@ItemGuid", SqlDbType.UniqueIdentifier).Value
 				= item.itemGuid;
 			command.Parameters.Add("@ItemCode", SqlDbType.Int).Value
@@ -31,19 +35,31 @@ namespace NewStock.Logic.Services
 		public static bool IsItem(ItemModel item)
 		{
 			return DbHelper.ExcuteData("TB_Item_OnlySave",
-				() => ParameterItem(item, DbHelper.Command));
+				() => ParameterItem(item, DbHelper.Command, DbHelper.Parameters));
 		}
 
-		private static void ParmeterDelete(Guid item, SqlCommand command) =>
-			 command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
-				 = item;
+		private static void ParmeterDelete(Guid item, SqlCommand command, SqlParameter sqlParameter)
+		{
+			if (sqlParameter == null) throw new ArgumentNullException(nameof(sqlParameter));
+			sqlParameter = new SqlParameter("@return", SqlDbType.Bit)
+			{
+				Direction = ParameterDirection.ReturnValue
+			};
+
+			command.Parameters.Add(sqlParameter);
+
+			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
+				= item;
+
+
+		}
 
 		public static bool IsDelete(Guid item)
 			=> DbHelper.ExcuteData("TB_Item_Delete",
-					() => ParmeterDelete(item, DbHelper.Command));
+					() => ParmeterDelete(item, DbHelper.Command, DbHelper.Parameters));
 
 
-		public static DataTable GetData(Guid guid)
+		public static DataTable GetData(Guid guid = default)
 			=> DbHelper.GetData("TB_item_GET",
 				() => SelectParameter(guid, DbHelper.Command));
 		private static void SelectParameter(Guid guid, SqlCommand command)

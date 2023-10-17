@@ -40,7 +40,9 @@
     <Reference Include="DevExpress.XtraEditors.v23.1" />
     <Reference Include="DevExpress.Printing.v23.1.Core" />
     <Reference Include="DevExpress.Drawing.v23.1" />
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +62,18 @@
       <DependentUpon>BillsDB.xsd</DependentUpon>
     </Compile>
     <Compile Include="Exten\DataTableHelper.cs" />
+    <Compile Include="Forms\Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Bills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Bills.Designer.cs">
+      <DependentUpon>Frm_Bills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,10 +89,18 @@
     <Compile Include="Forms\InterFaces\IItems.cs" />
     <Compile Include="Logic\DbHelper.cs" />
     <Compile Include="Logic\SaveGuid.cs" />
+    <Compile Include="Logic\Services\BillService.cs" />
     <Compile Include="Logic\Services\ItemService.cs" />
+    <Compile Include="Model\BillModel.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Bills.resx">
+      <DependentUpon>Frm_Bills.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Item.resx">
       <DependentUpon>Frm_Item.cs</DependentUpon>
     </EmbeddedResource>

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
 			this.treeList1 = new DevExpress.XtraTreeList.TreeList();
@@ -38,16 +39,21 @@
 			this.colitemPriceMany = new DevExpress.XtraTreeList.Columns.TreeListColumn();
 			this.colISGroup = new DevExpress.XtraTreeList.Columns.TreeListColumn();
 			this.colDateOfInsert = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-			this.billsDB1 = new NewStock.BillsDB();
+			this.billsDB2 = new NewStock.BillsDB();
 			this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+			this.billsDB1 = new NewStock.BillsDB();
 			this.tB_ItemTableAdapter1 = new NewStock.BillsDBTableAdapters.TB_ItemTableAdapter();
+			this.tBItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.tB_ItemTableAdapter2 = new NewStock.BillsDBTableAdapters.TB_ItemTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
 			this.panelControl3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsDB2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tBItemBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -80,7 +86,7 @@
 			this.colISGroup,
 			this.colDateOfInsert});
 			this.treeList1.DataMember = "TB_Item";
-			this.treeList1.DataSource = this.billsDB1;
+			this.treeList1.DataSource = this.billsDB2;
 			this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.treeList1.KeyFieldName = "itemGuid";
 			this.treeList1.Location = new System.Drawing.Point(2, 2);
@@ -146,10 +152,10 @@
 			this.colDateOfInsert.Visible = true;
 			this.colDateOfInsert.VisibleIndex = 6;
 			// 
-			// billsDB1
+			// billsDB2
 			// 
-			this.billsDB1.DataSetName = "BillsDB";
-			this.billsDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			this.billsDB2.DataSetName = "BillsDB";
+			this.billsDB2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// panelControl2
 			// 
@@ -159,9 +165,23 @@
 			this.panelControl2.Size = new System.Drawing.Size(200, 448);
 			this.panelControl2.TabIndex = 0;
 			// 
+			// billsDB1
+			// 
+			this.billsDB1.DataSetName = "BillsDB";
+			this.billsDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// tB_ItemTableAdapter1
 			// 
 			this.tB_ItemTableAdapter1.ClearBeforeFill = true;
+			// 
+			// tBItemBindingSource
+			// 
+			this.tBItemBindingSource.DataMember = "TB_Item";
+			this.tBItemBindingSource.DataSource = this.billsDB1;
+			// 
+			// tB_ItemTableAdapter2
+			// 
+			this.tB_ItemTableAdapter2.ClearBeforeFill = true;
 			// 
 			// Frm_Item
 			// 
@@ -171,13 +191,16 @@
 			this.Controls.Add(this.panelControl1);
 			this.Name = "Frm_Item";
 			this.Text = "Frm_Item";
+			this.Load += new System.EventHandler(this.Frm_Item_Load);
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
 			this.panelControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
 			this.panelControl3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsDB2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsDB1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tBItemBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -197,5 +220,8 @@
 		private DevExpress.XtraTreeList.Columns.TreeListColumn colDateOfInsert;
 		private BillsDB billsDB1;
 		private BillsDBTableAdapters.TB_ItemTableAdapter tB_ItemTableAdapter1;
+		private System.Windows.Forms.BindingSource tBItemBindingSource;
+		private BillsDB billsDB2;
+		private BillsDBTableAdapters.TB_ItemTableAdapter tB_ItemTableAdapter2;
 	}
 }

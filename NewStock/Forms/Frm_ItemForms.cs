@@ -18,29 +18,40 @@ namespace NewStock.Forms
 
 		void LookUpdater()
 		{
-			txtparentguid.Properties.DataSource = ItemService.GetParent();
-			txtparentguid.Properties.DisplayMember = "itemName";
+
+			var r = ItemService.GetParent().ChangeList(x => new
+			{
+				itemGuid = new Guid(x["itemGuid"].ToString()),
+				ParentGuid = new Guid(x["parentGuid"].ToString()),
+				itemName = x["itemName"].ToString(),
+			});
+			txtparentguid.Properties.DataSource = r;
 			txtparentguid.Properties.ValueMember = "itemGuid";
+			txtparentguid.Properties.DisplayMember = "itemName";
+
+
+
 		}
 
-
+		/*System.Data.DataRowView*/
 
 		private void Frm_ItemForms_Load(object sender, System.EventArgs e)
 		{
-			SetData(ItemService.GetData(SaveGuid.guidSave).
-				changeForItem(x => new ItemModel
-				{
-					itemGuid = Guid.Parse(x["itemGuid"].ToString()),
-					itemCode = Convert.ToInt32(x["itemcode"].ToString()),
-					itemName = x["itemName"].ToString(),
-					itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
-					itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
-					itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
-					parentGuid = Guid.Parse(x["parentGuid"].ToString()),
-					isGroup = Convert.ToBoolean(x["ISGroup"].ToString())
-				}));
 			LookUpdater();
+			SetData(ItemService.GetData(SaveGuid.guidSave).changeForItem(x => new ItemModel
+			{
+				itemGuid = Guid.Parse(x["itemGuid"].ToString()),
+				itemCode = Convert.ToInt32(x["itemcode"].ToString()),
+				itemName = x["itemName"].ToString(),
+				itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
+				itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
+				itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
+				parentGuid = Guid.Parse(x["parentGuid"].ToString()),
+				isGroup = Convert.ToBoolean(x["ISGroup"].ToString())
+			}));
+
 		}
+
 
 		void SetData(ItemModel dt)
 		{
@@ -56,11 +67,11 @@ namespace NewStock.Forms
 			Group.Checked = dt.isGroup;
 		}
 
-		ItemModel preprocess()
+		ItemModel Preprocess()
 		{
 			return new ItemModel()
 			{
-				parentGuid = new Guid(txtparentguid.Text),
+				parentGuid = new Guid(txtparentguid.EditValue.ToString()),
 				itemCode = Convert.ToInt32(txtCode.Text),
 				itemGuid = new Guid(txtGuid.Text),
 				itemName = txtName.Text,
@@ -75,10 +86,20 @@ namespace NewStock.Forms
 		{
 			try
 			{
-				bool check = ItemService.IsItem(item: preprocess());
+				bool check = ItemService.IsItem(item: Preprocess());
 
-				MessageBox.Show(check ? @"Save" : @"Error");
-				LookUpdater();
+				if (!check)
+				{
+					MessageBox.Show(@"Error");
+				}
+
+				else
+				{
+					SetData(new ItemModel());
+
+					LookUpdater();
+					MessageBox.Show(@"Delete");
+				}
 			}
 			catch (Exception exception)
 			{
@@ -97,9 +118,20 @@ namespace NewStock.Forms
 			try
 			{
 				bool check = ItemService.IsDelete(SaveGuid.guidSave);
-				MessageBox.Show(check ? @"Delete" : @"Error");
-				SetData(new ItemModel());
-				LookUpdater();
+
+				if (!check)
+				{
+					MessageBox.Show(@"Error");
+				}
+
+				else
+				{
+					SetData(new ItemModel());
+
+					LookUpdater();
+					MessageBox.Show(@"Delete");
+				}
+
 			}
 			catch (Exception exception)
 			{

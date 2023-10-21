@@ -85,6 +85,5 @@ namespace NewStock.Logic
 
 			return null;
 		}
-
 	}
 }

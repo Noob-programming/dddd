@@ -35,7 +35,7 @@ namespace NewStock.Logic.Services
 
 
 		public static DataTable FillLookUp(string sql) =>
-			DbHelper.GetData("TB_Item_GetItemandName", () => { });
+			DbHelper.GetData(sql, () => { });
 
 		static void pareterdelete(Guid id, SqlCommand command, SqlParameter parameter)
 		{

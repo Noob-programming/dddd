@@ -1,0 +1,12 @@
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\bin\Debug\guan forms.exe.config
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\bin\Debug\guan forms.exe
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\bin\Debug\guan forms.pdb
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\bin\Debug\Guna.UI2.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan forms.csproj.AssemblyReference.cache
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan_forms.Form1.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan_forms.Properties.Resources.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan forms.csproj.GenerateResource.cache
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan forms.csproj.CoreCompileInputs.cache
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan forms.csproj.CopyComplete
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan forms.exe
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\guan forms\obj\Debug\guan forms.pdb

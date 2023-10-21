@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+			this.tsType = new DevExpress.XtraEditors.ToggleSwitch();
 			this.dataBill = new DevExpress.XtraEditors.DateEdit();
 			this.txtNode = new DevExpress.XtraEditors.TextEdit();
 			this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -42,9 +43,9 @@
 			this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
 			this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
 			this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-			this.tsType = new DevExpress.XtraEditors.ToggleSwitch();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tsType.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataBill.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataBill.Properties.CalendarTimeProperties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNode.Properties)).BeginInit();
@@ -52,7 +53,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtGuid.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
 			this.panelControl2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tsType.Properties)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -70,13 +70,24 @@
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(976, 256);
+			this.panelControl1.Size = new System.Drawing.Size(647, 256);
 			this.panelControl1.TabIndex = 0;
+			// 
+			// tsType
+			// 
+			this.tsType.Location = new System.Drawing.Point(150, 146);
+			this.tsType.Name = "tsType";
+			this.tsType.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tsType.Properties.Appearance.Options.UseFont = true;
+			this.tsType.Properties.OffText = "Buy";
+			this.tsType.Properties.OnText = "Sell";
+			this.tsType.Size = new System.Drawing.Size(211, 26);
+			this.tsType.TabIndex = 8;
 			// 
 			// dataBill
 			// 
 			this.dataBill.EditValue = null;
-			this.dataBill.Location = new System.Drawing.Point(148, 202);
+			this.dataBill.Location = new System.Drawing.Point(150, 202);
 			this.dataBill.Name = "dataBill";
 			this.dataBill.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dataBill.Properties.Appearance.Options.UseFont = true;
@@ -110,7 +121,7 @@
 			// 
 			this.labelControl5.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelControl5.Appearance.Options.UseFont = true;
-			this.labelControl5.Location = new System.Drawing.Point(12, 166);
+			this.labelControl5.Location = new System.Drawing.Point(12, 148);
 			this.labelControl5.Name = "labelControl5";
 			this.labelControl5.Size = new System.Drawing.Size(80, 21);
 			this.labelControl5.TabIndex = 4;
@@ -120,7 +131,7 @@
 			// 
 			this.labelControl3.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelControl3.Appearance.Options.UseFont = true;
-			this.labelControl3.Location = new System.Drawing.Point(12, 205);
+			this.labelControl3.Location = new System.Drawing.Point(12, 196);
 			this.labelControl3.Name = "labelControl3";
 			this.labelControl3.Size = new System.Drawing.Size(80, 21);
 			this.labelControl3.TabIndex = 4;
@@ -172,7 +183,7 @@
 			this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl2.Location = new System.Drawing.Point(0, 256);
 			this.panelControl2.Name = "panelControl2";
-			this.panelControl2.Size = new System.Drawing.Size(976, 204);
+			this.panelControl2.Size = new System.Drawing.Size(647, 204);
 			this.panelControl2.TabIndex = 1;
 			// 
 			// simpleButton3
@@ -182,6 +193,7 @@
 			this.simpleButton3.Size = new System.Drawing.Size(153, 75);
 			this.simpleButton3.TabIndex = 0;
 			this.simpleButton3.Text = "delete";
+			this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
 			// 
 			// simpleButton2
 			// 
@@ -190,6 +202,7 @@
 			this.simpleButton2.Size = new System.Drawing.Size(153, 75);
 			this.simpleButton2.TabIndex = 0;
 			this.simpleButton2.Text = "add";
+			this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
 			// 
 			// simpleButton1
 			// 
@@ -198,23 +211,13 @@
 			this.simpleButton1.Size = new System.Drawing.Size(153, 75);
 			this.simpleButton1.TabIndex = 0;
 			this.simpleButton1.Text = "save";
-			// 
-			// tsType
-			// 
-			this.tsType.Location = new System.Drawing.Point(148, 161);
-			this.tsType.Name = "tsType";
-			this.tsType.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tsType.Properties.Appearance.Options.UseFont = true;
-			this.tsType.Properties.OffText = "Buy";
-			this.tsType.Properties.OnText = "Sell";
-			this.tsType.Size = new System.Drawing.Size(211, 26);
-			this.tsType.TabIndex = 8;
+			this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
 			// 
 			// Frm_Bills
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(976, 460);
+			this.ClientSize = new System.Drawing.Size(647, 460);
 			this.Controls.Add(this.panelControl2);
 			this.Controls.Add(this.panelControl1);
 			this.Name = "Frm_Bills";
@@ -223,6 +226,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
 			this.panelControl1.ResumeLayout(false);
 			this.panelControl1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tsType.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataBill.Properties.CalendarTimeProperties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataBill.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNode.Properties)).EndInit();
@@ -230,7 +234,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtGuid.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
 			this.panelControl2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.tsType.Properties)).EndInit();
 			this.ResumeLayout(false);
 
 		}

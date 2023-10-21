@@ -18,8 +18,6 @@ namespace NewStock.Forms
 			try
 			{
 				tB_ItemTableAdapter2.Fill(billsDB2.TB_Item);
-
-
 			}
 			catch (Exception e)
 			{

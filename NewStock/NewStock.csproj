@@ -87,12 +87,20 @@
       <DependentUpon>Frm_ItemForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InterFaces\IItems.cs" />
+    <Compile Include="Forms\Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\DbHelper.cs" />
     <Compile Include="Logic\SaveGuid.cs" />
     <Compile Include="Logic\Services\BillService.cs" />
     <Compile Include="Logic\Services\ItemService.cs" />
+    <Compile Include="Logic\Services\StockService.cs" />
     <Compile Include="Model\BillModel.cs" />
     <Compile Include="Model\ItemModel.cs" />
+    <Compile Include="Model\StockModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Bill.resx">
@@ -106,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_ItemForms.resx">
       <DependentUpon>Frm_ItemForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

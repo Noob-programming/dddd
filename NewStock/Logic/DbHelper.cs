@@ -16,7 +16,7 @@ namespace NewStock.Logic
 			{
 				DataSource = @"DESKTOP-LPLR64V\NEWSQL",
 				InitialCatalog = "Bills",
-				IntegratedSecurity = true
+				IntegratedSecurity = true,
 			};
 
 			return new SqlConnection(builder.ConnectionString);
@@ -46,7 +46,7 @@ namespace NewStock.Logic
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}

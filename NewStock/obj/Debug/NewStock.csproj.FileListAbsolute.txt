@@ -46,3 +46,4 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpr
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\bin\Debug\DevExpress.Office.v23.1.Core.xml
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Bill.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_Bills.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Stock.resources

@@ -13,24 +13,18 @@ namespace NewStock.Logic.Services
 			{
 				Direction = ParameterDirection.ReturnValue
 			};
-
-			// [BillGuid]
-			// ,[Billcode]
-			// ,[BillDate]
-			// ,[Notes]
-			// ,[BillType]
-
-			command.Parameters.Add("@BillGuid", SqlDbType.UniqueIdentifier).Value
+			command.Parameters.Add(parameter);
+			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
 				= model.billGuid;
 
-			command.Parameters.Add("@Billcode", SqlDbType.Int).Value
-				= model.billGuid;
-			command.Parameters.Add("@BillDate", SqlDbType.DateTime).Value
-				= model.billGuid;
-			command.Parameters.Add("@Notes", SqlDbType.NVarChar).Value
-				= model.billGuid;
-			command.Parameters.Add("@BillType", SqlDbType.Bit).Value
-				= model.billGuid;
+			command.Parameters.Add("@billcode", SqlDbType.Int).Value
+				= model.Billcode;
+			command.Parameters.Add("@date", SqlDbType.DateTime).Value
+				= model.billdate;
+			command.Parameters.Add("@notes", SqlDbType.NVarChar).Value
+				= model.notes;
+			command.Parameters.Add("@Billtype", SqlDbType.Bit).Value
+				= model.billType;
 		}
 
 		public static bool BillExistsSave(BillModel model)
@@ -56,7 +50,7 @@ namespace NewStock.Logic.Services
 		}
 
 		public static bool IsDelete(Guid item)
-			=> DbHelper.ExcuteData("TB_Item_Delete",
+			=> DbHelper.ExcuteData("TB_Bill_Delete",
 				() => ParmeterDelete(item, DbHelper.Command, DbHelper.Parameters));
 
 

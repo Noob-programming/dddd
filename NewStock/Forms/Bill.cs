@@ -1,4 +1,5 @@
 ﻿using NewStock.Logic;
+using NewStock.Logic.Services;
 using System;
 
 namespace NewStock.Forms
@@ -14,7 +15,7 @@ namespace NewStock.Forms
 
 		private void setData()
 		{
-			tB_BillTableAdapter1.Fill(billsDB1.TB_Bill);
+			gridControl1.DataSource = BillService.GetData();
 		}
 
 		private void Bill_Load(object sender, System.EventArgs e)

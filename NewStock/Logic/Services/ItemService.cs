@@ -10,10 +10,12 @@ namespace NewStock.Logic.Services
 
 		private static void ParameterItem(ItemModel item, SqlCommand command, SqlParameter parameter)
 		{
-			parameter = new SqlParameter("@return", SqlDbType.Bit)
+			parameter = new SqlParameter("@return", SqlDbType.Int)
 			{
 				Direction = ParameterDirection.ReturnValue
 			};
+
+			command.Parameters.Add(parameter);
 			command.Parameters.Add("@ItemGuid", SqlDbType.UniqueIdentifier).Value
 				= item.itemGuid;
 			command.Parameters.Add("@ItemCode", SqlDbType.Int).Value

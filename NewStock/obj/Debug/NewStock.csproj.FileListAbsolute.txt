@@ -49,3 +49,6 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStoc
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Stock.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_BillItem.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_BillItemEdit.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_Main.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_Info.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\NewStock\obj\Debug\NewStock.Forms.Frm_Order.resources

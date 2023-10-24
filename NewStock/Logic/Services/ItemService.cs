@@ -10,12 +10,12 @@ namespace NewStock.Logic.Services
 
 		private static void ParameterItem(ItemModel item, SqlCommand command, SqlParameter parameter)
 		{
-			parameter = new SqlParameter("@return", SqlDbType.Int)
-			{
-				Direction = ParameterDirection.ReturnValue
-			};
+			parameter.ParameterName = "@return";
+
+			parameter.DbType = DbType.Int32;
 
 			command.Parameters.Add(parameter);
+
 			command.Parameters.Add("@ItemGuid", SqlDbType.UniqueIdentifier).Value
 				= item.itemGuid;
 			command.Parameters.Add("@ItemCode", SqlDbType.Int).Value
@@ -34,6 +34,61 @@ namespace NewStock.Logic.Services
 				= item.isGroup;
 		}
 
+		// private static void ParameterItem(ItemModel item, SqlCommand command, SqlParameter[] parameters)
+		// {
+		// 	if (parameters == null)
+		// 	{
+		// 		throw new ArgumentNullException(nameof(parameters));
+		// 	}
+		//
+		// 	command.Parameters.AddRange(parameters);
+		//
+		// 	parameters[0] = new SqlParameter("@return", SqlDbType.Int)
+		// 	{
+		// 		Direction = ParameterDirection.ReturnValue
+		// 	};
+		//
+		// 	parameters[1] = new SqlParameter("@ItemGuid", SqlDbType.UniqueIdentifier)
+		// 	{
+		// 		Value = item.itemGuid
+		// 	};
+		//
+		// 	parameters[2] = new SqlParameter("@ItemCode", SqlDbType.Int)
+		// 	{
+		// 		Value = item.itemCode
+		// 	};
+		//
+		// 	parameters[3] = new SqlParameter("@ItemName", SqlDbType.NVarChar)
+		// 	{
+		// 		Value = item.itemName
+		// 	};
+		//
+		// 	parameters[4] = new SqlParameter("@ParentGuid", SqlDbType.UniqueIdentifier)
+		// 	{
+		// 		Value = item.parentGuid
+		// 	};
+		//
+		// 	parameters[5] = new SqlParameter("@itemPrice", SqlDbType.Decimal)
+		// 	{
+		// 		Value = item.itemPrice
+		// 	};
+		//
+		// 	parameters[6] = new SqlParameter("@itemPriceSingle", SqlDbType.Decimal)
+		// 	{
+		// 		Value = item.itemPriceSingle
+		// 	};
+		//
+		// 	parameters[7] = new SqlParameter("@itemPriceMany", SqlDbType.Decimal)
+		// 	{
+		// 		Value = item.itemPriceMany
+		// 	};
+		//
+		// 	parameters[8] = new SqlParameter("@IsGroup", SqlDbType.Bit)
+		// 	{
+		// 		Value = item.isGroup
+		// 	};
+		// }
+
 		public static bool IsItem(ItemModel item)
 		{
 			return DbHelper.ExcuteData("TB_Item_OnlySave",
@@ -43,10 +98,10 @@ namespace NewStock.Logic.Services
 		private static void ParmeterDelete(Guid item, SqlCommand command, SqlParameter sqlParameter)
 		{
 			if (sqlParameter == null) throw new ArgumentNullException(nameof(sqlParameter));
-			sqlParameter = new SqlParameter("@return", SqlDbType.Bit)
-			{
-				Direction = ParameterDirection.ReturnValue
-			};
+
+
+			sqlParameter.ParameterName = "@return";
+			sqlParameter.DbType = DbType.Int32;
 
 			command.Parameters.Add(sqlParameter);
 

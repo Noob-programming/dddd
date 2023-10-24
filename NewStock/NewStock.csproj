@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Data.v23.1" />
     <Reference Include="DevExpress.Utils.v23.1" />
     <Reference Include="DevExpress.Sparkline.v23.1.Core" />
+    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v23.1" />
     <Reference Include="DevExpress.Printing.v23.1.Core" />
     <Reference Include="DevExpress.Drawing.v23.1" />
@@ -86,6 +87,12 @@
     <Compile Include="Forms\Frm_Bills.Designer.cs">
       <DependentUpon>Frm_Bills.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Info.Designer.cs">
+      <DependentUpon>Frm_Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +104,18 @@
     </Compile>
     <Compile Include="Forms\Frm_ItemForms.Designer.cs">
       <DependentUpon>Frm_ItemForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Order.Designer.cs">
+      <DependentUpon>Frm_Order.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InterFaces\IItems.cs" />
     <Compile Include="Forms\Stock.cs">
@@ -110,10 +129,12 @@
     <Compile Include="Logic\Services\BillItemService.cs" />
     <Compile Include="Logic\Services\BillService.cs" />
     <Compile Include="Logic\Services\ItemService.cs" />
+    <Compile Include="Logic\Services\OrderService.cs" />
     <Compile Include="Logic\Services\StockService.cs" />
     <Compile Include="Model\BillItemModel.cs" />
     <Compile Include="Model\BillModel.cs" />
     <Compile Include="Model\ItemModel.cs" />
+    <Compile Include="Model\Orders.cs" />
     <Compile Include="Model\StockModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,11 +150,20 @@
     <EmbeddedResource Include="Forms\Frm_Bills.resx">
       <DependentUpon>Frm_Bills.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Info.resx">
+      <DependentUpon>Frm_Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Item.resx">
       <DependentUpon>Frm_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_ItemForms.resx">
       <DependentUpon>Frm_ItemForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Order.resx">
+      <DependentUpon>Frm_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>

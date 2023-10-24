@@ -1,4 +1,5 @@
 ﻿using NewStock.Model;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -41,5 +42,22 @@ namespace NewStock.Logic.Services
 		public static bool SaveData(BillItemModel model)
 			=> DbHelper.ExcuteData("TB_BillItem_Save",
 				() => SetParameter(model, DbHelper.Command, DbHelper.Parameters));
+
+		static void SetParameterDelete(Guid guid, SqlCommand
+			command, SqlParameter parameter)
+		{
+			parameter.ParameterName = "@return";
+			parameter.DbType = DbType.Int32;
+
+			command.Parameters.Add(parameter);
+
+			command.Parameters.Add
+				("@BillitemGUID", SqlDbType.UniqueIdentifier).Value = guid;
+
+		}
+
+		public static bool DeleteOrder(Guid orderGuid) =>
+			DbHelper.ExcuteData("TB_BillItem_Delete", () =>
+				SetParameterDelete(orderGuid, DbHelper.Command, DbHelper.Parameters));
 	}
 }

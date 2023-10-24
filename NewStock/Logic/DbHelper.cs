@@ -33,6 +33,7 @@ namespace NewStock.Logic
 					{
 						Direction = ParameterDirection.ReturnValue
 					};
+
 					Command.CommandType = CommandType.StoredProcedure;
 
 					action.Invoke();

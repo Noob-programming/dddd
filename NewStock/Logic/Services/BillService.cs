@@ -9,11 +9,11 @@ namespace NewStock.Logic.Services
 	{
 		private static void BillParameter(BillModel model, SqlCommand command, SqlParameter parameter)
 		{
-			parameter = new SqlParameter("@return", SqlDbType.Bit)
-			{
-				Direction = ParameterDirection.ReturnValue
-			};
+			parameter.ParameterName = "@return";
+			parameter.SqlDbType = SqlDbType.Int;
+
 			command.Parameters.Add(parameter);
+
 			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
 				= model.billGuid;
 
@@ -33,15 +33,13 @@ namespace NewStock.Logic.Services
 				() => BillParameter(model, DbHelper.Command, DbHelper.Parameters));
 		}
 
-		private static void ParmeterDelete(Guid item, SqlCommand command, SqlParameter sqlParameter)
+		private static void ParmeterDelete(Guid item, SqlCommand command, SqlParameter parameter)
 		{
-			if (sqlParameter == null) throw new ArgumentNullException(nameof(sqlParameter));
-			sqlParameter = new SqlParameter("@return", SqlDbType.Bit)
-			{
-				Direction = ParameterDirection.ReturnValue
-			};
+			if (parameter == null) throw new ArgumentNullException(nameof(parameter));
+			parameter.ParameterName = "@return";
+			parameter.SqlDbType = SqlDbType.Int;
 
-			command.Parameters.Add(sqlParameter);
+			command.Parameters.Add(parameter);
 
 			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
 				= item;

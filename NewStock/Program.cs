@@ -14,7 +14,7 @@ namespace NewStock
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Frm_BillItem());
+			Application.Run(new Frm_Item());
 		}
 	}
 }

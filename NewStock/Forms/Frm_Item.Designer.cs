@@ -77,17 +77,24 @@
 			// 
 			// treeList1
 			// 
+			this.treeList1.Appearance.TreeLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.treeList1.Appearance.TreeLine.BorderColor = System.Drawing.Color.White;
+			this.treeList1.Appearance.TreeLine.ForeColor = System.Drawing.Color.Black;
+			this.treeList1.Appearance.TreeLine.Options.UseBackColor = true;
+			this.treeList1.Appearance.TreeLine.Options.UseBorderColor = true;
+			this.treeList1.Appearance.TreeLine.Options.UseForeColor = true;
 			this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-			this.colitemcode,
-			this.colitemName,
-			this.colitemPrice,
-			this.colitemPriceSingle,
-			this.colitemPriceMany,
-			this.colISGroup,
-			this.colDateOfInsert});
+            this.colitemcode,
+            this.colitemName,
+            this.colitemPrice,
+            this.colitemPriceSingle,
+            this.colitemPriceMany,
+            this.colISGroup,
+            this.colDateOfInsert});
 			this.treeList1.DataMember = "TB_Item";
 			this.treeList1.DataSource = this.billsDB2;
 			this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeList1.ImeMode = System.Windows.Forms.ImeMode.On;
 			this.treeList1.KeyFieldName = "itemGuid";
 			this.treeList1.Location = new System.Drawing.Point(2, 2);
 			this.treeList1.Name = "treeList1";

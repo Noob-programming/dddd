@@ -80,5 +80,28 @@ namespace NewStock.Forms
 			LookUpItem.EditValue = null;
 			txtGuid.Text = Guid.Empty.ToString();
 		}
+
+		private void simpleButton3_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				_check = BillItemService.DeleteOrder(SaveGuid.guidSave);
+				if (!_check)
+				{
+					MessageBox.Show(@"Delete error");
+				}
+				else
+				{
+					MessageBox.Show(@"Delete Done");
+					ClearField();
+				}
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show($@"{exception}");
+				throw;
+			}
+
+		}
 	}
 }

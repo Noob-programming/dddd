@@ -38,17 +38,18 @@ namespace NewStock.Forms
 		private void Frm_ItemForms_Load(object sender, System.EventArgs e)
 		{
 			LookUpdater();
-			SetData(ItemService.GetData(SaveGuid.guidSave).changeForItem(x => new ItemModel
-			{
-				itemGuid = Guid.Parse(x["itemGuid"].ToString()),
-				itemCode = Convert.ToInt32(x["itemcode"].ToString()),
-				itemName = x["itemName"].ToString(),
-				itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
-				itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
-				itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
-				parentGuid = Guid.Parse(x["parentGuid"].ToString()),
-				isGroup = Convert.ToBoolean(x["ISGroup"].ToString())
-			}));
+			SetData(ItemService.GetData(SaveGuid.guidSave).
+				changeForItem(x => new ItemModel
+				{
+					itemGuid = Guid.Parse(x["itemGuid"].ToString()),
+					itemCode = Convert.ToInt32(x["itemcode"].ToString()),
+					itemName = x["itemName"].ToString(),
+					itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
+					itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
+					itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
+					parentGuid = Guid.Parse(x["parentGuid"].ToString()),
+					isGroup = Convert.ToBoolean(x["ISGroup"].ToString())
+				}));
 
 		}
 
@@ -98,12 +99,12 @@ namespace NewStock.Forms
 					SetData(new ItemModel());
 
 					LookUpdater();
-					MessageBox.Show(@"Delete");
+					MessageBox.Show(@"Save Done");
 				}
 			}
 			catch (Exception exception)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{exception}");
+				MessageBox.Show($@"{exception}");
 				throw;
 			}
 		}

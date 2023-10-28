@@ -19,12 +19,13 @@ namespace NewStock.Forms
 		void LookUpdater()
 		{
 
-			var r = ItemService.GetParent().ChangeList(x => new
-			{
-				itemGuid = new Guid(x["itemGuid"].ToString()),
-				ParentGuid = new Guid(x["parentGuid"].ToString()),
-				itemName = x["itemName"].ToString(),
-			});
+			var r = ItemService.GetParent()
+				.ChangeList(x => new
+				{
+					itemGuid = new Guid(x["itemGuid"].ToString()),
+					ParentGuid = new Guid(x["parentGuid"].ToString()),
+					itemName = x["itemName"].ToString(),
+				});
 			txtparentguid.Properties.DataSource = r;
 			txtparentguid.Properties.ValueMember = "itemGuid";
 			txtparentguid.Properties.DisplayMember = "itemName";
@@ -39,7 +40,7 @@ namespace NewStock.Forms
 		{
 			LookUpdater();
 			SetData(ItemService.GetData(SaveGuid.guidSave).
-				changeForItem(x => new ItemModel
+				ChangeForItem(x => new ItemModel
 				{
 					itemGuid = Guid.Parse(x["itemGuid"].ToString()),
 					itemCode = Convert.ToInt32(x["itemcode"].ToString()),

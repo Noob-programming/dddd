@@ -40,7 +40,10 @@
     <Reference Include="DevExpress.XtraEditors.v23.1" />
     <Reference Include="DevExpress.Printing.v23.1.Core" />
     <Reference Include="DevExpress.Drawing.v23.1" />
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI2">
       <HintPath>E:\Guna.UI2\Guna.UI2.dll</HintPath>
     </Reference>
@@ -60,12 +63,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BillsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\Extension\ConvertTBToT.cs" />
+    <Compile Include="Logic\Extension\GuidHelper.cs" />
     <Compile Include="Logic\Repository\ IRepository.cs" />
+    <Compile Include="Logic\Repository\DBHelper.cs" />
     <Compile Include="Logic\Repository\ItemRepository.cs" />
+    <Compile Include="Logic\Repository\MainRepository.cs" />
     <Compile Include="Logic\Repository\UnitofWork.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Forms\Frm_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\Frm_Item.Designer.cs">
+      <DependentUpon>Frm_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\Frm_ItemEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +111,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Forms\Frm_Item.resx">
+      <DependentUpon>Frm_Item.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Frm_ItemEdit.resx">
       <DependentUpon>Frm_ItemEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +121,28 @@
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="BillsDataSet.xsc">
+      <DependentUpon>BillsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BillsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BillsDataSet.xss">
+      <DependentUpon>BillsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BillsDataSet1.xsc">
+      <DependentUpon>BillsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BillsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BillsDataSet1.xss">
+      <DependentUpon>BillsDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

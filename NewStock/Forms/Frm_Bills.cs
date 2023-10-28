@@ -17,7 +17,7 @@ namespace NewStock.Forms
 
 		private void Frm_Bills_Load(object sender, EventArgs e)
 		{
-			SetData(BillService.GetData(SaveGuid.guidSave).changeForItem(x =>
+			SetData(BillService.GetData(SaveGuid.guidSave).ChangeForItem(x =>
 				_billModel = new BillModel
 				{
 					billGuid = Guid.Parse(x["BillGuid"].ToString()),

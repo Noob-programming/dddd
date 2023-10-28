@@ -33,3 +33,16 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\D
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.exe.licenses
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\Guna.UI2.dll
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_ItemEdit.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraGrid.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraPrinting.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraTreeList.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraBars.v23.1.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.RichEdit.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.Office.v23.1.Core.dll
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraGrid.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraPrinting.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraTreeList.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraBars.v23.1.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.RichEdit.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.Office.v23.1.Core.xml
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_Item.resources

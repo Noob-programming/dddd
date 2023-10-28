@@ -14,7 +14,7 @@ namespace ItemStockRepoPattern
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Frm_ItemEdit());
+			Application.Run(new Frm_Main());
 		}
 	}
 }

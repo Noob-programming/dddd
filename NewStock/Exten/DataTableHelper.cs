@@ -6,7 +6,7 @@ namespace NewStock.Exten
 {
 	public static class DataTableHelper
 	{
-		public static T changeForItem<T>
+		public static T ChangeForItem<T>
 			(this DataTable soures, Func<DataRow, T> selector)
 		where T : class
 		{

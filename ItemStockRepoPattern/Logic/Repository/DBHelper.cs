@@ -2,13 +2,11 @@
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
-	public static class DBHelper
+	public static class DbHelper
 	{
 
-		public static SqlCommand _command;
+		public static SqlCommand Command;
 
-
-		private static SqlConnection _connection;
 
 		private static SqlConnection Connection()
 		{

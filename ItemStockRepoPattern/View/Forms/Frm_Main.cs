@@ -14,5 +14,13 @@
 
 			f.Close();
 		}
+
+		private void guna2Button2_Click(object sender, System.EventArgs e)
+		{
+			Frm_Bill f = new Frm_Bill();
+			f.ShowDialog();
+
+			f.Close();
+		}
 	}
 }

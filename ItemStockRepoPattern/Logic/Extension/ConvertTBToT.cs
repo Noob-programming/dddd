@@ -20,12 +20,12 @@ namespace ItemStockRepoPattern.Logic.Extension
 		}
 
 		public static List<T> ChangeList<T>
-			(this DataTable soures, Func<DataRow, T> selector)
+			(this DataTable source, Func<DataRow, T> selector)
 
 			where T : class
 		{
-			List<T> data = new List<T>();
-			foreach (DataRow dr in soures.Rows)
+			var data = new List<T>();
+			foreach (DataRow dr in source.Rows)
 			{
 				T item = selector(dr);
 				data.Add(item);

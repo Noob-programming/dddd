@@ -20,9 +20,9 @@ namespace ItemStockRepoPattern {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BillsDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BillsData")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BillsDataSet : global::System.Data.DataSet {
+    public partial class BillsData : global::System.Data.DataSet {
         
         private TB_BillDataTable tableTB_Bill;
         
@@ -42,7 +42,7 @@ namespace ItemStockRepoPattern {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BillsDataSet() {
+        public BillsData() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -53,7 +53,7 @@ namespace ItemStockRepoPattern {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected BillsDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BillsData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -178,7 +178,7 @@ namespace ItemStockRepoPattern {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BillsDataSet cln = ((BillsDataSet)(base.Clone()));
+            BillsData cln = ((BillsData)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -280,9 +280,9 @@ namespace ItemStockRepoPattern {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BillsDataSet";
+            this.DataSetName = "BillsData";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BillsDataSet.xsd";
+            this.Namespace = "http://tempuri.org/BillsData.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableTB_Bill = new TB_BillDataTable();
@@ -342,7 +342,7 @@ namespace ItemStockRepoPattern {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BillsDataSet ds = new BillsDataSet();
+            BillsData ds = new BillsData();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -656,7 +656,7 @@ namespace ItemStockRepoPattern {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BillsDataSet ds = new BillsDataSet();
+                BillsData ds = new BillsData();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1008,7 +1008,7 @@ namespace ItemStockRepoPattern {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BillsDataSet ds = new BillsDataSet();
+                BillsData ds = new BillsData();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1381,7 +1381,7 @@ namespace ItemStockRepoPattern {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BillsDataSet ds = new BillsDataSet();
+                BillsData ds = new BillsData();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1663,7 +1663,7 @@ namespace ItemStockRepoPattern {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BillsDataSet ds = new BillsDataSet();
+                BillsData ds = new BillsData();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2419,7 +2419,7 @@ namespace ItemStockRepoPattern {
         }
     }
 }
-namespace ItemStockRepoPattern.BillsDataSetTableAdapters {
+namespace ItemStockRepoPattern.BillsDataTableAdapters {
     
     
     /// <summary>
@@ -2610,7 +2610,7 @@ SELECT BillGuid, Billcode, BillDate, Notes, BillType FROM TB_Bill WHERE (BillGui
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BillsDataSet.TB_BillDataTable dataTable) {
+        public virtual int Fill(BillsData.TB_BillDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2623,9 +2623,9 @@ SELECT BillGuid, Billcode, BillDate, Notes, BillType FROM TB_Bill WHERE (BillGui
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BillsDataSet.TB_BillDataTable GetData() {
+        public virtual BillsData.TB_BillDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BillsDataSet.TB_BillDataTable dataTable = new BillsDataSet.TB_BillDataTable();
+            BillsData.TB_BillDataTable dataTable = new BillsData.TB_BillDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2633,14 +2633,14 @@ SELECT BillGuid, Billcode, BillDate, Notes, BillType FROM TB_Bill WHERE (BillGui
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet.TB_BillDataTable dataTable) {
+        public virtual int Update(BillsData.TB_BillDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet dataSet) {
+        public virtual int Update(BillsData dataSet) {
             return this.Adapter.Update(dataSet, "TB_Bill");
         }
         
@@ -2982,7 +2982,7 @@ SELECT BillitemGuid, BillitemID, BillGuid, itemGuid, Quantity, Price, Total FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BillsDataSet.TB_BillitemsDataTable dataTable) {
+        public virtual int Fill(BillsData.TB_BillitemsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2995,9 +2995,9 @@ SELECT BillitemGuid, BillitemID, BillGuid, itemGuid, Quantity, Price, Total FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BillsDataSet.TB_BillitemsDataTable GetData() {
+        public virtual BillsData.TB_BillitemsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BillsDataSet.TB_BillitemsDataTable dataTable = new BillsDataSet.TB_BillitemsDataTable();
+            BillsData.TB_BillitemsDataTable dataTable = new BillsData.TB_BillitemsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3005,14 +3005,14 @@ SELECT BillitemGuid, BillitemID, BillGuid, itemGuid, Quantity, Price, Total FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet.TB_BillitemsDataTable dataTable) {
+        public virtual int Update(BillsData.TB_BillitemsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet dataSet) {
+        public virtual int Update(BillsData dataSet) {
             return this.Adapter.Update(dataSet, "TB_Billitems");
         }
         
@@ -3396,7 +3396,7 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BillsDataSet.TB_ItemDataTable dataTable) {
+        public virtual int Fill(BillsData.TB_ItemDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3409,9 +3409,9 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BillsDataSet.TB_ItemDataTable GetData() {
+        public virtual BillsData.TB_ItemDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BillsDataSet.TB_ItemDataTable dataTable = new BillsDataSet.TB_ItemDataTable();
+            BillsData.TB_ItemDataTable dataTable = new BillsData.TB_ItemDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3419,14 +3419,14 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet.TB_ItemDataTable dataTable) {
+        public virtual int Update(BillsData.TB_ItemDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet dataSet) {
+        public virtual int Update(BillsData dataSet) {
             return this.Adapter.Update(dataSet, "TB_Item");
         }
         
@@ -3888,7 +3888,7 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BillsDataSet.TB_StockItemDataTable dataTable) {
+        public virtual int Fill(BillsData.TB_StockItemDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3901,9 +3901,9 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BillsDataSet.TB_StockItemDataTable GetData() {
+        public virtual BillsData.TB_StockItemDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BillsDataSet.TB_StockItemDataTable dataTable = new BillsDataSet.TB_StockItemDataTable();
+            BillsData.TB_StockItemDataTable dataTable = new BillsData.TB_StockItemDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3911,14 +3911,14 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet.TB_StockItemDataTable dataTable) {
+        public virtual int Update(BillsData.TB_StockItemDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillsDataSet dataSet) {
+        public virtual int Update(BillsData dataSet) {
             return this.Adapter.Update(dataSet, "TB_StockItem");
         }
         
@@ -4127,7 +4127,7 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(BillsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BillsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tB_BillTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TB_Bill.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -4173,7 +4173,7 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(BillsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BillsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tB_BillTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TB_Bill.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -4215,7 +4215,7 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(BillsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BillsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._tB_StockItemTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TB_StockItem.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -4281,7 +4281,7 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(BillsDataSet dataSet) {
+        public virtual int UpdateAll(BillsData dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -6,7 +6,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 	public interface IRepository<T> where T : class
 	{
 		T GetByGuid(Guid guid);
-		IEnumerable<T> GetAll(Guid itemGuid);
+		IEnumerable<T> GetAll();
 		bool Save(T item);
 		bool Delete(Guid item);
 

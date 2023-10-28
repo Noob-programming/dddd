@@ -11,9 +11,8 @@ namespace ItemStockRepoPattern.Logic.Repository
 			throw new NotImplementedException();
 		}
 
-		/// <param name="itemGuid"></param>
 		/// <inheritdoc />
-		public IEnumerable<T> GetAll(Guid itemGuid)
+		public IEnumerable<T> GetAll()
 		{
 			throw new NotImplementedException();
 		}

@@ -1,5 +1,4 @@
-﻿using ItemStockRepoPattern.Logic.Extension;
-using ItemStockRepoPattern.Model;
+﻿using ItemStockRepoPattern.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,10 +13,10 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (SqlConnection _connection = DBHelper.GetConnection())
+				using (SqlConnection _connection = DbHelper.GetConnection())
 				{
-					DBHelper._command = new SqlCommand("TB_item_GET", _connection);
-					DBHelper._command.CommandType = CommandType.StoredProcedure;
+					DbHelper.Command = new SqlCommand("TB_item_GET", _connection);
+					DbHelper.Command.CommandType = CommandType.StoredProcedure;
 
 					SqlParameter param = new SqlParameter
 					{
@@ -25,27 +24,28 @@ namespace ItemStockRepoPattern.Logic.Repository
 						DbType = DbType.Guid,
 						Value = guid
 					};
-					DBHelper._command.Parameters.Add(param);
+					DbHelper.Command.Parameters.Add(param);
 					_connection.Open();
-					SqlDataAdapter adapter = new SqlDataAdapter(DBHelper._command);
-					DataTable dt = new DataTable();
-
-					adapter.Fill(dt);
-
-
-					return dt.ChangeForType(x => new ItemModel()
+					using (var reader = DbHelper.Command.ExecuteReader())
 					{
-						itemGuid = new Guid(x["itemGuid"].ToString()),
-						itemCode = Convert.ToInt32(x["itemcode"].ToString()),
-						itemName = x["itemName"].ToString(),
-						itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
-						itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
-						itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
-						parentGuid = new Guid(x["parentGuid"].ToString()),
-						ISgroup = Convert.ToBoolean(x["ISGroup"].ToString())
-
-					});
+						while (reader.Read())
+						{
+							return new ItemModel
+							{
+								itemGuid = new Guid(reader["itemGuid"].ToString()),
+								itemCode = Convert.ToInt32(reader["itemcode"].ToString()),
+								itemName = reader["itemName"].ToString(),
+								itemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
+								itemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
+								itemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
+								parentGuid = new Guid(reader["parentGuid"].ToString()),
+								ISgroup = Convert.ToBoolean(reader["ISGroup"].ToString())
+							};
+						}
+					}
 				}
+
+				return new ItemModel();
 			}
 			catch (Exception e)
 			{
@@ -59,13 +59,13 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (SqlConnection _connection = DBHelper.GetConnection())
+				using (SqlConnection _connection = DbHelper.GetConnection())
 				{
-					DBHelper._command = new SqlCommand("TB_Item_GetParentData", _connection);
-					DBHelper._command.CommandType = CommandType.StoredProcedure;
+					DbHelper.Command = new SqlCommand("TB_Item_GetParentData", _connection);
+					DbHelper.Command.CommandType = CommandType.StoredProcedure;
 					_connection.Open();
 					DataTable dt = new DataTable();
-					SqlDataAdapter adapter = new SqlDataAdapter(DBHelper._command);
+					SqlDataAdapter adapter = new SqlDataAdapter(DbHelper.Command);
 					adapter.Fill(dt);
 					_connection.Close();
 
@@ -79,39 +79,36 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-		public IEnumerable<ItemModel> GetAll(Guid itemGuid)
+		public IEnumerable<ItemModel> GetAll()
 		{
 			try
 			{
-				using (SqlConnection _connection = DBHelper.GetConnection())
+				var list = new List<ItemModel>();
+
+				using (var _connection = DbHelper.GetConnection())
 				{
-					DBHelper._command = new SqlCommand("TB_item_GET", _connection);
-					DBHelper._command.CommandType = CommandType.StoredProcedure;
+					DbHelper.Command = new SqlCommand("TB_item_GET", _connection);
+					DbHelper.Command.CommandType = CommandType.StoredProcedure;
 
-					SqlParameter param = new SqlParameter
-					{
-						ParameterName = "@guid",
-						DbType = DbType.Guid,
-						Value = itemGuid
-					};
-
-					DBHelper._command.Parameters.Add(param);
 					_connection.Open();
-					SqlDataAdapter adapter = new SqlDataAdapter(DBHelper._command);
-					DataTable dt = new DataTable();
-					adapter.Fill(dt);
-					_connection.Close();
-					return dt.ChangeList(x => new ItemModel
+					using (var reader = DbHelper.Command.ExecuteReader())
 					{
-						itemGuid = new Guid(x["itemGuid"].ToString()),
-						itemCode = Convert.ToInt32(x["itemcode"].ToString()),
-						itemName = x["itemName"].ToString(),
-						itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
-						itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
-						itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
-						parentGuid = new Guid(x["parentGuid"].ToString()),
-						ISgroup = Convert.ToBoolean(x["ISGroup"].ToString())
-					});
+						while (reader.Read())
+						{
+							list.Add(new ItemModel
+							{
+								itemGuid = new Guid(reader["itemGuid"].ToString()),
+								itemCode = Convert.ToInt32(reader["itemcode"].ToString()),
+								itemName = reader["itemName"].ToString(),
+								itemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
+								itemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
+								itemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
+								parentGuid = new Guid(reader["parentGuid"].ToString()),
+								ISgroup = Convert.ToBoolean(reader["ISGroup"].ToString())
+							});
+						}
+					}
+					return list;
 				}
 			}
 			catch (Exception e)
@@ -127,12 +124,18 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (SqlConnection _connection = DBHelper.GetConnection())
+				using (SqlConnection _connection = DbHelper.GetConnection())
 				{
-					DBHelper._command = new SqlCommand("TB_Item_OnlySave", _connection);
-					DBHelper._command.CommandType = CommandType.StoredProcedure;
+					DbHelper.Command = new SqlCommand("TB_Item_OnlySave", _connection);
+					DbHelper.Command.CommandType = CommandType.StoredProcedure;
 					SqlParameter[] parameters =
 					{
+						new SqlParameter
+						{
+							ParameterName = "@return",
+							DbType = DbType.Int32,
+							Direction = ParameterDirection.ReturnValue
+						},
 						new SqlParameter
 						{
 							ParameterName = "@ItemGuid",
@@ -180,20 +183,14 @@ namespace ItemStockRepoPattern.Logic.Repository
 							ParameterName = "@IsGroup",
 							DbType = DbType.Boolean,
 							Value = item.ISgroup
-						},new SqlParameter
-						{
-						ParameterName = "@return",
-						DbType = DbType.Int32,
-						Direction = ParameterDirection.ReturnValue
 						}
 					};
 
 
-					DBHelper._command.Parameters.AddRange(parameters); _connection.Open();
-					DBHelper._command.ExecuteNonQuery();
+					DbHelper.Command.Parameters.AddRange(parameters); _connection.Open();
+					DbHelper.Command.ExecuteNonQuery();
 					_connection.Close();
-					return Convert.ToBoolean(parameters
-						.FirstOrDefault(x => x.ParameterName == "@return")?.Value);
+					return Convert.ToBoolean(parameters[0]?.Value);
 				}
 			}
 			catch (Exception e)
@@ -208,12 +205,12 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (var connection = DBHelper.GetConnection())
+				using (var connection = DbHelper.GetConnection())
 				{
 
 
-					DBHelper._command = new SqlCommand("TB_Item_Delete", connection);
-					DBHelper._command.CommandType = CommandType.StoredProcedure;
+					DbHelper.Command = new SqlCommand("TB_Item_Delete", connection);
+					DbHelper.Command.CommandType = CommandType.StoredProcedure;
 
 					SqlParameter[] parameters =
 					{
@@ -230,9 +227,9 @@ namespace ItemStockRepoPattern.Logic.Repository
 						}
 					};
 
-					DBHelper._command.Parameters.AddRange(parameters);
+					DbHelper.Command.Parameters.AddRange(parameters);
 					connection.Open();
-					DBHelper._command.ExecuteNonQuery();
+					DbHelper.Command.ExecuteNonQuery();
 					connection.Close();
 
 					return Convert.ToBoolean(parameters

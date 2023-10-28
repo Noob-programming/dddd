@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="BillsDataSet1" targetNamespace="http://tempuri.org/BillsDataSet1.xsd" xmlns:mstns="http://tempuri.org/BillsDataSet1.xsd" xmlns="http://tempuri.org/BillsDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="BillsData" targetNamespace="http://tempuri.org/BillsData.xsd" xmlns:mstns="http://tempuri.org/BillsData.xsd" xmlns="http://tempuri.org/BillsData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -275,7 +275,7 @@ SELECT itemGuid, itemcode, itemName, itemPrice, itemPriceSingle, itemPriceMany, 
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="BillsDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BillsDataSet1" msprop:Generator_DataSetName="BillsDataSet1">
+  <xs:element name="BillsData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BillsData" msprop:Generator_DataSetName="BillsData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="TB_Bill" msprop:Generator_RowEvHandlerName="TB_BillRowChangeEventHandler" msprop:Generator_RowDeletedName="TB_BillRowDeleted" msprop:Generator_RowDeletingName="TB_BillRowDeleting" msprop:Generator_RowEvArgName="TB_BillRowChangeEvent" msprop:Generator_TablePropName="TB_Bill" msprop:Generator_RowChangedName="TB_BillRowChanged" msprop:Generator_RowChangingName="TB_BillRowChanging" msprop:Generator_TableClassName="TB_BillDataTable" msprop:Generator_RowClassName="TB_BillRow" msprop:Generator_TableVarName="tableTB_Bill" msprop:Generator_UserTableName="TB_Bill">

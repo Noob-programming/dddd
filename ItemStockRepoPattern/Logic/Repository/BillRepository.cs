@@ -14,9 +14,9 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (SqlConnection _connection = DbHelper.GetConnection())
+				using (SqlConnection connection = DbHelper.GetConnection())
 				{
-					DbHelper.Command = new SqlCommand("TB_Bill_GET", _connection);
+					DbHelper.Command = new SqlCommand("TB_Bill_GET", connection);
 					DbHelper.Command.CommandType = CommandType.StoredProcedure;
 
 					SqlParameter param = new SqlParameter
@@ -26,7 +26,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 						Value = guid
 					};
 					DbHelper.Command.Parameters.Add(param);
-					_connection.Open();
+					connection.Open();
 					SqlDataAdapter adapter = new SqlDataAdapter(DbHelper.Command);
 					DataTable dt = new DataTable();
 

@@ -28,11 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.Lookitem = new DevExpress.XtraEditors.LookUpEdit();
 			this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+			this.tBStockItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.billsData = new ItemStockRepoPattern.BillsData();
 			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
 			this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -49,12 +52,15 @@
 			this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.tB_StockItemTableAdapter = new ItemStockRepoPattern.BillsDataTableAdapters.TB_StockItemTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Lookitem.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tBStockItemBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsData)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -117,9 +123,7 @@
 			this.Lookitem.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemName", "Item Name"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "Guid", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-			this.Lookitem.Properties.DisplayMember = "itemName";
 			this.Lookitem.Properties.NullText = "";
-			this.Lookitem.Properties.ValueMember = "itemGuid";
 			this.Lookitem.Size = new System.Drawing.Size(920, 20);
 			this.Lookitem.StyleController = this.layoutControl1;
 			this.Lookitem.TabIndex = 11;
@@ -134,10 +138,21 @@
 			this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
 			// 
+			// tBStockItemBindingSource
+			// 
+			this.tBStockItemBindingSource.DataMember = "TB_StockItem";
+			this.tBStockItemBindingSource.DataSource = this.billsData;
+			// 
+			// billsData
+			// 
+			this.billsData.DataSetName = "BillsData";
+			this.billsData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// gridView1
 			// 
 			this.gridView1.GridControl = this.gridControl1;
 			this.gridView1.Name = "gridView1";
+			this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
 			// 
 			// simpleButton3
 			// 
@@ -149,6 +164,7 @@
 			this.simpleButton3.StyleController = this.layoutControl1;
 			this.simpleButton3.TabIndex = 9;
 			this.simpleButton3.Text = "Save";
+			this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
 			// 
 			// simpleButton2
 			// 
@@ -160,6 +176,7 @@
 			this.simpleButton2.StyleController = this.layoutControl1;
 			this.simpleButton2.TabIndex = 8;
 			this.simpleButton2.Text = "Delete";
+			this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
 			// 
 			// simpleButton1
 			// 
@@ -171,6 +188,7 @@
 			this.simpleButton1.StyleController = this.layoutControl1;
 			this.simpleButton1.TabIndex = 7;
 			this.simpleButton1.Text = "ADD";
+			this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
 			// 
 			// toggleSwitch1
 			// 
@@ -231,8 +249,10 @@
 			// 
 			this.layoutControlItem3.Control = this.toggleSwitch1;
 			this.layoutControlItem3.Location = new System.Drawing.Point(64, 48);
+			this.layoutControlItem3.MinSize = new System.Drawing.Size(114, 30);
 			this.layoutControlItem3.Name = "layoutControlItem3";
 			this.layoutControlItem3.Size = new System.Drawing.Size(924, 30);
+			this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem3.TextVisible = false;
 			// 
@@ -291,6 +311,10 @@
 			this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem8.TextVisible = false;
 			// 
+			// tB_StockItemTableAdapter
+			// 
+			this.tB_StockItemTableAdapter.ClearBeforeFill = true;
+			// 
 			// Frm_StockItem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +330,8 @@
 			this.layoutControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.Lookitem.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tBStockItemBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.billsData)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
@@ -346,5 +372,8 @@
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+		private BillsData billsData;
+		private System.Windows.Forms.BindingSource tBStockItemBindingSource;
+		private BillsDataTableAdapters.TB_StockItemTableAdapter tB_StockItemTableAdapter;
 	}
 }

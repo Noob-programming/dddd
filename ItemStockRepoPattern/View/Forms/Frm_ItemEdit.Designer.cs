@@ -86,7 +86,7 @@
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(1206, 785);
+			this.panelControl1.Size = new System.Drawing.Size(958, 345);
 			this.panelControl1.TabIndex = 1;
 			// 
 			// layoutControl1
@@ -107,7 +107,7 @@
 			this.layoutControl1.Margin = new System.Windows.Forms.Padding(5);
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.Root = this.Root;
-			this.layoutControl1.Size = new System.Drawing.Size(1202, 781);
+			this.layoutControl1.Size = new System.Drawing.Size(954, 341);
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
@@ -117,7 +117,7 @@
 			this.txtGuid.Name = "txtGuid";
 			this.txtGuid.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtGuid.Properties.Appearance.Options.UseFont = true;
-			this.txtGuid.Size = new System.Drawing.Size(996, 28);
+			this.txtGuid.Size = new System.Drawing.Size(748, 28);
 			this.txtGuid.StyleController = this.layoutControl1;
 			this.txtGuid.TabIndex = 17;
 			// 
@@ -128,7 +128,7 @@
 			this.btnDelete.Location = new System.Drawing.Point(12, 202);
 			this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
 			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(1178, 26);
+			this.btnDelete.Size = new System.Drawing.Size(930, 26);
 			this.btnDelete.StyleController = this.layoutControl1;
 			this.btnDelete.TabIndex = 15;
 			this.btnDelete.Text = "Delete";
@@ -140,7 +140,7 @@
 			this.btnAdd.Location = new System.Drawing.Point(12, 232);
 			this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
 			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(1178, 26);
+			this.btnAdd.Size = new System.Drawing.Size(930, 26);
 			this.btnAdd.StyleController = this.layoutControl1;
 			this.btnAdd.TabIndex = 14;
 			this.btnAdd.Text = "Add";
@@ -153,7 +153,7 @@
 			this.btnSave.Location = new System.Drawing.Point(12, 172);
 			this.btnSave.Margin = new System.Windows.Forms.Padding(5);
 			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(1178, 26);
+			this.btnSave.Size = new System.Drawing.Size(930, 26);
 			this.btnSave.StyleController = this.layoutControl1;
 			this.btnSave.TabIndex = 13;
 			this.btnSave.Text = "Save";
@@ -167,36 +167,36 @@
 			this.LookParent.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.LookParent.Properties.Appearance.Options.UseFont = true;
 			this.LookParent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-			new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
 			this.LookParent.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-			new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemName", "Item name"),
-			new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "Value", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-			new DevExpress.XtraEditors.Controls.LookUpColumnInfo("parentGuid", "Name5", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemName", "Item name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "Value", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("parentGuid", "Name5", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
 			this.LookParent.Properties.NullText = "";
-			this.LookParent.Size = new System.Drawing.Size(996, 28);
+			this.LookParent.Size = new System.Drawing.Size(748, 28);
 			this.LookParent.StyleController = this.layoutControl1;
 			this.LookParent.TabIndex = 12;
 			// 
 			// CEGroup
 			// 
-			this.CEGroup.Location = new System.Drawing.Point(800, 76);
+			this.CEGroup.Location = new System.Drawing.Point(634, 76);
 			this.CEGroup.Margin = new System.Windows.Forms.Padding(5);
 			this.CEGroup.Name = "CEGroup";
 			this.CEGroup.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.CEGroup.Properties.Appearance.Options.UseFont = true;
 			this.CEGroup.Properties.Caption = "IS Group";
-			this.CEGroup.Size = new System.Drawing.Size(390, 25);
+			this.CEGroup.Size = new System.Drawing.Size(308, 25);
 			this.CEGroup.StyleController = this.layoutControl1;
 			this.CEGroup.TabIndex = 11;
 			// 
 			// txtPriceMany
 			// 
-			this.txtPriceMany.Location = new System.Drawing.Point(785, 140);
+			this.txtPriceMany.Location = new System.Drawing.Point(661, 140);
 			this.txtPriceMany.Margin = new System.Windows.Forms.Padding(5);
 			this.txtPriceMany.Name = "txtPriceMany";
 			this.txtPriceMany.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPriceMany.Properties.Appearance.Options.UseFont = true;
-			this.txtPriceMany.Size = new System.Drawing.Size(405, 28);
+			this.txtPriceMany.Size = new System.Drawing.Size(281, 28);
 			this.txtPriceMany.StyleController = this.layoutControl1;
 			this.txtPriceMany.TabIndex = 9;
 			// 
@@ -207,7 +207,7 @@
 			this.txtPriceSingle.Name = "txtPriceSingle";
 			this.txtPriceSingle.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPriceSingle.Properties.Appearance.Options.UseFont = true;
-			this.txtPriceSingle.Size = new System.Drawing.Size(405, 28);
+			this.txtPriceSingle.Size = new System.Drawing.Size(281, 28);
 			this.txtPriceSingle.StyleController = this.layoutControl1;
 			this.txtPriceSingle.TabIndex = 8;
 			// 
@@ -218,18 +218,18 @@
 			this.txtPrice.Name = "txtPrice";
 			this.txtPrice.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPrice.Properties.Appearance.Options.UseFont = true;
-			this.txtPrice.Size = new System.Drawing.Size(208, 28);
+			this.txtPrice.Size = new System.Drawing.Size(125, 28);
 			this.txtPrice.StyleController = this.layoutControl1;
 			this.txtPrice.TabIndex = 7;
 			// 
 			// txtName
 			// 
-			this.txtName.Location = new System.Drawing.Point(588, 76);
+			this.txtName.Location = new System.Drawing.Point(505, 76);
 			this.txtName.Margin = new System.Windows.Forms.Padding(5);
 			this.txtName.Name = "txtName";
 			this.txtName.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtName.Properties.Appearance.Options.UseFont = true;
-			this.txtName.Size = new System.Drawing.Size(208, 28);
+			this.txtName.Size = new System.Drawing.Size(125, 28);
 			this.txtName.StyleController = this.layoutControl1;
 			this.txtName.TabIndex = 6;
 			// 
@@ -240,7 +240,7 @@
 			this.txtCode.Name = "txtCode";
 			this.txtCode.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCode.Properties.Appearance.Options.UseFont = true;
-			this.txtCode.Size = new System.Drawing.Size(996, 28);
+			this.txtCode.Size = new System.Drawing.Size(748, 28);
 			this.txtCode.StyleController = this.layoutControl1;
 			this.txtCode.TabIndex = 5;
 			// 
@@ -251,19 +251,19 @@
 			this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
 			this.Root.GroupBordersVisible = false;
 			this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-			this.layoutControlItem4,
-			this.layoutControlItem10,
-			this.layoutControlItem9,
-			this.layoutControlItem11,
-			this.layoutControlItem3,
-			this.layoutControlItem2,
-			this.layoutControlItem5,
-			this.layoutControlItem6,
-			this.layoutControlItem8,
-			this.layoutControlItem12,
-			this.layoutControlItem7});
+            this.layoutControlItem4,
+            this.layoutControlItem10,
+            this.layoutControlItem9,
+            this.layoutControlItem11,
+            this.layoutControlItem3,
+            this.layoutControlItem2,
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem8,
+            this.layoutControlItem12,
+            this.layoutControlItem7});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(1202, 781);
+			this.Root.Size = new System.Drawing.Size(954, 341);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlItem4
@@ -273,7 +273,7 @@
 			this.layoutControlItem4.Control = this.txtPrice;
 			this.layoutControlItem4.Location = new System.Drawing.Point(0, 64);
 			this.layoutControlItem4.Name = "layoutControlItem4";
-			this.layoutControlItem4.Size = new System.Drawing.Size(394, 32);
+			this.layoutControlItem4.Size = new System.Drawing.Size(311, 32);
 			this.layoutControlItem4.Text = "Item Price";
 			this.layoutControlItem4.TextSize = new System.Drawing.Size(170, 21);
 			// 
@@ -282,7 +282,7 @@
 			this.layoutControlItem10.Control = this.btnAdd;
 			this.layoutControlItem10.Location = new System.Drawing.Point(0, 220);
 			this.layoutControlItem10.Name = "layoutControlItem10";
-			this.layoutControlItem10.Size = new System.Drawing.Size(1182, 541);
+			this.layoutControlItem10.Size = new System.Drawing.Size(934, 101);
 			this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem10.TextVisible = false;
 			// 
@@ -291,7 +291,7 @@
 			this.layoutControlItem9.Control = this.btnSave;
 			this.layoutControlItem9.Location = new System.Drawing.Point(0, 160);
 			this.layoutControlItem9.Name = "layoutControlItem9";
-			this.layoutControlItem9.Size = new System.Drawing.Size(1182, 30);
+			this.layoutControlItem9.Size = new System.Drawing.Size(934, 30);
 			this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem9.TextVisible = false;
 			// 
@@ -300,7 +300,7 @@
 			this.layoutControlItem11.Control = this.btnDelete;
 			this.layoutControlItem11.Location = new System.Drawing.Point(0, 190);
 			this.layoutControlItem11.Name = "layoutControlItem11";
-			this.layoutControlItem11.Size = new System.Drawing.Size(1182, 30);
+			this.layoutControlItem11.Size = new System.Drawing.Size(934, 30);
 			this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem11.TextVisible = false;
 			// 
@@ -309,9 +309,9 @@
 			this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem3.Control = this.txtName;
-			this.layoutControlItem3.Location = new System.Drawing.Point(394, 64);
+			this.layoutControlItem3.Location = new System.Drawing.Point(311, 64);
 			this.layoutControlItem3.Name = "layoutControlItem3";
-			this.layoutControlItem3.Size = new System.Drawing.Size(394, 32);
+			this.layoutControlItem3.Size = new System.Drawing.Size(311, 32);
 			this.layoutControlItem3.Text = "Item Name";
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(170, 21);
 			// 
@@ -322,7 +322,7 @@
 			this.layoutControlItem2.Control = this.txtCode;
 			this.layoutControlItem2.Location = new System.Drawing.Point(0, 96);
 			this.layoutControlItem2.Name = "layoutControlItem2";
-			this.layoutControlItem2.Size = new System.Drawing.Size(1182, 32);
+			this.layoutControlItem2.Size = new System.Drawing.Size(934, 32);
 			this.layoutControlItem2.Text = "Item Code";
 			this.layoutControlItem2.TextSize = new System.Drawing.Size(170, 21);
 			// 
@@ -333,7 +333,7 @@
 			this.layoutControlItem5.Control = this.txtPriceSingle;
 			this.layoutControlItem5.Location = new System.Drawing.Point(0, 128);
 			this.layoutControlItem5.Name = "layoutControlItem5";
-			this.layoutControlItem5.Size = new System.Drawing.Size(591, 32);
+			this.layoutControlItem5.Size = new System.Drawing.Size(467, 32);
 			this.layoutControlItem5.Text = "Item Price Single";
 			this.layoutControlItem5.TextSize = new System.Drawing.Size(170, 21);
 			// 
@@ -342,18 +342,18 @@
 			this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem6.Control = this.txtPriceMany;
-			this.layoutControlItem6.Location = new System.Drawing.Point(591, 128);
+			this.layoutControlItem6.Location = new System.Drawing.Point(467, 128);
 			this.layoutControlItem6.Name = "layoutControlItem6";
-			this.layoutControlItem6.Size = new System.Drawing.Size(591, 32);
+			this.layoutControlItem6.Size = new System.Drawing.Size(467, 32);
 			this.layoutControlItem6.Text = "Item Price Many";
 			this.layoutControlItem6.TextSize = new System.Drawing.Size(170, 21);
 			// 
 			// layoutControlItem8
 			// 
 			this.layoutControlItem8.Control = this.CEGroup;
-			this.layoutControlItem8.Location = new System.Drawing.Point(788, 64);
+			this.layoutControlItem8.Location = new System.Drawing.Point(622, 64);
 			this.layoutControlItem8.Name = "layoutControlItem8";
-			this.layoutControlItem8.Size = new System.Drawing.Size(394, 32);
+			this.layoutControlItem8.Size = new System.Drawing.Size(312, 32);
 			this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem8.TextVisible = false;
 			// 
@@ -364,7 +364,7 @@
 			this.layoutControlItem12.Control = this.txtGuid;
 			this.layoutControlItem12.Location = new System.Drawing.Point(0, 32);
 			this.layoutControlItem12.Name = "layoutControlItem12";
-			this.layoutControlItem12.Size = new System.Drawing.Size(1182, 32);
+			this.layoutControlItem12.Size = new System.Drawing.Size(934, 32);
 			this.layoutControlItem12.Text = "Item Guid";
 			this.layoutControlItem12.TextSize = new System.Drawing.Size(170, 21);
 			// 
@@ -376,7 +376,7 @@
 			this.layoutControlItem7.CustomizationFormText = "Parent Guid";
 			this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem7.Name = "layoutControlItem7";
-			this.layoutControlItem7.Size = new System.Drawing.Size(1182, 32);
+			this.layoutControlItem7.Size = new System.Drawing.Size(934, 32);
 			this.layoutControlItem7.Text = "Parent Guid";
 			this.layoutControlItem7.TextSize = new System.Drawing.Size(170, 21);
 			// 
@@ -384,7 +384,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1206, 785);
+			this.ClientSize = new System.Drawing.Size(958, 345);
 			this.Controls.Add(this.panelControl1);
 			this.Name = "Frm_ItemEdit";
 			this.Text = "Frm_ItemEdit";

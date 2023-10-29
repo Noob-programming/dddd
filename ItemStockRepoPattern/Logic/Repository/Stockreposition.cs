@@ -1,50 +1,61 @@
-﻿using ItemStockRepoPattern.Model;
+﻿using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
 	public class Stockreposition : IRepository<StockModel>
 	{
-		/// <inheritdoc />
+
 		public StockModel GetByGuid(Guid guid)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				var parameter = new[]
+				{
+					new SqlParameter
+					{
+						ParameterName = "@guid",
+						DbType = DbType.Guid,
+						Value = guid
+					},
+					new SqlParameter("@return", SqlDbType.Int)
+					{
+						Direction = ParameterDirection.ReturnValue
+					}
+				};
+
+				var res = DbHelper.GetDataTable("TB_Stock_Get", parameter);
+				return res.ChangeForType(dataRow => new StockModel
+				{
+					ItemGuid = new Guid(dataRow["itemGuid"].ToString()),
+					Quantity = Convert.ToDecimal(dataRow["Quintity"].ToString()),
+					Status = dataRow["status"].ToString()
+				});
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+
 		}
 
-		/// <inheritdoc />
 		public IEnumerable<StockModel> GetAll()
 		{
 			try
 			{
-				List<StockModel> stocks = new List<StockModel>();
-				using (SqlConnection _connection = DbHelper.GetConnection())
+				var res = DbHelper.GetDataTable("TB_Stock_Get");
+				var stocks = res.ChangeList(dataRow => new StockModel
 				{
-					DbHelper.Command = new SqlCommand("TB_Stock_Get", _connection);
-					DbHelper.Command.CommandType = CommandType.StoredProcedure;
-
-
-					_connection.Open();
-
-					using (var reader = DbHelper.Command.ExecuteReader())
-					{
-						while (reader.Read())
-						{
-							stocks.Add(new StockModel
-							{
-								ItemGuid = new Guid(reader["itemGuid"].ToString()),
-								Status = reader["status"].ToString(),
-								Quantity = Convert.ToDecimal(reader["Quintity"].ToString())
-							}
-							);
-						}
-
-						return stocks;
-					}
-				}
+					ItemGuid = new Guid(dataRow["itemGuid"].ToString()),
+					Quantity = Convert.ToDecimal(dataRow["Quintity"].ToString()),
+					Status = dataRow["status"].ToString()
+				});
+				return stocks;
 			}
 			catch (Exception e)
 			{
@@ -53,51 +64,53 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-		/// <inheritdoc />
+		public DataTable FillLook()
+		{
+			try
+			{
+				return DbHelper.GetDataTable("TB_Item_GetItemandName");
+			}
+			catch (Exception e)
+			{
+				System.Windows.Forms.MessageBox.Show($@"{e}");
+				throw;
+			}
+		}
+
+
 		public bool Save(StockModel item)
 		{
 			try
 			{
-				using (SqlConnection _connection = DbHelper.GetConnection())
+				SqlParameter[] parameters =
 				{
-					DbHelper.Command = new SqlCommand("TB_Item_OnlySave", _connection);
-					DbHelper.Command.CommandType = CommandType.StoredProcedure;
-					SqlParameter[] parameters =
+					new SqlParameter
 					{
-						new SqlParameter
-						{
-						ParameterName = "@return",
-						DbType = DbType.Int32,
+						ParameterName = "@Guid",
+						DbType = DbType.Guid,
+						Value = item.ItemGuid
+					},
+					new SqlParameter
+					{
+						ParameterName = "@Status",
+						DbType = DbType.String,
+						Value = item.Status
+					},
+					new SqlParameter
+					{
+						ParameterName = "@Quin",
+						DbType = DbType.Decimal,
+						Value = item.Quantity
+					},
+					new SqlParameter("@return", SqlDbType.Int)
+					{
 						Direction = ParameterDirection.ReturnValue
-						}
-						,
-						new SqlParameter
-						{
-							ParameterName = "@Guid",
-							DbType = DbType.Guid,
-							Value = item.ItemGuid
-						},
-						new SqlParameter
-						{
-							ParameterName ="@Status",
-							DbType = DbType.String,
-							Value = item.Status
-						},
-						new SqlParameter
-						{
-							ParameterName = "@Quin",
-							DbType = DbType.Decimal,
-							Value = item.Quantity
-						}
-					};
+					}
+				};
 
+				var returnCode = DbHelper.ExecuteData("TB_Stock_Save", parameters);
 
-					DbHelper.Command.Parameters.AddRange(parameters); _connection.Open();
-					DbHelper.Command.ExecuteNonQuery();
-					_connection.Close();
-					return Convert.ToBoolean(parameters
-						.FirstOrDefault(x => x.ParameterName == "@return")?.Value);
-				}
+				return Convert.ToBoolean(returnCode);
 			}
 			catch (Exception e)
 			{
@@ -111,58 +124,24 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (SqlConnection _connection = DbHelper.GetConnection())
+				SqlParameter[] parameters =
 				{
-					DbHelper.Command = new SqlCommand("TB_Stock_Delete", _connection);
-					DbHelper.Command.CommandType = CommandType.StoredProcedure;
-					SqlParameter[] parameters =
+					new SqlParameter
 					{
-						new SqlParameter
-						{
-							ParameterName = "@return",
-							DbType = DbType.Int32,
-							Direction = ParameterDirection.ReturnValue
-						}
-						,
-						new SqlParameter
-						{
-							ParameterName = "@Guid",
-							DbType = DbType.Guid,
-							Value = item
-						},
+						ParameterName = "@return",
+						DbType = DbType.Int32,
+						Direction = ParameterDirection.ReturnValue
+					},
+					new SqlParameter
+					{
+						ParameterName = "@Guid",
+						DbType = DbType.Guid,
+						Value = item
+					}
+				};
+				var r = DbHelper.ExecuteData("TB_Stock_Delete", parameters);
+				return Convert.ToBoolean(r);
 
-					};
-
-
-					DbHelper.Command.Parameters.AddRange(parameters); _connection.Open();
-					DbHelper.Command.ExecuteNonQuery();
-					_connection.Close();
-					return Convert.ToBoolean(parameters
-						.FirstOrDefault(x => x.ParameterName == "@return")?.Value);
-				}
-			}
-			catch (Exception e)
-			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
-				throw;
-			}
-		}
-		public DataTable FillLookUp()
-		{
-			try
-			{
-				using (SqlConnection _connection = DbHelper.GetConnection())
-				{
-					DbHelper.Command = new SqlCommand("TB_Item_GetItemandName", _connection);
-					DbHelper.Command.CommandType = CommandType.StoredProcedure;
-					_connection.Open();
-					DataTable dt = new DataTable();
-					SqlDataAdapter adapter = new SqlDataAdapter(DbHelper.Command);
-					adapter.Fill(dt);
-					_connection.Close();
-
-					return dt;
-				}
 			}
 			catch (Exception e)
 			{

@@ -7,8 +7,8 @@ namespace ItemStockRepoPattern.Logic.Repository
 	{
 		T GetByGuid(Guid guid);
 		IEnumerable<T> GetAll();
-		bool Save(T item);
-		bool Delete(Guid item);
+		int Save(T item);
+		int Delete(Guid item);
 
 	}
 }

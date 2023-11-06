@@ -43,16 +43,16 @@
 			this.txtCode = new DevExpress.XtraEditors.TextEdit();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -67,16 +67,16 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -86,7 +86,7 @@
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(958, 345);
+			this.panelControl1.Size = new System.Drawing.Size(740, 392);
 			this.panelControl1.TabIndex = 1;
 			// 
 			// layoutControl1
@@ -107,17 +107,17 @@
 			this.layoutControl1.Margin = new System.Windows.Forms.Padding(5);
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.Root = this.Root;
-			this.layoutControl1.Size = new System.Drawing.Size(954, 341);
+			this.layoutControl1.Size = new System.Drawing.Size(736, 388);
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
 			// txtGuid
 			// 
-			this.txtGuid.Location = new System.Drawing.Point(194, 44);
+			this.txtGuid.Location = new System.Drawing.Point(194, 12);
 			this.txtGuid.Name = "txtGuid";
 			this.txtGuid.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtGuid.Properties.Appearance.Options.UseFont = true;
-			this.txtGuid.Size = new System.Drawing.Size(748, 28);
+			this.txtGuid.Size = new System.Drawing.Size(530, 28);
 			this.txtGuid.StyleController = this.layoutControl1;
 			this.txtGuid.TabIndex = 17;
 			// 
@@ -125,10 +125,10 @@
 			// 
 			this.btnDelete.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelete.Appearance.Options.UseFont = true;
-			this.btnDelete.Location = new System.Drawing.Point(12, 202);
+			this.btnDelete.Location = new System.Drawing.Point(12, 295);
 			this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
 			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(930, 26);
+			this.btnDelete.Size = new System.Drawing.Size(712, 26);
 			this.btnDelete.StyleController = this.layoutControl1;
 			this.btnDelete.TabIndex = 15;
 			this.btnDelete.Text = "Delete";
@@ -137,10 +137,10 @@
 			// 
 			this.btnAdd.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAdd.Appearance.Options.UseFont = true;
-			this.btnAdd.Location = new System.Drawing.Point(12, 232);
+			this.btnAdd.Location = new System.Drawing.Point(12, 325);
 			this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
 			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(930, 26);
+			this.btnAdd.Size = new System.Drawing.Size(712, 26);
 			this.btnAdd.StyleController = this.layoutControl1;
 			this.btnAdd.TabIndex = 14;
 			this.btnAdd.Text = "Add";
@@ -150,10 +150,10 @@
 			// 
 			this.btnSave.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.Appearance.Options.UseFont = true;
-			this.btnSave.Location = new System.Drawing.Point(12, 172);
+			this.btnSave.Location = new System.Drawing.Point(12, 265);
 			this.btnSave.Margin = new System.Windows.Forms.Padding(5);
 			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(930, 26);
+			this.btnSave.Size = new System.Drawing.Size(712, 26);
 			this.btnSave.StyleController = this.layoutControl1;
 			this.btnSave.TabIndex = 13;
 			this.btnSave.Text = "Save";
@@ -161,7 +161,7 @@
 			// 
 			// LookParent
 			// 
-			this.LookParent.Location = new System.Drawing.Point(194, 12);
+			this.LookParent.Location = new System.Drawing.Point(194, 204);
 			this.LookParent.Margin = new System.Windows.Forms.Padding(5);
 			this.LookParent.Name = "LookParent";
 			this.LookParent.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,30 +173,30 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "Value", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("parentGuid", "Name5", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
 			this.LookParent.Properties.NullText = "";
-			this.LookParent.Size = new System.Drawing.Size(748, 28);
+			this.LookParent.Size = new System.Drawing.Size(530, 28);
 			this.LookParent.StyleController = this.layoutControl1;
 			this.LookParent.TabIndex = 12;
 			// 
 			// CEGroup
 			// 
-			this.CEGroup.Location = new System.Drawing.Point(634, 76);
+			this.CEGroup.Location = new System.Drawing.Point(12, 236);
 			this.CEGroup.Margin = new System.Windows.Forms.Padding(5);
 			this.CEGroup.Name = "CEGroup";
 			this.CEGroup.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.CEGroup.Properties.Appearance.Options.UseFont = true;
 			this.CEGroup.Properties.Caption = "IS Group";
-			this.CEGroup.Size = new System.Drawing.Size(308, 25);
+			this.CEGroup.Size = new System.Drawing.Size(712, 25);
 			this.CEGroup.StyleController = this.layoutControl1;
 			this.CEGroup.TabIndex = 11;
 			// 
 			// txtPriceMany
 			// 
-			this.txtPriceMany.Location = new System.Drawing.Point(661, 140);
+			this.txtPriceMany.Location = new System.Drawing.Point(194, 172);
 			this.txtPriceMany.Margin = new System.Windows.Forms.Padding(5);
 			this.txtPriceMany.Name = "txtPriceMany";
 			this.txtPriceMany.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPriceMany.Properties.Appearance.Options.UseFont = true;
-			this.txtPriceMany.Size = new System.Drawing.Size(281, 28);
+			this.txtPriceMany.Size = new System.Drawing.Size(530, 28);
 			this.txtPriceMany.StyleController = this.layoutControl1;
 			this.txtPriceMany.TabIndex = 9;
 			// 
@@ -207,40 +207,40 @@
 			this.txtPriceSingle.Name = "txtPriceSingle";
 			this.txtPriceSingle.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPriceSingle.Properties.Appearance.Options.UseFont = true;
-			this.txtPriceSingle.Size = new System.Drawing.Size(281, 28);
+			this.txtPriceSingle.Size = new System.Drawing.Size(530, 28);
 			this.txtPriceSingle.StyleController = this.layoutControl1;
 			this.txtPriceSingle.TabIndex = 8;
 			// 
 			// txtPrice
 			// 
-			this.txtPrice.Location = new System.Drawing.Point(194, 76);
+			this.txtPrice.Location = new System.Drawing.Point(194, 108);
 			this.txtPrice.Margin = new System.Windows.Forms.Padding(5);
 			this.txtPrice.Name = "txtPrice";
 			this.txtPrice.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPrice.Properties.Appearance.Options.UseFont = true;
-			this.txtPrice.Size = new System.Drawing.Size(125, 28);
+			this.txtPrice.Size = new System.Drawing.Size(530, 28);
 			this.txtPrice.StyleController = this.layoutControl1;
 			this.txtPrice.TabIndex = 7;
 			// 
 			// txtName
 			// 
-			this.txtName.Location = new System.Drawing.Point(505, 76);
+			this.txtName.Location = new System.Drawing.Point(194, 76);
 			this.txtName.Margin = new System.Windows.Forms.Padding(5);
 			this.txtName.Name = "txtName";
 			this.txtName.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtName.Properties.Appearance.Options.UseFont = true;
-			this.txtName.Size = new System.Drawing.Size(125, 28);
+			this.txtName.Size = new System.Drawing.Size(530, 28);
 			this.txtName.StyleController = this.layoutControl1;
 			this.txtName.TabIndex = 6;
 			// 
 			// txtCode
 			// 
-			this.txtCode.Location = new System.Drawing.Point(194, 108);
+			this.txtCode.Location = new System.Drawing.Point(194, 44);
 			this.txtCode.Margin = new System.Windows.Forms.Padding(5);
 			this.txtCode.Name = "txtCode";
 			this.txtCode.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCode.Properties.Appearance.Options.UseFont = true;
-			this.txtCode.Size = new System.Drawing.Size(748, 28);
+			this.txtCode.Size = new System.Drawing.Size(530, 28);
 			this.txtCode.StyleController = this.layoutControl1;
 			this.txtCode.TabIndex = 5;
 			// 
@@ -252,18 +252,18 @@
 			this.Root.GroupBordersVisible = false;
 			this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem12,
+            this.layoutControlItem3,
+            this.layoutControlItem2,
+            this.layoutControlItem6,
+            this.layoutControlItem8,
             this.layoutControlItem10,
             this.layoutControlItem9,
             this.layoutControlItem11,
-            this.layoutControlItem3,
-            this.layoutControlItem2,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem8,
-            this.layoutControlItem12,
             this.layoutControlItem7});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(954, 341);
+			this.Root.Size = new System.Drawing.Size(736, 388);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlItem4
@@ -271,60 +271,11 @@
 			this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem4.Control = this.txtPrice;
-			this.layoutControlItem4.Location = new System.Drawing.Point(0, 64);
+			this.layoutControlItem4.Location = new System.Drawing.Point(0, 96);
 			this.layoutControlItem4.Name = "layoutControlItem4";
-			this.layoutControlItem4.Size = new System.Drawing.Size(311, 32);
+			this.layoutControlItem4.Size = new System.Drawing.Size(716, 32);
 			this.layoutControlItem4.Text = "Item Price";
 			this.layoutControlItem4.TextSize = new System.Drawing.Size(170, 21);
-			// 
-			// layoutControlItem10
-			// 
-			this.layoutControlItem10.Control = this.btnAdd;
-			this.layoutControlItem10.Location = new System.Drawing.Point(0, 220);
-			this.layoutControlItem10.Name = "layoutControlItem10";
-			this.layoutControlItem10.Size = new System.Drawing.Size(934, 101);
-			this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem10.TextVisible = false;
-			// 
-			// layoutControlItem9
-			// 
-			this.layoutControlItem9.Control = this.btnSave;
-			this.layoutControlItem9.Location = new System.Drawing.Point(0, 160);
-			this.layoutControlItem9.Name = "layoutControlItem9";
-			this.layoutControlItem9.Size = new System.Drawing.Size(934, 30);
-			this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem9.TextVisible = false;
-			// 
-			// layoutControlItem11
-			// 
-			this.layoutControlItem11.Control = this.btnDelete;
-			this.layoutControlItem11.Location = new System.Drawing.Point(0, 190);
-			this.layoutControlItem11.Name = "layoutControlItem11";
-			this.layoutControlItem11.Size = new System.Drawing.Size(934, 30);
-			this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem11.TextVisible = false;
-			// 
-			// layoutControlItem3
-			// 
-			this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-			this.layoutControlItem3.Control = this.txtName;
-			this.layoutControlItem3.Location = new System.Drawing.Point(311, 64);
-			this.layoutControlItem3.Name = "layoutControlItem3";
-			this.layoutControlItem3.Size = new System.Drawing.Size(311, 32);
-			this.layoutControlItem3.Text = "Item Name";
-			this.layoutControlItem3.TextSize = new System.Drawing.Size(170, 21);
-			// 
-			// layoutControlItem2
-			// 
-			this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
-			this.layoutControlItem2.Control = this.txtCode;
-			this.layoutControlItem2.Location = new System.Drawing.Point(0, 96);
-			this.layoutControlItem2.Name = "layoutControlItem2";
-			this.layoutControlItem2.Size = new System.Drawing.Size(934, 32);
-			this.layoutControlItem2.Text = "Item Code";
-			this.layoutControlItem2.TextSize = new System.Drawing.Size(170, 21);
 			// 
 			// layoutControlItem5
 			// 
@@ -333,40 +284,31 @@
 			this.layoutControlItem5.Control = this.txtPriceSingle;
 			this.layoutControlItem5.Location = new System.Drawing.Point(0, 128);
 			this.layoutControlItem5.Name = "layoutControlItem5";
-			this.layoutControlItem5.Size = new System.Drawing.Size(467, 32);
+			this.layoutControlItem5.Size = new System.Drawing.Size(716, 32);
 			this.layoutControlItem5.Text = "Item Price Single";
 			this.layoutControlItem5.TextSize = new System.Drawing.Size(170, 21);
-			// 
-			// layoutControlItem6
-			// 
-			this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
-			this.layoutControlItem6.Control = this.txtPriceMany;
-			this.layoutControlItem6.Location = new System.Drawing.Point(467, 128);
-			this.layoutControlItem6.Name = "layoutControlItem6";
-			this.layoutControlItem6.Size = new System.Drawing.Size(467, 32);
-			this.layoutControlItem6.Text = "Item Price Many";
-			this.layoutControlItem6.TextSize = new System.Drawing.Size(170, 21);
-			// 
-			// layoutControlItem8
-			// 
-			this.layoutControlItem8.Control = this.CEGroup;
-			this.layoutControlItem8.Location = new System.Drawing.Point(622, 64);
-			this.layoutControlItem8.Name = "layoutControlItem8";
-			this.layoutControlItem8.Size = new System.Drawing.Size(312, 32);
-			this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem8.TextVisible = false;
 			// 
 			// layoutControlItem12
 			// 
 			this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem12.Control = this.txtGuid;
-			this.layoutControlItem12.Location = new System.Drawing.Point(0, 32);
+			this.layoutControlItem12.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem12.Name = "layoutControlItem12";
-			this.layoutControlItem12.Size = new System.Drawing.Size(934, 32);
+			this.layoutControlItem12.Size = new System.Drawing.Size(716, 32);
 			this.layoutControlItem12.Text = "Item Guid";
 			this.layoutControlItem12.TextSize = new System.Drawing.Size(170, 21);
+			// 
+			// layoutControlItem3
+			// 
+			this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+			this.layoutControlItem3.Control = this.txtName;
+			this.layoutControlItem3.Location = new System.Drawing.Point(0, 64);
+			this.layoutControlItem3.Name = "layoutControlItem3";
+			this.layoutControlItem3.Size = new System.Drawing.Size(716, 32);
+			this.layoutControlItem3.Text = "Item Name";
+			this.layoutControlItem3.TextSize = new System.Drawing.Size(170, 21);
 			// 
 			// layoutControlItem7
 			// 
@@ -374,17 +316,75 @@
 			this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem7.Control = this.LookParent;
 			this.layoutControlItem7.CustomizationFormText = "Parent Guid";
-			this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
+			this.layoutControlItem7.Location = new System.Drawing.Point(0, 192);
 			this.layoutControlItem7.Name = "layoutControlItem7";
-			this.layoutControlItem7.Size = new System.Drawing.Size(934, 32);
+			this.layoutControlItem7.Size = new System.Drawing.Size(716, 32);
 			this.layoutControlItem7.Text = "Parent Guid";
 			this.layoutControlItem7.TextSize = new System.Drawing.Size(170, 21);
+			// 
+			// layoutControlItem2
+			// 
+			this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
+			this.layoutControlItem2.Control = this.txtCode;
+			this.layoutControlItem2.Location = new System.Drawing.Point(0, 32);
+			this.layoutControlItem2.Name = "layoutControlItem2";
+			this.layoutControlItem2.Size = new System.Drawing.Size(716, 32);
+			this.layoutControlItem2.Text = "Item Code";
+			this.layoutControlItem2.TextSize = new System.Drawing.Size(170, 21);
+			// 
+			// layoutControlItem6
+			// 
+			this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
+			this.layoutControlItem6.Control = this.txtPriceMany;
+			this.layoutControlItem6.Location = new System.Drawing.Point(0, 160);
+			this.layoutControlItem6.Name = "layoutControlItem6";
+			this.layoutControlItem6.Size = new System.Drawing.Size(716, 32);
+			this.layoutControlItem6.Text = "Item Price Many";
+			this.layoutControlItem6.TextSize = new System.Drawing.Size(170, 21);
+			// 
+			// layoutControlItem8
+			// 
+			this.layoutControlItem8.Control = this.CEGroup;
+			this.layoutControlItem8.Location = new System.Drawing.Point(0, 224);
+			this.layoutControlItem8.Name = "layoutControlItem8";
+			this.layoutControlItem8.Size = new System.Drawing.Size(716, 29);
+			this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem8.TextVisible = false;
+			// 
+			// layoutControlItem10
+			// 
+			this.layoutControlItem10.Control = this.btnAdd;
+			this.layoutControlItem10.Location = new System.Drawing.Point(0, 313);
+			this.layoutControlItem10.Name = "layoutControlItem10";
+			this.layoutControlItem10.Size = new System.Drawing.Size(716, 55);
+			this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem10.TextVisible = false;
+			// 
+			// layoutControlItem9
+			// 
+			this.layoutControlItem9.Control = this.btnSave;
+			this.layoutControlItem9.Location = new System.Drawing.Point(0, 253);
+			this.layoutControlItem9.Name = "layoutControlItem9";
+			this.layoutControlItem9.Size = new System.Drawing.Size(716, 30);
+			this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem9.TextVisible = false;
+			// 
+			// layoutControlItem11
+			// 
+			this.layoutControlItem11.Control = this.btnDelete;
+			this.layoutControlItem11.Location = new System.Drawing.Point(0, 283);
+			this.layoutControlItem11.Name = "layoutControlItem11";
+			this.layoutControlItem11.Size = new System.Drawing.Size(716, 30);
+			this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem11.TextVisible = false;
 			// 
 			// Frm_ItemEdit
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(958, 345);
+			this.ClientSize = new System.Drawing.Size(740, 392);
 			this.Controls.Add(this.panelControl1);
 			this.Name = "Frm_ItemEdit";
 			this.Text = "Frm_ItemEdit";
@@ -403,16 +403,16 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
 			this.ResumeLayout(false);
 
 		}

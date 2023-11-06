@@ -24,10 +24,21 @@ namespace ItemStockRepoPattern.View.Forms
 			try
 			{
 				SetItem();
-				bool check = _repository.Save(_item);
-				MessageBox.Show(check ? "Done" : "Error");
-				FillLook();
-
+				var ch = _repository.Save(_item);
+				if (ch == 0)
+				{
+					MessageBox.Show(@"Error");
+				}
+				else if (ch == 1)
+				{
+					MessageBox.Show(@"Done Insert");
+					FillLook();
+				}
+				else if (ch == 2)
+				{
+					MessageBox.Show(@"Done UPdate");
+					FillLook();
+				}
 			}
 			catch (Exception exception)
 			{

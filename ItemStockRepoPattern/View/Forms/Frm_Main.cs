@@ -7,7 +7,7 @@
 			InitializeComponent();
 		}
 
-		private void guna2Button1_Click(object sender, System.EventArgs e)
+		private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			Frm_Item f = new Frm_Item();
 			f.ShowDialog();
@@ -15,12 +15,26 @@
 			f.Close();
 		}
 
-		private void guna2Button2_Click(object sender, System.EventArgs e)
+		private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			Frm_Bill f = new Frm_Bill();
 			f.ShowDialog();
 
 			f.Close();
 		}
+
+		private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			var frm = new Frm_StockItem();
+			frm.ShowDialog();
+			frm.Close();
+		}
+
+		private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+
+		}
+
+
 	}
 }

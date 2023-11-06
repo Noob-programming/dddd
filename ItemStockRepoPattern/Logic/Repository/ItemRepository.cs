@@ -13,14 +13,14 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				SqlParameter[] param =
-					{
+				SqlParameter[] param = {
 						new SqlParameter() {
 						ParameterName = "@guid",
 						DbType = DbType.Guid,
 						Value = guid
-					}
+						}
 				};
+
 				return DbHelper.GetDataTable("TB_item_GET", param).ChangeForType(
 					reader => new ItemModel
 					{
@@ -83,7 +83,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 
 		}
 
-		public bool Save(ItemModel item)
+		public int Save(ItemModel item)
 		{
 			try
 			{
@@ -145,7 +145,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 					}
 				};
 
-				return Convert.ToBoolean(DbHelper.ExecuteData("TB_Item_OnlySave", parameters));
+				return DbHelper.ExecuteData("TB_Item_OnlySave", parameters);
 			}
 			catch (Exception e)
 			{
@@ -154,7 +154,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-		public bool Delete(Guid item = default)
+		public int Delete(Guid item = default)
 		{
 			try
 			{
@@ -173,7 +173,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 						Direction = ParameterDirection.ReturnValue
 					}
 				};
-				return Convert.ToBoolean(DbHelper.ExecuteData("TB_Item_Delete", parameters));
+				return DbHelper.ExecuteData("TB_Item_Delete", parameters);
 			}
 
 			catch (Exception e)

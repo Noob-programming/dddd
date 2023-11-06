@@ -7,9 +7,8 @@ using System.Data.SqlClient;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
-	public class Stockreposition : IRepository<StockModel>
+	public class StockReposition : IRepository<StockModel>
 	{
-
 		public StockModel GetByGuid(Guid guid)
 		{
 			try
@@ -77,8 +76,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-
-		public bool Save(StockModel item)
+		public int Save(StockModel item)
 		{
 			try
 			{
@@ -108,9 +106,8 @@ namespace ItemStockRepoPattern.Logic.Repository
 					}
 				};
 
-				var returnCode = DbHelper.ExecuteData("TB_Stock_Save", parameters);
 
-				return Convert.ToBoolean(returnCode);
+				return DbHelper.ExecuteData("TB_Stock_Save", parameters);
 			}
 			catch (Exception e)
 			{
@@ -119,8 +116,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-
-		public bool Delete(Guid item)
+		public int Delete(Guid item)
 		{
 			try
 			{
@@ -139,9 +135,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 						Value = item
 					}
 				};
-				var r = DbHelper.ExecuteData("TB_Stock_Delete", parameters);
-				return Convert.ToBoolean(r);
-
+				return DbHelper.ExecuteData("TB_Stock_Delete", parameters);
 			}
 			catch (Exception e)
 			{

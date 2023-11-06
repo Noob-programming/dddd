@@ -6,8 +6,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 {
 	public static class DbHelper
 	{
-
-		public static SqlCommand Command;
+		private static SqlCommand _command;
 
 
 		private static SqlConnection Connection()
@@ -23,7 +22,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			return new SqlConnection(builder.ConnectionString);
 		}
 
-		public static SqlConnection GetConnection()
+		private static SqlConnection GetConnection()
 		{
 			return Connection();
 		}
@@ -33,19 +32,19 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (SqlConnection connection = DbHelper.GetConnection())
+				using (SqlConnection connection = GetConnection())
 				{
 
-					Command = new SqlCommand(sql, connection);
-					Command.CommandType = CommandType.StoredProcedure;
+					_command = new SqlCommand(sql, connection);
+					_command.CommandType = CommandType.StoredProcedure;
 					if (parameters != null)
 					{
-						Command.Parameters.AddRange(parameters);
+						_command.Parameters.AddRange(parameters);
 					}
 					connection.Open();
-					Command.ExecuteNonQuery();
+					_command.ExecuteNonQuery();
 					connection.Close();
-					return (int)Command.Parameters["@return"].Value;
+					return (int)_command.Parameters["@return"].Value;
 				}
 			}
 			catch (Exception e)
@@ -63,16 +62,16 @@ namespace ItemStockRepoPattern.Logic.Repository
 				using (var connection = GetConnection())
 				{
 
-					Command = new SqlCommand(sql, connection);
-					Command.CommandType = CommandType.StoredProcedure;
+					_command = new SqlCommand(sql, connection);
+					_command.CommandType = CommandType.StoredProcedure;
 
 					if (parameters != null)
 					{
-						Command.Parameters.AddRange(parameters);
+						_command.Parameters.AddRange(parameters);
 					}
 
 					connection.Open();
-					var adapter = new SqlDataAdapter(Command);
+					var adapter = new SqlDataAdapter(_command);
 
 					var dt = new DataTable();
 

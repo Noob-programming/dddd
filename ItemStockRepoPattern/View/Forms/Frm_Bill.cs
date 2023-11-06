@@ -24,26 +24,35 @@ namespace ItemStockRepoPattern.View.Forms
 		}
 		BillModel bill = new BillModel();
 
-		void SetBill(BillModel Bill)
+		void SetBill(BillModel bills)
 		{
-			bill.billGuid = new Guid(txtGuid.Text);
-			bill.BillCode = Convert.ToInt32(txtCode.Text);
-			bill.Notes = txtNotes.Text;
-			bill.BillDate = Convert.ToDateTime(txtDate.Text);
-			bill.BillType = TbillType.IsOn;
+			this.bill.billGuid = new Guid(txtGuid.Text);
+			this.bill.BillCode = Convert.ToInt32(txtCode.Text);
+			this.bill.Notes = txtNotes.Text;
+			this.bill.BillDate = Convert.ToDateTime(txtDate.Text);
+			this.bill.BillType = TbillType.IsOn;
 		}
 
 		private void simpleButton1_Click(object sender, System.EventArgs e)
 		{
 			SetBill(bill);
-			bool ch = repository.Save(bill);
-			if (!ch)
+			int ch = repository.Save(bill);
+			if (ch == 0)
 			{
 				MessageBox.Show(@"Error");
 				return;
 			}
-			MessageBox.Show(@"Done Save");
-			SetData();
+
+			if (ch == 1)
+			{
+				MessageBox.Show(@"Done Save");
+				SetData();
+			}
+			else if (ch == 2)
+			{
+				MessageBox.Show(@"Done UPdate");
+				SetData();
+			}
 		}
 
 		private void simpleButton2_Click(object sender, EventArgs e)
@@ -59,21 +68,19 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void simpleButton3_Click(object sender, EventArgs e)
 		{
-			var a = gridView1.GetFocusedRowCellValue("BillGuid").ToString();
-			bool ch = repository.Delete(new Guid(a));
-
-			if (!ch)
+			var a = gridView1.GetFocusedRowCellValue("billGuid").ToString();
+			int ch = repository.Delete(new Guid(a));
+			if (ch == 0)
 			{
 				MessageBox.Show(@"Error");
 				return;
 			}
-			MessageBox.Show(@"Done Save");
-			SetData();
-
+			else if (ch == 1)
+			{
+				MessageBox.Show(@"Done Delete");
+				SetData();
+			}
 		}
-
-
-
 
 		private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
 		{

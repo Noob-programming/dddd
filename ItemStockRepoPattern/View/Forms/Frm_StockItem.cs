@@ -14,17 +14,16 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void Frm_StockItem_Load(object sender, EventArgs e)
 		{
-
 			SetData();
 		}
 
-		Stockreposition reposition = new Stockreposition();
+		private readonly StockReposition _reposition = new StockReposition();
 
 		void SetData()
 		{
-			gridControl1.DataSource = reposition.GetAll();
+			gridControl1.DataSource = _reposition.GetAll();
 
-			Lookitem.Properties.DataSource = reposition.FillLook();
+			Lookitem.Properties.DataSource = _reposition.FillLook();
 			Lookitem.Properties.DisplayMember = "itemName";
 			Lookitem.Properties.ValueMember = "itemGuid";
 		}
@@ -39,13 +38,25 @@ namespace ItemStockRepoPattern.View.Forms
 
 		}
 
-		Stockreposition Stockreposition = new Stockreposition();
+		private readonly StockReposition _stockReposition = new StockReposition();
 		private void simpleButton3_Click(object sender, EventArgs e)
 		{
 			SetUp();
-			var ch = Stockreposition.Save(stock);
-			MessageBox.Show(ch ? @"Done Save" : @"ERROR");
-			SetData();
+			var ch = _stockReposition.Save(stock);
+			if (ch == 0)
+			{
+				MessageBox.Show(@"ERROR");
+			}
+			else if (ch == 1)
+			{
+				MessageBox.Show(@"Done Insert");
+				SetData();
+			}
+			else if (ch == 2)
+			{
+				MessageBox.Show(@"Done Update");
+				SetData();
+			}
 		}
 
 		private void simpleButton1_Click(object sender, EventArgs e)
@@ -57,7 +68,15 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void simpleButton2_Click(object sender, EventArgs e)
 		{
-			var re = Stockreposition.Delete(stock.ItemGuid);
+			var re = _stockReposition.Delete(stock.ItemGuid);
+			if (re == 0)
+				MessageBox.Show(@"Error delete");
+			if (re == 1)
+			{
+				MessageBox.Show(@"Done Delete");
+				SetData();
+			}
+
 		}
 
 		private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

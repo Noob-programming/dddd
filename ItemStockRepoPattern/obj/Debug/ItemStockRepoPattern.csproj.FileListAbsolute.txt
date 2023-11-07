@@ -48,3 +48,4 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\D
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_Item.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_Bill.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_StockItem.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_ShoppingCart.resources

@@ -32,9 +32,9 @@
 
 		private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
-
+			var frm = new Frm_ShoppingCart();
+			frm.ShowDialog();
+			frm.Close();
 		}
-
-
 	}
 }

@@ -89,4 +89,5 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 	}
+
 }

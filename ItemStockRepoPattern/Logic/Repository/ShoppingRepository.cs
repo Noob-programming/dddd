@@ -25,10 +25,11 @@ namespace ItemStockRepoPattern.Logic.Repository
 				.ChangeForType(x => new StoppingCartModel
 				{
 					SalesOrderId = new Guid(x["SalesOrderGuid"].ToString()),
-					StoppingOrderId = Convert.ToInt32(x["ShoppingID"].ToString()),
-
+					ShoppingOrderId = Convert.ToInt32(x["ShoppingID"].ToString()),
 					ItemGuid = new Guid(x["ItemGuid"].ToString()),
 					BillGuid = new Guid(x["BillGuid"].ToString()),
+					ItemName = x["itemName"].ToString(),
+					BillCode = Convert.ToInt32(x["Billcode"].ToString()),
 					Quantity = Convert.ToDecimal(x["Quantity"].ToString()),
 					Prices = Convert.ToDecimal(x["Price"].ToString()),
 					Total = Convert.ToDecimal(x["Total"].ToString())
@@ -36,7 +37,6 @@ namespace ItemStockRepoPattern.Logic.Repository
 				});
 		}
 
-		/// <inheritdoc />
 		public IEnumerable<StoppingCartModel> GetAll()
 		{
 
@@ -46,13 +46,14 @@ namespace ItemStockRepoPattern.Logic.Repository
 					  .ChangeList(x => new StoppingCartModel
 					  {
 						  SalesOrderId = new Guid(x["SalesOrderGuid"].ToString()),
-						  StoppingOrderId = Convert.ToInt32(x["ShoppingID"].ToString()),
+						  ShoppingOrderId = Convert.ToInt32(x["ShoppingID"].ToString()),
 						  ItemGuid = new Guid(x["ItemGuid"].ToString()),
 						  BillGuid = new Guid(x["BillGuid"].ToString()),
+						  ItemName = x["itemName"].ToString(),
+						  BillCode = Convert.ToInt32(x["Billcode"].ToString()),
 						  Quantity = Convert.ToDecimal(x["Quantity"].ToString()),
 						  Prices = Convert.ToDecimal(x["Price"].ToString()),
 						  Total = Convert.ToDecimal(x["Total"].ToString())
-
 					  });
 			}
 			catch (Exception e)
@@ -118,7 +119,6 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-
 		public int Delete(Guid item)
 		{
 			try
@@ -146,5 +146,50 @@ namespace ItemStockRepoPattern.Logic.Repository
 				throw;
 			}
 		}
+
+		public object FillLookBill()
+		{
+			try
+			{
+				var r = DbHelper.GetDataTable("TB_Bill_GetGuid");
+				var n = r.ChangeList(x => new
+				{
+					BillGuid = new Guid(x["BillGuid"].ToString()),
+					Billcode = Convert.ToInt32(x["Billcode"])
+				});
+
+				return n;
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+
+		}
+
+		public object FillLookItem()
+		{
+			try
+			{
+				var r = DbHelper.GetDataTable("TB_Item_GETGuidPriceName");
+
+
+				var res = r.ChangeList(x
+					=> new
+					{
+						itemGuid = new Guid(x["itemGuid"].ToString()),
+						itemName = x["itemName"].ToString(),
+						itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString())
+					});
+				return res;
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+		}
+
 	}
 }

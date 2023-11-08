@@ -1,12 +1,20 @@
-﻿using ItemStockRepoPattern.Logic.Repository;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using ItemStockRepoPattern.Logic.Repository;
 using ItemStockRepoPattern.Model;
 using System;
 using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.View.Forms
 {
-	public partial class Frm_StockItem : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_StockItem : XtraForm
 	{
+		private readonly StockReposition _reposition = new StockReposition();
+
+		private readonly StockReposition _stockReposition = new StockReposition();
+
+		private readonly StockModel stock = new StockModel();
+
 		public Frm_StockItem()
 		{
 			InitializeComponent();
@@ -17,28 +25,22 @@ namespace ItemStockRepoPattern.View.Forms
 			SetData();
 		}
 
-		private readonly StockReposition _reposition = new StockReposition();
-
-		void SetData()
+		private void SetData()
 		{
 			gridControl1.DataSource = _reposition.GetAll();
 
-			Lookitem.Properties.DataSource = _reposition.FillLook();
+			Lookitem.Properties.DataSource = _reposition.FillLookItem();
 			Lookitem.Properties.DisplayMember = "itemName";
 			Lookitem.Properties.ValueMember = "itemGuid";
 		}
 
-		private StockModel stock = new StockModel();
-
-		void SetUp()
+		private void SetUp()
 		{
 			stock.ItemGuid = new Guid(Lookitem.EditValue.ToString());
 			stock.Quantity = Convert.ToDecimal(textEdit2.Text);
 			stock.Status = toggleSwitch1.IsOn ? "IN" : "OUT";
-
 		}
 
-		private readonly StockReposition _stockReposition = new StockReposition();
 		private void simpleButton3_Click(object sender, EventArgs e)
 		{
 			SetUp();
@@ -76,15 +78,13 @@ namespace ItemStockRepoPattern.View.Forms
 				MessageBox.Show(@"Done Delete");
 				SetData();
 			}
-
 		}
 
-		private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+		private void gridView1_RowClick(object sender, RowClickEventArgs e)
 		{
 			Lookitem.EditValue = gridView1.GetFocusedRowCellValue("ItemGuid").ToString();
 			textEdit2.Text = gridView1.GetFocusedRowCellValue("Quantity").ToString();
 			toggleSwitch1.IsOn = gridView1.GetFocusedRowCellValue("Status").ToString() == "IN";
-
 		}
 	}
 }

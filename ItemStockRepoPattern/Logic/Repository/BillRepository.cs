@@ -1,14 +1,35 @@
 ﻿using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Logic.Interfaces;
 using ItemStockRepoPattern.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
-	public class BillRepository : IRepository<BillModel>
+	public class BillRepository : IRepository<BillModel>, IMax
 	{
+		public int GetMaxId()
+		{
+			try
+			{
+				var p = new SqlParameter
+				{
+					ParameterName = "@return",
+					DbType = DbType.Int32,
+					Direction = ParameterDirection.ReturnValue
+				};
+				return DbHelper.GetLengthenTable("TB_Bill_GETMAX", p);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+		}
+
 		public BillModel GetByGuid(Guid guid = default)
 		{
 			try
@@ -40,10 +61,9 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
-
 		}
 
 		public IEnumerable<BillModel> GetAll()
@@ -52,18 +72,18 @@ namespace ItemStockRepoPattern.Logic.Repository
 			{
 				return DbHelper.GetDataTable("TB_Bill_GET").ChangeList
 				(reader =>
-						new BillModel
-						{
-							billGuid = new Guid(reader["BillGuid"].ToString()),
-							BillCode = Convert.ToInt32(reader["Billcode"].ToString()),
-							BillDate = Convert.ToDateTime(reader["BillDate"].ToString()),
-							Notes = reader["Notes"].ToString(),
-							BillType = Convert.ToBoolean(reader["Type"].ToString() == "Buy")
-						});
+					new BillModel
+					{
+						billGuid = new Guid(reader["BillGuid"].ToString()),
+						BillCode = Convert.ToInt32(reader["Billcode"].ToString()),
+						BillDate = Convert.ToDateTime(reader["BillDate"].ToString()),
+						Notes = reader["Notes"].ToString(),
+						BillType = Convert.ToBoolean(reader["Type"].ToString() == "Buy")
+					});
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}
@@ -118,7 +138,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}
@@ -146,7 +166,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}

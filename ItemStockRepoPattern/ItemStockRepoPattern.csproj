@@ -87,15 +87,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BillsData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Extension\ConvertTBToT.cs" />
+    <Compile Include="Logic\Extension\ConvertToType.cs" />
     <Compile Include="Logic\Extension\GuidHelper.cs" />
     <Compile Include="Logic\Repository\ IRepository.cs" />
     <Compile Include="Logic\Repository\BillRepository.cs" />
     <Compile Include="Logic\Repository\DBHelper.cs" />
+    <Compile Include="Logic\Interfaces\IFillLookBill.cs" />
+    <Compile Include="Logic\Interfaces\IFillLookItem.cs" />
+    <Compile Include="Logic\Interfaces\IMax.cs" />
     <Compile Include="Logic\Repository\ItemRepository.cs" />
     <Compile Include="Logic\Repository\ShoppingRepository.cs" />
     <Compile Include="Logic\Repository\StockReposition.cs" />
+    <Compile Include="Logic\Repository\UsersRepository.cs" />
     <Compile Include="Model\BillModel.cs" />
+    <Compile Include="Model\UsersModel.cs" />
+    <Compile Include="View\Forms\Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Model\StockModel.cs" />
     <Compile Include="Model\StoppingCartModel.cs" />
@@ -137,6 +148,9 @@
     <Compile Include="View\Forms\Frm_StockItem.Designer.cs">
       <DependentUpon>Frm_StockItem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Forms\Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

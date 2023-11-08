@@ -9,6 +9,5 @@ namespace ItemStockRepoPattern.Logic.Repository
 		IEnumerable<T> GetAll();
 		int Save(T item);
 		int Delete(Guid item);
-
 	}
 }

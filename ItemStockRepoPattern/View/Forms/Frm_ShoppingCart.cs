@@ -1,14 +1,22 @@
-﻿using ItemStockRepoPattern.Logic.Extension;
-using ItemStockRepoPattern.Logic.Repository;
-using ItemStockRepoPattern.Model;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Logic.Repository;
+using ItemStockRepoPattern.Model;
 
 namespace ItemStockRepoPattern.View.Forms
 {
-	public partial class Frm_ShoppingCart : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_ShoppingCart : XtraForm
 	{
+		private readonly ItemRepository _repository = new ItemRepository();
+
+		private readonly ShoppingRepository _shopping = new ShoppingRepository();
+
+		private readonly StoppingCartModel _shoppingCard = new StoppingCartModel();
+
 		public Frm_ShoppingCart()
 		{
 			InitializeComponent();
@@ -29,16 +37,13 @@ namespace ItemStockRepoPattern.View.Forms
 			LookBillGuid.EditValue = null;
 			LookItemGuid.EditValue = null;
 
-			txtShoppingID.Text = @"0";
+			txtShoppingID.Text = $@"{_shopping.GetMaxId()}";
 		}
 
-		private readonly StoppingCartModel _shoppingCard = new StoppingCartModel();
 		private void Frm_ShoppingCart_Load(object sender, EventArgs e)
 		{
 			GetData();
 		}
-
-		private readonly ShoppingRepository _shopping = new ShoppingRepository();
 
 		private void GetData()
 		{
@@ -56,11 +61,9 @@ namespace ItemStockRepoPattern.View.Forms
 			LookItemGuid.Properties.DisplayMember = "itemName";
 			LookItemGuid.Properties.ValueMember = "itemGuid";
 
-			gridControl1.DataSource = _shopping.GetAll(); ;
-
+			gridControl1.DataSource = _shopping.GetAll();
+			;
 		}
-
-		readonly ItemRepository _repository = new ItemRepository();
 
 		private void LookItemGuid_EditValueChanged(object sender, EventArgs e)
 		{
@@ -68,21 +71,20 @@ namespace ItemStockRepoPattern.View.Forms
 			var res = _repository.GetByGuid(new Guid(LookItemGuid.EditValue.ToString()));
 
 			txtPrice.Text = res.itemPriceSingle.ToString(CultureInfo.InvariantCulture);
-
 		}
 
 		private void txtQuantity_EditValueChanged(object sender, EventArgs e)
 		{
 			if (txtQuantity.Text == null) return;
 			txtTotal.Text =
-				(Convert.ToDecimal(txtPrice.Text) * Convert.ToDecimal(txtQuantity.Text)).
-				ToString(CultureInfo.InvariantCulture);
+				(Convert.ToDecimal(txtPrice.Text) * Convert.ToDecimal(txtQuantity.Text)).ToString(CultureInfo
+					.InvariantCulture);
 		}
 
 		private void simpleButton2_Click(object sender, EventArgs e)
 		{
 			SetShopping();
-			int ch = _shopping.Save(_shoppingCard);
+			var ch = _shopping.Save(_shoppingCard);
 
 			if (ch == 0)
 			{
@@ -91,12 +93,14 @@ namespace ItemStockRepoPattern.View.Forms
 			else if (ch == 1)
 			{
 				MessageBox.Show(@"Add Done");
-				GetData(); AddMember();
+				GetData();
+				AddMember();
 			}
 			else if (ch == 2)
 			{
 				MessageBox.Show(@"Update Done");
-				GetData(); AddMember();
+				GetData();
+				AddMember();
 			}
 		}
 
@@ -114,7 +118,7 @@ namespace ItemStockRepoPattern.View.Forms
 		private void simpleButton3_Click(object sender, EventArgs e)
 		{
 			GuidHelper.SaveGuid = new Guid(txtSalesOrderGuid.Text);
-			int ch = _shopping.Delete(GuidHelper.SaveGuid);
+			var ch = _shopping.Delete(GuidHelper.SaveGuid);
 
 			if (ch == 0)
 			{
@@ -123,16 +127,15 @@ namespace ItemStockRepoPattern.View.Forms
 			else if (ch == 1)
 			{
 				MessageBox.Show(@"Delete Done");
-				GetData(); AddMember();
+				GetData();
+				AddMember();
 			}
-
 		}
 
-		private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+		private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
 		{
 			try
 			{
-
 				txtSalesOrderGuid.Text = gridView1.GetFocusedRowCellValue("SalesOrderId").ToString();
 				txtPrice.Text = gridView1.GetFocusedRowCellValue("Prices").ToString();
 				txtShoppingID.Text = gridView1.GetFocusedRowCellValue("ShoppingOrderId").ToString();

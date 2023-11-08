@@ -13,6 +13,5 @@ namespace ItemStockRepoPattern.Model
 		public decimal Quantity { get; set; }
 		public string ItemName { get; set; }
 		public int BillCode { get; set; }
-
 	}
 }

@@ -1,14 +1,28 @@
-﻿using ItemStockRepoPattern.Logic.Extension;
-using ItemStockRepoPattern.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Model;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
-	public class StockReposition : IRepository<StockModel>
+	public class StockReposition : IRepository<StockModel>, IFillLookItem
 	{
+		public object FillLookItem()
+		{
+			try
+			{
+				return DbHelper.GetDataTable("TB_Item_GetItemandName");
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($@"{e}");
+				throw;
+			}
+		}
+
 		public StockModel GetByGuid(Guid guid)
 		{
 			try
@@ -40,7 +54,6 @@ namespace ItemStockRepoPattern.Logic.Repository
 				Console.WriteLine(e);
 				throw;
 			}
-
 		}
 
 		public IEnumerable<StockModel> GetAll()
@@ -58,20 +71,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
-				throw;
-			}
-		}
-
-		public DataTable FillLook()
-		{
-			try
-			{
-				return DbHelper.GetDataTable("TB_Item_GetItemandName");
-			}
-			catch (Exception e)
-			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}
@@ -111,7 +111,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}
@@ -139,7 +139,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}

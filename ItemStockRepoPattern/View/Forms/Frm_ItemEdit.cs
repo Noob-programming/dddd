@@ -1,23 +1,23 @@
-﻿using ItemStockRepoPattern.Logic.Extension;
-using ItemStockRepoPattern.Logic.Repository;
-using ItemStockRepoPattern.Model;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Logic.Repository;
+using ItemStockRepoPattern.Model;
 
 namespace ItemStockRepoPattern.View.Forms
 {
-	public partial class Frm_ItemEdit : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_ItemEdit : XtraForm
 	{
+		private readonly ItemRepository _repository = new ItemRepository();
+		private ItemModel _item = new ItemModel();
 
 
 		public Frm_ItemEdit()
 		{
 			InitializeComponent();
 		}
-
-		readonly ItemRepository _repository = new ItemRepository();
-		ItemModel _item = new ItemModel();
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
@@ -42,13 +42,12 @@ namespace ItemStockRepoPattern.View.Forms
 			}
 			catch (Exception exception)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{exception}");
+				MessageBox.Show($@"{exception}");
 				throw;
 			}
-
 		}
 
-		void GetData()
+		private void GetData()
 		{
 			FillLook();
 
@@ -68,12 +67,7 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void FillLook()
 		{
-			var r = _repository.FillLookUp().ChangeList(x => new ItemModel()
-			{
-				itemGuid = new Guid(x["itemguid"].ToString()),
-				itemName = x["itemName"].ToString(),
-				parentGuid = new Guid(x["parentGuid"].ToString()),
-			});
+			var r = _repository.FillLookItem();
 			LookParent.Properties.DataSource = r;
 			LookParent.Properties.DisplayMember = "itemName";
 			LookParent.Properties.ValueMember = "itemGuid";
@@ -81,7 +75,9 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void SetItem()
 		{
-			var a = string.IsNullOrEmpty(LookParent.EditValue.ToString()) ? (IComparable)Guid.Empty : LookParent.EditValue.ToString();
+			var a = string.IsNullOrEmpty(LookParent.EditValue.ToString())
+				? (IComparable)Guid.Empty
+				: LookParent.EditValue.ToString();
 			_item.parentGuid = new Guid(a.ToString());
 			_item.itemName = txtName.Text;
 			_item.itemCode = Convert.ToInt32(txtCode.Text);
@@ -104,16 +100,15 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void AddMember()
 		{
-
-			txtCode.Text = "";
+			txtCode.Text = $@"{_repository.GetMaxId()}";
 
 			txtGuid.Text = Guid.Empty.ToString();
-			txtName.Text = "";
-			txtPrice.Text = "";
+			txtName.Text = string.Empty;
+			txtPrice.Text = string.Empty;
 
-			txtPriceSingle.Text = "";
-			txtPriceMany.Text = "";
-			LookParent.EditValue = "";
+			txtPriceSingle.Text = string.Empty;
+			txtPriceMany.Text = string.Empty;
+			LookParent.EditValue = string.Empty;
 
 			CEGroup.Checked = false;
 		}

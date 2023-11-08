@@ -46,11 +46,11 @@
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.billsData1 = new ItemStockRepoPattern.BillsData();
 			this.tB_BillTableAdapter1 = new ItemStockRepoPattern.BillsDataTableAdapters.TB_BillTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -71,11 +71,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.billsData1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -111,7 +111,7 @@
 			// 
 			// TbillType
 			// 
-			this.TbillType.Location = new System.Drawing.Point(12, 112);
+			this.TbillType.Location = new System.Drawing.Point(12, 156);
 			this.TbillType.Name = "TbillType";
 			this.TbillType.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.TbillType.Properties.Appearance.Options.UseFont = true;
@@ -123,10 +123,10 @@
 			// 
 			// gridControl1
 			// 
-			this.gridControl1.Location = new System.Drawing.Point(12, 244);
+			this.gridControl1.Location = new System.Drawing.Point(12, 280);
 			this.gridControl1.MainView = this.gridView1;
 			this.gridControl1.Name = "gridControl1";
-			this.gridControl1.Size = new System.Drawing.Size(1177, 453);
+			this.gridControl1.Size = new System.Drawing.Size(1177, 417);
 			this.gridControl1.TabIndex = 13;
 			this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -140,14 +140,16 @@
 			// txtDate
 			// 
 			this.txtDate.EditValue = null;
-			this.txtDate.Location = new System.Drawing.Point(114, 87);
+			this.txtDate.Location = new System.Drawing.Point(114, 120);
 			this.txtDate.Margin = new System.Windows.Forms.Padding(5);
 			this.txtDate.Name = "txtDate";
+			this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDate.Properties.Appearance.Options.UseFont = true;
 			this.txtDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
 			this.txtDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-			this.txtDate.Size = new System.Drawing.Size(1075, 20);
+			this.txtDate.Size = new System.Drawing.Size(1075, 32);
 			this.txtDate.StyleController = this.layoutControl1;
 			this.txtDate.TabIndex = 12;
 			// 
@@ -155,7 +157,7 @@
 			// 
 			this.simpleButton3.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.simpleButton3.Appearance.Options.UseFont = true;
-			this.simpleButton3.Location = new System.Drawing.Point(12, 172);
+			this.simpleButton3.Location = new System.Drawing.Point(12, 216);
 			this.simpleButton3.Margin = new System.Windows.Forms.Padding(5);
 			this.simpleButton3.Name = "simpleButton3";
 			this.simpleButton3.Size = new System.Drawing.Size(1177, 26);
@@ -168,7 +170,7 @@
 			// 
 			this.simpleButton2.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.simpleButton2.Appearance.Options.UseFont = true;
-			this.simpleButton2.Location = new System.Drawing.Point(12, 142);
+			this.simpleButton2.Location = new System.Drawing.Point(12, 186);
 			this.simpleButton2.Margin = new System.Windows.Forms.Padding(5);
 			this.simpleButton2.Name = "simpleButton2";
 			this.simpleButton2.Size = new System.Drawing.Size(586, 26);
@@ -181,7 +183,7 @@
 			// 
 			this.simpleButton1.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.simpleButton1.Appearance.Options.UseFont = true;
-			this.simpleButton1.Location = new System.Drawing.Point(602, 142);
+			this.simpleButton1.Location = new System.Drawing.Point(602, 186);
 			this.simpleButton1.Margin = new System.Windows.Forms.Padding(5);
 			this.simpleButton1.Name = "simpleButton1";
 			this.simpleButton1.Size = new System.Drawing.Size(587, 26);
@@ -192,19 +194,23 @@
 			// 
 			// txtNotes
 			// 
-			this.txtNotes.Location = new System.Drawing.Point(114, 62);
+			this.txtNotes.Location = new System.Drawing.Point(114, 84);
 			this.txtNotes.Margin = new System.Windows.Forms.Padding(5);
 			this.txtNotes.Name = "txtNotes";
-			this.txtNotes.Size = new System.Drawing.Size(1075, 20);
+			this.txtNotes.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNotes.Properties.Appearance.Options.UseFont = true;
+			this.txtNotes.Size = new System.Drawing.Size(1075, 32);
 			this.txtNotes.StyleController = this.layoutControl1;
 			this.txtNotes.TabIndex = 6;
 			// 
 			// txtCode
 			// 
-			this.txtCode.Location = new System.Drawing.Point(114, 37);
+			this.txtCode.Location = new System.Drawing.Point(114, 48);
 			this.txtCode.Margin = new System.Windows.Forms.Padding(5);
 			this.txtCode.Name = "txtCode";
-			this.txtCode.Size = new System.Drawing.Size(1075, 20);
+			this.txtCode.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCode.Properties.Appearance.Options.UseFont = true;
+			this.txtCode.Size = new System.Drawing.Size(1075, 32);
 			this.txtCode.StyleController = this.layoutControl1;
 			this.txtCode.TabIndex = 5;
 			// 
@@ -213,7 +219,9 @@
 			this.txtGuid.Location = new System.Drawing.Point(114, 12);
 			this.txtGuid.Margin = new System.Windows.Forms.Padding(5);
 			this.txtGuid.Name = "txtGuid";
-			this.txtGuid.Size = new System.Drawing.Size(1075, 20);
+			this.txtGuid.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtGuid.Properties.Appearance.Options.UseFont = true;
+			this.txtGuid.Size = new System.Drawing.Size(1075, 32);
 			this.txtGuid.StyleController = this.layoutControl1;
 			this.txtGuid.TabIndex = 4;
 			// 
@@ -243,16 +251,16 @@
 			this.layoutControlItem1.Control = this.txtGuid;
 			this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem1.Name = "layoutControlItem1";
-			this.layoutControlItem1.Size = new System.Drawing.Size(1181, 25);
+			this.layoutControlItem1.Size = new System.Drawing.Size(1181, 36);
 			this.layoutControlItem1.Text = "Bill Guid";
 			this.layoutControlItem1.TextSize = new System.Drawing.Size(90, 21);
 			// 
 			// emptySpaceItem1
 			// 
 			this.emptySpaceItem1.AllowHotTrack = false;
-			this.emptySpaceItem1.Location = new System.Drawing.Point(0, 190);
+			this.emptySpaceItem1.Location = new System.Drawing.Point(0, 234);
 			this.emptySpaceItem1.Name = "emptySpaceItem1";
-			this.emptySpaceItem1.Size = new System.Drawing.Size(1181, 42);
+			this.emptySpaceItem1.Size = new System.Drawing.Size(1181, 34);
 			this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
 			// 
 			// layoutControlItem2
@@ -260,9 +268,9 @@
 			this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem2.Control = this.txtCode;
-			this.layoutControlItem2.Location = new System.Drawing.Point(0, 25);
+			this.layoutControlItem2.Location = new System.Drawing.Point(0, 36);
 			this.layoutControlItem2.Name = "layoutControlItem2";
-			this.layoutControlItem2.Size = new System.Drawing.Size(1181, 25);
+			this.layoutControlItem2.Size = new System.Drawing.Size(1181, 36);
 			this.layoutControlItem2.Text = "Bill Code";
 			this.layoutControlItem2.TextSize = new System.Drawing.Size(90, 21);
 			// 
@@ -271,34 +279,25 @@
 			this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem3.Control = this.txtNotes;
-			this.layoutControlItem3.Location = new System.Drawing.Point(0, 50);
+			this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
 			this.layoutControlItem3.Name = "layoutControlItem3";
-			this.layoutControlItem3.Size = new System.Drawing.Size(1181, 25);
+			this.layoutControlItem3.Size = new System.Drawing.Size(1181, 36);
 			this.layoutControlItem3.Text = "Notes";
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(90, 21);
 			// 
 			// layoutControlItem6
 			// 
 			this.layoutControlItem6.Control = this.simpleButton1;
-			this.layoutControlItem6.Location = new System.Drawing.Point(590, 130);
+			this.layoutControlItem6.Location = new System.Drawing.Point(590, 174);
 			this.layoutControlItem6.Name = "layoutControlItem6";
 			this.layoutControlItem6.Size = new System.Drawing.Size(591, 30);
 			this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem6.TextVisible = false;
 			// 
-			// layoutControlItem7
-			// 
-			this.layoutControlItem7.Control = this.simpleButton2;
-			this.layoutControlItem7.Location = new System.Drawing.Point(0, 130);
-			this.layoutControlItem7.Name = "layoutControlItem7";
-			this.layoutControlItem7.Size = new System.Drawing.Size(590, 30);
-			this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem7.TextVisible = false;
-			// 
 			// layoutControlItem8
 			// 
 			this.layoutControlItem8.Control = this.simpleButton3;
-			this.layoutControlItem8.Location = new System.Drawing.Point(0, 160);
+			this.layoutControlItem8.Location = new System.Drawing.Point(0, 204);
 			this.layoutControlItem8.Name = "layoutControlItem8";
 			this.layoutControlItem8.Size = new System.Drawing.Size(1181, 30);
 			this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -309,29 +308,38 @@
 			this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
 			this.layoutControlItem4.Control = this.txtDate;
-			this.layoutControlItem4.Location = new System.Drawing.Point(0, 75);
+			this.layoutControlItem4.Location = new System.Drawing.Point(0, 108);
 			this.layoutControlItem4.Name = "layoutControlItem4";
-			this.layoutControlItem4.Size = new System.Drawing.Size(1181, 25);
+			this.layoutControlItem4.Size = new System.Drawing.Size(1181, 36);
 			this.layoutControlItem4.Text = "Date";
 			this.layoutControlItem4.TextSize = new System.Drawing.Size(90, 21);
 			// 
 			// layoutControlItem9
 			// 
 			this.layoutControlItem9.Control = this.gridControl1;
-			this.layoutControlItem9.Location = new System.Drawing.Point(0, 232);
+			this.layoutControlItem9.Location = new System.Drawing.Point(0, 268);
 			this.layoutControlItem9.Name = "layoutControlItem9";
-			this.layoutControlItem9.Size = new System.Drawing.Size(1181, 457);
+			this.layoutControlItem9.Size = new System.Drawing.Size(1181, 421);
 			this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem9.TextVisible = false;
 			// 
 			// layoutControlItem5
 			// 
 			this.layoutControlItem5.Control = this.TbillType;
-			this.layoutControlItem5.Location = new System.Drawing.Point(0, 100);
+			this.layoutControlItem5.Location = new System.Drawing.Point(0, 144);
 			this.layoutControlItem5.Name = "layoutControlItem5";
 			this.layoutControlItem5.Size = new System.Drawing.Size(1181, 30);
 			this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem5.TextVisible = false;
+			// 
+			// layoutControlItem7
+			// 
+			this.layoutControlItem7.Control = this.simpleButton2;
+			this.layoutControlItem7.Location = new System.Drawing.Point(0, 174);
+			this.layoutControlItem7.Name = "layoutControlItem7";
+			this.layoutControlItem7.Size = new System.Drawing.Size(590, 30);
+			this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem7.TextVisible = false;
 			// 
 			// billsData1
 			// 
@@ -372,11 +380,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.billsData1)).EndInit();
 			this.ResumeLayout(false);
 

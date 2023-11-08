@@ -1,24 +1,67 @@
 ﻿using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Logic.Interfaces;
 using ItemStockRepoPattern.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
-	public class ItemRepository : IRepository<ItemModel>
+	public class ItemRepository : IRepository<ItemModel>, IFillLookItem, IMax
 	{
+		public object FillLookItem()
+		{
+			try
+			{
+				return DbHelper.GetDataTable("TB_Item_GetParentData").ChangeList(x => new ItemModel
+				{
+					itemGuid = new Guid(x["itemguid"].ToString()),
+					itemName = x["itemName"].ToString(),
+					parentGuid = new Guid(x["parentGuid"].ToString())
+				});
+				;
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show($@"{e}");
+				throw;
+			}
+		}
+
+		public int GetMaxId()
+		{
+			try
+			{
+				var p = new SqlParameter
+				{
+					ParameterName = "@return",
+					DbType = DbType.Int32,
+					Direction = ParameterDirection.ReturnValue
+				};
+
+				return DbHelper.GetLengthenTable("TB_Item_GETMAX", p);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+		}
+
 		public ItemModel GetByGuid(Guid guid)
 		{
 			try
 			{
-				SqlParameter[] param = {
-						new SqlParameter() {
+				SqlParameter[] param =
+				{
+					new SqlParameter
+					{
 						ParameterName = "@guid",
 						DbType = DbType.Guid,
 						Value = guid
-						}
+					}
 				};
 
 				return DbHelper.GetDataTable("TB_item_GET", param).ChangeForType(
@@ -36,20 +79,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
-				throw;
-			}
-		}
-
-		public DataTable FillLookUp()
-		{
-			try
-			{
-				return DbHelper.GetDataTable("TB_Item_GetParentData");
-			}
-			catch (Exception e)
-			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}
@@ -58,29 +88,26 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-
 				return
-				DbHelper.GetDataTable("TB_item_GET").
-					ChangeList(reader =>
-					new ItemModel
-					{
-						itemGuid = new Guid(reader["itemGuid"].ToString()),
-						itemCode = Convert.ToInt32(reader["itemcode"].ToString()),
-						itemName = reader["itemName"].ToString(),
-						itemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
-						itemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
-						itemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
-						parentGuid = new Guid(reader["parentGuid"].ToString()),
-						ISgroup = Convert.ToBoolean(reader["ISGroup"].ToString())
-					});
+					DbHelper.GetDataTable("TB_item_GET").ChangeList(reader =>
+						new ItemModel
+						{
+							itemGuid = new Guid(reader["itemGuid"].ToString()),
+							itemCode = Convert.ToInt32(reader["itemcode"].ToString()),
+							itemName = reader["itemName"].ToString(),
+							itemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
+							itemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
+							itemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
+							parentGuid = new Guid(reader["parentGuid"].ToString()),
+							ISgroup = Convert.ToBoolean(reader["ISGroup"].ToString())
+						});
 			}
 
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
-
 		}
 
 		public int Save(ItemModel item)
@@ -149,7 +176,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}
@@ -160,13 +187,13 @@ namespace ItemStockRepoPattern.Logic.Repository
 			{
 				SqlParameter[] parameters =
 				{
-					new SqlParameter()
+					new SqlParameter
 					{
 						ParameterName = "@guid",
 						DbType = DbType.Guid,
 						Value = item
 					},
-					new SqlParameter()
+					new SqlParameter
 					{
 						ParameterName = "@return",
 						DbType = DbType.Int32,
@@ -178,7 +205,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 
 			catch (Exception e)
 			{
-				System.Windows.Forms.MessageBox.Show($@"{e}");
+				MessageBox.Show($@"{e}");
 				throw;
 			}
 		}

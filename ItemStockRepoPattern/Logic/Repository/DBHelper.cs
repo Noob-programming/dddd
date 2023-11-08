@@ -11,12 +11,11 @@ namespace ItemStockRepoPattern.Logic.Repository
 
 		private static SqlConnection Connection()
 		{
-
 			var builder = new SqlConnectionStringBuilder
 			{
 				DataSource = @"DESKTOP-LPLR64V\NEWSQL",
 				InitialCatalog = "Bills",
-				IntegratedSecurity = true,
+				IntegratedSecurity = true
 			};
 
 			return new SqlConnection(builder.ConnectionString);
@@ -32,15 +31,11 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			try
 			{
-				using (SqlConnection connection = GetConnection())
+				using (var connection = GetConnection())
 				{
-
 					_command = new SqlCommand(sql, connection);
 					_command.CommandType = CommandType.StoredProcedure;
-					if (parameters != null)
-					{
-						_command.Parameters.AddRange(parameters);
-					}
+					if (parameters != null) _command.Parameters.AddRange(parameters);
 					connection.Open();
 					_command.ExecuteNonQuery();
 					connection.Close();
@@ -52,7 +47,6 @@ namespace ItemStockRepoPattern.Logic.Repository
 				Console.WriteLine(e);
 				throw;
 			}
-
 		}
 
 		public static DataTable GetDataTable(string sql, SqlParameter[] parameters = default)
@@ -61,14 +55,10 @@ namespace ItemStockRepoPattern.Logic.Repository
 			{
 				using (var connection = GetConnection())
 				{
-
 					_command = new SqlCommand(sql, connection);
 					_command.CommandType = CommandType.StoredProcedure;
 
-					if (parameters != null)
-					{
-						_command.Parameters.AddRange(parameters);
-					}
+					if (parameters != null) _command.Parameters.AddRange(parameters);
 
 					connection.Open();
 					var adapter = new SqlDataAdapter(_command);
@@ -88,6 +78,27 @@ namespace ItemStockRepoPattern.Logic.Repository
 				throw;
 			}
 		}
-	}
 
+		public static int GetLengthenTable(string sql, SqlParameter p)
+		{
+			try
+			{
+				using (var connection = GetConnection())
+				{
+					_command = new SqlCommand(sql, connection);
+					_command.CommandType = CommandType.StoredProcedure;
+					_command.Parameters.Add(p);
+					connection.Open();
+					_command.ExecuteNonQuery();
+					connection.Close();
+					return (int)_command.Parameters["@return"].Value;
+				}
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+		}
+	}
 }

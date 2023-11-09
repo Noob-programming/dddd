@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
+﻿using DevExpress.XtraEditors;
 using ItemStockRepoPattern.Logic.Repository;
 using ItemStockRepoPattern.Model;
+using System;
+using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.View.Forms
 {
@@ -19,7 +18,11 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void SetData()
 		{
-			gridControl1.DataSource = repository.GetAll();
+
+			billModelBindingSource.DataSource = new BillModel();
+			BindingSource dt = new BindingSource();
+			dt.DataSource = repository.GetAll();
+			gridControl1.DataSource = dt;
 		}
 
 		private void Frm_Bill_Load(object sender, EventArgs e)
@@ -27,19 +30,10 @@ namespace ItemStockRepoPattern.View.Forms
 			SetData();
 		}
 
-		private void SetBill(BillModel bills)
+		private void Save_Click(object sender, EventArgs e)
 		{
-			bill.billGuid = new Guid(txtGuid.Text);
-			bill.BillCode = Convert.ToInt32(txtCode.Text);
-			bill.Notes = txtNotes.Text;
-			bill.BillDate = Convert.ToDateTime(txtDate.Text);
-			bill.BillType = TbillType.IsOn;
-		}
-
-		private void simpleButton1_Click(object sender, EventArgs e)
-		{
-			SetBill(bill);
-			var ch = repository.Save(bill);
+			var items = (BillModel)billModelBindingSource.DataSource;
+			var ch = repository.Save(items);
 			if (ch == 0)
 			{
 				MessageBox.Show(@"Error");
@@ -58,20 +52,11 @@ namespace ItemStockRepoPattern.View.Forms
 			}
 		}
 
-		private void simpleButton2_Click(object sender, EventArgs e)
+		private void Delete_Click(object sender, EventArgs e)
 		{
-			txtCode.Text = $@"{repository.GetMaxId()}";
-			txtNotes.Text = string.Empty;
-			txtGuid.Text = Guid.Empty.ToString();
 
-			txtDate.Text = DateTime.Now.ToLongDateString();
-			TbillType.IsOn = false;
-		}
-
-		private void simpleButton3_Click(object sender, EventArgs e)
-		{
-			var a = gridView1.GetFocusedRowCellValue("billGuid").ToString();
-			var ch = repository.Delete(new Guid(a));
+			var a = (BillModel)billModelBindingSource.DataSource;
+			var ch = repository.Delete(a.BillGuid);
 			if (ch == 0)
 			{
 				MessageBox.Show(@"Error");
@@ -83,15 +68,6 @@ namespace ItemStockRepoPattern.View.Forms
 				MessageBox.Show(@"Done Delete");
 				SetData();
 			}
-		}
-
-		private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-		{
-			txtGuid.Text = gridView1.GetFocusedRowCellValue("billGuid").ToString();
-			txtCode.Text = gridView1.GetFocusedRowCellValue("BillCode").ToString();
-			txtNotes.Text = gridView1.GetFocusedRowCellValue("BillDate").ToString();
-			txtDate.Text = gridView1.GetFocusedRowCellValue("Notes").ToString();
-			TbillType.IsOn = (bool)gridView1.GetFocusedRowCellValue("BillType");
 		}
 	}
 }

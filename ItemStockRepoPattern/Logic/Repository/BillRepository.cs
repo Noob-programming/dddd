@@ -52,7 +52,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 				return DbHelper.GetDataTable("TB_Bill_GET", parameters).ChangeForType(
 					x => new BillModel
 					{
-						billGuid = new Guid(x["BillGuid"].ToString()),
+						BillGuid = new Guid(x["BillGuid"].ToString()),
 						BillCode = Convert.ToInt32(x["Billcode"].ToString()),
 						BillDate = Convert.ToDateTime(x["BillDate"].ToString()),
 						BillType = Convert.ToBoolean(x["Type"].ToString() == "Buy"),
@@ -74,7 +74,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 				(reader =>
 					new BillModel
 					{
-						billGuid = new Guid(reader["BillGuid"].ToString()),
+						BillGuid = new Guid(reader["BillGuid"].ToString()),
 						BillCode = Convert.ToInt32(reader["Billcode"].ToString()),
 						BillDate = Convert.ToDateTime(reader["BillDate"].ToString()),
 						Notes = reader["Notes"].ToString(),
@@ -98,7 +98,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 					{
 						ParameterName = "@guid",
 						DbType = DbType.Guid,
-						Value = item.billGuid
+						Value = item.BillGuid
 					},
 					new SqlParameter
 					{

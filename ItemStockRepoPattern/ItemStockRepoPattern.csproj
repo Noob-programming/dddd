@@ -109,7 +109,7 @@
     </Compile>
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Model\StockModel.cs" />
-    <Compile Include="Model\StoppingCartModel.cs" />
+    <Compile Include="Model\ShoppingCartModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Forms\Frm_Bill.cs">
@@ -148,12 +148,6 @@
     <Compile Include="View\Forms\Frm_StockItem.Designer.cs">
       <DependentUpon>Frm_StockItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\testfrom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\testfrom.Designer.cs">
-      <DependentUpon>testfrom.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\Forms\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,9 +179,6 @@
     <EmbeddedResource Include="View\Forms\Frm_StockItem.resx">
       <DependentUpon>Frm_StockItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\testfrom.resx">
-      <DependentUpon>testfrom.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="BillsData.xsc">
       <DependentUpon>BillsData.xsd</DependentUpon>
@@ -202,6 +193,8 @@
     </None>
     <None Include="Properties\DataSources\ItemStockRepoPattern.Model.BillModel.datasource" />
     <None Include="Properties\DataSources\ItemStockRepoPattern.Model.ItemModel.datasource" />
+    <None Include="Properties\DataSources\ItemStockRepoPattern.Model.StockModel.datasource" />
+    <None Include="Properties\DataSources\ItemStockRepoPattern.Model.StoppingCartModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

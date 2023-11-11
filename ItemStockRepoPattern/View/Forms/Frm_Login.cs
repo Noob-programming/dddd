@@ -1,5 +1,5 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
+using DevExpress.XtraEditors;
 
 namespace ItemStockRepoPattern.View.Forms
 {

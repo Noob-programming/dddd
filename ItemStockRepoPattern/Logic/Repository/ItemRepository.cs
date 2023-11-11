@@ -1,11 +1,11 @@
-﻿using ItemStockRepoPattern.Logic.Extension;
-using ItemStockRepoPattern.Logic.Interfaces;
-using ItemStockRepoPattern.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Logic.Interfaces;
+using ItemStockRepoPattern.Model;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
@@ -21,7 +21,6 @@ namespace ItemStockRepoPattern.Logic.Repository
 					itemName = x["itemName"].ToString(),
 					parentGuid = new Guid(x["parentGuid"].ToString())
 				});
-				;
 			}
 			catch (Exception e)
 			{

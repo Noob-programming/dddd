@@ -1,11 +1,9 @@
-﻿using System;
-using System.Globalization;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
+﻿using DevExpress.XtraEditors;
 using ItemStockRepoPattern.Logic.Extension;
 using ItemStockRepoPattern.Logic.Repository;
 using ItemStockRepoPattern.Model;
+using System;
+using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.View.Forms
 {
@@ -15,29 +13,11 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private readonly ShoppingRepository _shopping = new ShoppingRepository();
 
-		private readonly StoppingCartModel _shoppingCard = new StoppingCartModel();
+		private readonly ShoppingCartModel _shoppingCard = new ShoppingCartModel();
 
 		public Frm_ShoppingCart()
 		{
 			InitializeComponent();
-		}
-
-		private void simpleButton1_Click(object sender, EventArgs e)
-		{
-			AddMember();
-		}
-
-		private void AddMember()
-		{
-			txtPrice.Text = @"0";
-			txtQuantity.Text = @"0";
-			txtTotal.Text = @"0";
-
-			txtSalesOrderGuid.Text = Guid.Empty.ToString();
-			LookBillGuid.EditValue = null;
-			LookItemGuid.EditValue = null;
-
-			txtShoppingID.Text = $@"{_shopping.GetMaxId()}";
 		}
 
 		private void Frm_ShoppingCart_Load(object sender, EventArgs e)
@@ -49,102 +29,109 @@ namespace ItemStockRepoPattern.View.Forms
 		{
 			var lookFillBill = _shopping.FillLookBill();
 
-
-			LookBillGuid.Properties.DataSource = lookFillBill;
-			LookBillGuid.Properties.DisplayMember = "Billcode";
-			LookBillGuid.Properties.ValueMember = "BillGuid";
+			BillGuidTextEdit.Properties.DataSource = lookFillBill;
+			BillGuidTextEdit.Properties.DisplayMember = "Billcode";
+			BillGuidTextEdit.Properties.ValueMember = "BillGuid";
 
 
 			var lookFillItem = _shopping.FillLookItem();
 
-			LookItemGuid.Properties.DataSource = lookFillItem;
-			LookItemGuid.Properties.DisplayMember = "itemName";
-			LookItemGuid.Properties.ValueMember = "itemGuid";
+			ItemGuidTextEdit.Properties.DataSource = lookFillItem;
+			ItemGuidTextEdit.Properties.DisplayMember = "itemName";
+			ItemGuidTextEdit.Properties.ValueMember = "itemGuid";
 
-			gridControl1.DataSource = _shopping.GetAll();
-			;
+			var binding = new BindingSource();
+			binding.DataSource = _shopping.GetAll();
+			gridControl1.DataSource = binding;
 		}
 
-		private void LookItemGuid_EditValueChanged(object sender, EventArgs e)
-		{
-			if (LookItemGuid.EditValue == null) return;
-			var res = _repository.GetByGuid(new Guid(LookItemGuid.EditValue.ToString()));
-
-			txtPrice.Text = res.itemPriceSingle.ToString(CultureInfo.InvariantCulture);
-		}
-
-		private void txtQuantity_EditValueChanged(object sender, EventArgs e)
-		{
-			if (txtQuantity.Text == null) return;
-			txtTotal.Text =
-				(Convert.ToDecimal(txtPrice.Text) * Convert.ToDecimal(txtQuantity.Text)).ToString(CultureInfo
-					.InvariantCulture);
-		}
-
-		private void simpleButton2_Click(object sender, EventArgs e)
-		{
-			SetShopping();
-			var ch = _shopping.Save(_shoppingCard);
-
-			if (ch == 0)
-			{
-				MessageBox.Show(@"Error");
-			}
-			else if (ch == 1)
-			{
-				MessageBox.Show(@"Add Done");
-				GetData();
-				AddMember();
-			}
-			else if (ch == 2)
-			{
-				MessageBox.Show(@"Update Done");
-				GetData();
-				AddMember();
-			}
-		}
-
-		private void SetShopping()
-		{
-			_shoppingCard.ItemGuid = new Guid(LookItemGuid.EditValue.ToString());
-			_shoppingCard.BillGuid = new Guid(LookBillGuid.EditValue.ToString());
-			_shoppingCard.Quantity = Convert.ToDecimal(txtQuantity.Text);
-			_shoppingCard.Prices = Convert.ToDecimal(txtPrice.Text);
-			_shoppingCard.Total = Convert.ToDecimal(txtTotal.Text);
-			_shoppingCard.SalesOrderId = new Guid(txtSalesOrderGuid.Text);
-			_shoppingCard.ShoppingOrderId = Convert.ToInt32(txtShoppingID.Text);
-		}
 
 		private void simpleButton3_Click(object sender, EventArgs e)
 		{
-			GuidHelper.SaveGuid = new Guid(txtSalesOrderGuid.Text);
+			if (MessageBox.Show(@"are you ready to delete", @"delete", MessageBoxButtons.OKCancel) !=
+				DialogResult.OK) return;
+			GuidHelper.SaveGuid = new Guid(SalesOrderIdTextEdit.Text);
 			var ch = _shopping.Delete(GuidHelper.SaveGuid);
 
-			if (ch == 0)
+			switch (ch)
 			{
-				MessageBox.Show(@"Error");
-			}
-			else if (ch == 1)
-			{
-				MessageBox.Show(@"Delete Done");
-				GetData();
-				AddMember();
+				case 0:
+					MessageBox.Show(@"Error");
+					break;
+				case 1:
+					MessageBox.Show(@"Delete Done");
+					GetData();
+
+					break;
 			}
 		}
 
-		private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+		private void gridView1_DoubleClick(object sender, EventArgs e)
+		{
+			stoppingCartModelBindingSource.DataSource = (ShoppingCartModel)gridView1.GetRow(gridView1.FocusedRowHandle);
+		}
+
+		private void Save_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				txtSalesOrderGuid.Text = gridView1.GetFocusedRowCellValue("SalesOrderId").ToString();
-				txtPrice.Text = gridView1.GetFocusedRowCellValue("Prices").ToString();
-				txtShoppingID.Text = gridView1.GetFocusedRowCellValue("ShoppingOrderId").ToString();
+				var ch = _shopping.Save((ShoppingCartModel)stoppingCartModelBindingSource.DataSource);
 
-				txtTotal.Text = gridView1.GetFocusedRowCellValue("Total").ToString();
-				LookBillGuid.EditValue = gridView1.GetFocusedRowCellValue("BillGuid").ToString();
-				LookItemGuid.EditValue = gridView1.GetFocusedRowCellValue("ItemGuid").ToString();
+				switch (ch)
+				{
+					case 0:
+						MessageBox.Show(@"Error");
+						break;
+					case 1:
+						MessageBox.Show(@"Add Done");
+						GetData();
 
-				txtQuantity.Text = gridView1.GetFocusedRowCellValue("Quantity").ToString();
+						break;
+					case 2:
+						MessageBox.Show(@"Update Done");
+						GetData();
+
+						break;
+				}
+			}
+			catch (Exception exception)
+			{
+				Console.WriteLine(exception);
+				throw;
+			}
+		}
+
+		private void Add_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				stoppingCartModelBindingSource.DataSource = new ShoppingCartModel();
+			}
+			catch (Exception exception)
+			{
+				Console.WriteLine(exception);
+				throw;
+			}
+		}
+
+		private void Delete_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (MessageBox.Show("are you ready to delete", "delete", MessageBoxButtons.OKCancel) !=
+					DialogResult.OK) return;
+				var a = (ShoppingCartModel)stoppingCartModelBindingSource.DataSource;
+				var ch = _shopping.Delete(a.SalesOrderId);
+				switch (ch)
+				{
+					case 0:
+						MessageBox.Show(@"Error");
+						return;
+					case 1:
+						MessageBox.Show(@"Done Delete");
+						GetData();
+						break;
+				}
 			}
 			catch (Exception exception)
 			{

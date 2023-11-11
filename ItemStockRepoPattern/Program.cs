@@ -1,6 +1,6 @@
-﻿using ItemStockRepoPattern.View.Forms;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using ItemStockRepoPattern.View.Forms;
 
 namespace ItemStockRepoPattern
 {
@@ -14,7 +14,7 @@ namespace ItemStockRepoPattern
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Frm_Bill());
+			Application.Run(new Frm_Main());
 		}
 	}
 }

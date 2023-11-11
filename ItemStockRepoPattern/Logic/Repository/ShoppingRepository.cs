@@ -1,14 +1,14 @@
-﻿using ItemStockRepoPattern.Logic.Extension;
-using ItemStockRepoPattern.Logic.Interfaces;
-using ItemStockRepoPattern.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Logic.Interfaces;
+using ItemStockRepoPattern.Model;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
-	public class ShoppingRepository : IRepository<StoppingCartModel>, IFillLookBill, IFillLookItem, IMax
+	public class ShoppingRepository : IRepository<ShoppingCartModel>, IFillLookBill, IFillLookItem, IMax
 	{
 		public object FillLookBill()
 		{
@@ -56,7 +56,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-		public StoppingCartModel GetByGuid(Guid guid)
+		public ShoppingCartModel GetByGuid(Guid guid)
 		{
 			SqlParameter[] param =
 			{
@@ -69,7 +69,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			};
 
 			return DbHelper.GetDataTable("TB_ShoppingCart_Get", param)
-				.ChangeForType(x => new StoppingCartModel
+				.ChangeForType(x => new ShoppingCartModel
 				{
 					SalesOrderId = new Guid(x["SalesOrderGuid"].ToString()),
 					ShoppingOrderId = Convert.ToInt32(x["ShoppingID"].ToString()),
@@ -83,12 +83,12 @@ namespace ItemStockRepoPattern.Logic.Repository
 				});
 		}
 
-		public IEnumerable<StoppingCartModel> GetAll()
+		public IEnumerable<ShoppingCartModel> GetAll()
 		{
 			try
 			{
 				return DbHelper.GetDataTable("TB_ShoppingCart_Get")
-					.ChangeList(x => new StoppingCartModel
+					.ChangeList(x => new ShoppingCartModel
 					{
 						SalesOrderId = new Guid(x["SalesOrderGuid"].ToString()),
 						ShoppingOrderId = Convert.ToInt32(x["ShoppingID"].ToString()),
@@ -108,7 +108,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 			}
 		}
 
-		public int Save(StoppingCartModel item)
+		public int Save(ShoppingCartModel item)
 		{
 			try
 			{

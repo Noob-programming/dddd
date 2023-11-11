@@ -1,10 +1,10 @@
-﻿using System;
+﻿using ItemStockRepoPattern.Logic.Extension;
+using ItemStockRepoPattern.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using ItemStockRepoPattern.Logic.Extension;
-using ItemStockRepoPattern.Model;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
@@ -64,6 +64,7 @@ namespace ItemStockRepoPattern.Logic.Repository
 				var stocks = res.ChangeList(dataRow => new StockModel
 				{
 					ItemGuid = new Guid(dataRow["itemGuid"].ToString()),
+					itemName = dataRow["itemName"].ToString(),
 					Quantity = Convert.ToDecimal(dataRow["Quintity"].ToString()),
 					Status = dataRow["status"].ToString()
 				});

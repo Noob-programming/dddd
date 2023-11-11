@@ -1,9 +1,9 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using ItemStockRepoPattern.Logic.Extension;
 using ItemStockRepoPattern.Logic.Repository;
 using ItemStockRepoPattern.Model;
-using System;
-using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.View.Forms
 {
@@ -49,7 +49,7 @@ namespace ItemStockRepoPattern.View.Forms
 		private void simpleButton3_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show(@"are you ready to delete", @"delete", MessageBoxButtons.OKCancel) !=
-				DialogResult.OK) return;
+			    DialogResult.OK) return;
 			GuidHelper.SaveGuid = new Guid(SalesOrderIdTextEdit.Text);
 			var ch = _shopping.Delete(GuidHelper.SaveGuid);
 
@@ -119,7 +119,7 @@ namespace ItemStockRepoPattern.View.Forms
 			try
 			{
 				if (MessageBox.Show("are you ready to delete", "delete", MessageBoxButtons.OKCancel) !=
-					DialogResult.OK) return;
+				    DialogResult.OK) return;
 				var a = (ShoppingCartModel)stoppingCartModelBindingSource.DataSource;
 				var ch = _shopping.Delete(a.SalesOrderId);
 				switch (ch)

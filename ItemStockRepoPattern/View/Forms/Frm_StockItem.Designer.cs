@@ -35,7 +35,12 @@
 			this.Add = new DevExpress.XtraEditors.SimpleButton();
 			this.Save = new DevExpress.XtraEditors.SimpleButton();
 			this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+			this.stockModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+			this.colItemGuid = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.colitemName = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -43,7 +48,6 @@
 			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
 			this.QuantityTextEdit = new DevExpress.XtraEditors.TextEdit();
-			this.stockModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.ItemGuidTextEdit = new DevExpress.XtraEditors.LookUpEdit();
 			this.StatusTextEdit = new DevExpress.XtraEditors.TextEdit();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -56,6 +60,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.stockModelBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -65,7 +70,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
 			this.dataLayoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.QuantityTextEdit.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.stockModelBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGuidTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.StatusTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -92,10 +96,10 @@
 			this.layoutControl1.Controls.Add(this.Save);
 			this.layoutControl1.Controls.Add(this.gridControl1);
 			this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.layoutControl1.Location = new System.Drawing.Point(2, 135);
+			this.layoutControl1.Location = new System.Drawing.Point(2, 158);
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.Root = this.layoutControlGroup1;
-			this.layoutControl1.Size = new System.Drawing.Size(1082, 603);
+			this.layoutControl1.Size = new System.Drawing.Size(1082, 580);
 			this.layoutControl1.TabIndex = 1;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
@@ -137,19 +141,55 @@
 			// 
 			// gridControl1
 			// 
+			this.gridControl1.DataSource = this.stockModelBindingSource;
 			this.gridControl1.Location = new System.Drawing.Point(12, 114);
 			this.gridControl1.MainView = this.gridView1;
 			this.gridControl1.Name = "gridControl1";
-			this.gridControl1.Size = new System.Drawing.Size(1058, 477);
+			this.gridControl1.Size = new System.Drawing.Size(1058, 454);
 			this.gridControl1.TabIndex = 4;
 			this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
 			// 
+			// stockModelBindingSource
+			// 
+			this.stockModelBindingSource.DataSource = typeof(ItemStockRepoPattern.Model.StockModel);
+			// 
 			// gridView1
 			// 
+			this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colItemGuid,
+            this.colitemName,
+            this.colStatus,
+            this.colQuantity});
 			this.gridView1.GridControl = this.gridControl1;
 			this.gridView1.Name = "gridView1";
 			this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+			// 
+			// colItemGuid
+			// 
+			this.colItemGuid.FieldName = "ItemGuid";
+			this.colItemGuid.Name = "colItemGuid";
+			// 
+			// colitemName
+			// 
+			this.colitemName.FieldName = "itemName";
+			this.colitemName.Name = "colitemName";
+			this.colitemName.Visible = true;
+			this.colitemName.VisibleIndex = 0;
+			// 
+			// colStatus
+			// 
+			this.colStatus.FieldName = "Status";
+			this.colStatus.Name = "colStatus";
+			this.colStatus.Visible = true;
+			this.colStatus.VisibleIndex = 1;
+			// 
+			// colQuantity
+			// 
+			this.colQuantity.FieldName = "Quantity";
+			this.colQuantity.Name = "colQuantity";
+			this.colQuantity.Visible = true;
+			this.colQuantity.VisibleIndex = 2;
 			// 
 			// layoutControlGroup1
 			// 
@@ -161,7 +201,7 @@
             this.layoutControlItem3,
             this.layoutControlItem4});
 			this.layoutControlGroup1.Name = "layoutControlGroup1";
-			this.layoutControlGroup1.Size = new System.Drawing.Size(1082, 603);
+			this.layoutControlGroup1.Size = new System.Drawing.Size(1082, 580);
 			this.layoutControlGroup1.TextVisible = false;
 			// 
 			// layoutControlItem1
@@ -169,7 +209,7 @@
 			this.layoutControlItem1.Control = this.gridControl1;
 			this.layoutControlItem1.Location = new System.Drawing.Point(0, 102);
 			this.layoutControlItem1.Name = "layoutControlItem1";
-			this.layoutControlItem1.Size = new System.Drawing.Size(1062, 481);
+			this.layoutControlItem1.Size = new System.Drawing.Size(1062, 458);
 			this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem1.TextVisible = false;
 			// 
@@ -211,7 +251,7 @@
 			this.dataLayoutControl1.Name = "dataLayoutControl1";
 			this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 0, 650, 400);
 			this.dataLayoutControl1.Root = this.Root;
-			this.dataLayoutControl1.Size = new System.Drawing.Size(1082, 133);
+			this.dataLayoutControl1.Size = new System.Drawing.Size(1082, 156);
 			this.dataLayoutControl1.TabIndex = 0;
 			this.dataLayoutControl1.Text = "dataLayoutControl1";
 			// 
@@ -229,10 +269,6 @@
 			this.QuantityTextEdit.StyleController = this.dataLayoutControl1;
 			this.QuantityTextEdit.TabIndex = 6;
 			// 
-			// stockModelBindingSource
-			// 
-			this.stockModelBindingSource.DataSource = typeof(ItemStockRepoPattern.Model.StockModel);
-			// 
 			// ItemGuidTextEdit
 			// 
 			this.ItemGuidTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stockModelBindingSource, "ItemGuid", true));
@@ -242,6 +278,9 @@
 			this.ItemGuidTextEdit.Properties.Appearance.Options.UseFont = true;
 			this.ItemGuidTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+			this.ItemGuidTextEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "Name1", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemName", "اسم العنصر")});
 			this.ItemGuidTextEdit.Properties.NullText = "";
 			this.ItemGuidTextEdit.Size = new System.Drawing.Size(956, 28);
 			this.ItemGuidTextEdit.StyleController = this.dataLayoutControl1;
@@ -266,7 +305,7 @@
 			this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(1082, 133);
+			this.Root.Size = new System.Drawing.Size(1082, 156);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlGroup2
@@ -279,7 +318,7 @@
             this.ItemForQuantity});
 			this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-			this.layoutControlGroup2.Size = new System.Drawing.Size(1062, 113);
+			this.layoutControlGroup2.Size = new System.Drawing.Size(1062, 136);
 			// 
 			// ItemForItemGuid
 			// 
@@ -310,7 +349,7 @@
 			this.ItemForQuantity.Control = this.QuantityTextEdit;
 			this.ItemForQuantity.Location = new System.Drawing.Point(0, 64);
 			this.ItemForQuantity.Name = "ItemForQuantity";
-			this.ItemForQuantity.Size = new System.Drawing.Size(1062, 49);
+			this.ItemForQuantity.Size = new System.Drawing.Size(1062, 72);
 			this.ItemForQuantity.Text = "Quantity";
 			this.ItemForQuantity.TextSize = new System.Drawing.Size(90, 21);
 			// 
@@ -328,6 +367,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.stockModelBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -337,7 +377,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
 			this.dataLayoutControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.QuantityTextEdit.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.stockModelBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGuidTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.StatusTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -373,5 +412,9 @@
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
 		private DevExpress.XtraEditors.LookUpEdit ItemGuidTextEdit;
 		private DevExpress.XtraEditors.TextEdit StatusTextEdit;
+		private DevExpress.XtraGrid.Columns.GridColumn colItemGuid;
+		private DevExpress.XtraGrid.Columns.GridColumn colitemName;
+		private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+		private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
 	}
 }

@@ -98,9 +98,7 @@
     <Compile Include="Logic\Repository\ItemRepository.cs" />
     <Compile Include="Logic\Repository\ShoppingRepository.cs" />
     <Compile Include="Logic\Repository\StockReposition.cs" />
-    <Compile Include="Logic\Repository\UsersRepository.cs" />
     <Compile Include="Model\BillModel.cs" />
-    <Compile Include="Model\UsersModel.cs" />
     <Compile Include="View\Forms\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>

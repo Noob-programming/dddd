@@ -5,12 +5,15 @@ namespace ItemStockRepoPattern.Model
 {
 	public class StockModel
 	{
-		[Required]
-		[Display(Name = "عنوان اللعنصر")]
+		[Required, Display(Name = "عنوان اللعنصر")]
 		public Guid ItemGuid { get; set; }
+		[Display(Name = "اسم العنصر")]
+		public string itemName { get; set; }
 
-		[Display(Name = "status")] public string Status { get; set; }
+		[Display(Name = "الحالة"), StringLength(10, MinimumLength = 2, ErrorMessage = "is to long make this small > 2")]
+		public string Status { get; set; }
 
-		[Display(Name = "الكمية")] public decimal Quantity { get; set; }
+		[Display(Name = "الكمية"), Range(0, double.MaxValue)]
+		public decimal Quantity { get; set; }
 	}
 }

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ItemStockRepoPattern.Logic.Extension;
 using ItemStockRepoPattern.Logic.Repository;
 using ItemStockRepoPattern.Model;
+using System;
+using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.View.Forms
 {
@@ -20,10 +20,13 @@ namespace ItemStockRepoPattern.View.Forms
 
 		private void SetData()
 		{
-			itemModelBindingSource.DataSource = _repository.GetByGuid(GuidHelper.SaveGuid);
-			parentGuidTextEdit.Properties.DataSource = _repository.FillLookItem();
-			parentGuidTextEdit.Properties.DisplayMember = "itemName";
-			parentGuidTextEdit.Properties.ValueMember = "itemGuid";
+			var item = _repository.GetByGuid(GuidHelper.SaveGuid);
+			itemModelBindingSource.DataSource = item;
+			var p = _repository.GetByGuid(item.parentGuid);
+			parentGuidTextEdit.EditValue = p.parentGuid;
+			//parentGuidTextEdit.Text = p.itemName;
+
+
 		}
 
 		private void Frm_ItemEdit_Load(object sender, EventArgs e)
@@ -35,15 +38,14 @@ namespace ItemStockRepoPattern.View.Forms
 		private void AddMember()
 		{
 			itemModelBindingSource.DataSource = new ItemModel();
-			parentGuidTextEdit.Properties.DataSource = _repository.FillLookItem();
-			parentGuidTextEdit.Properties.DisplayMember = "itemName";
-			parentGuidTextEdit.Properties.ValueMember = "itemGuid";
+
 		}
 
 		private void simpleButton1_Click(object sender, EventArgs e)
 		{
 			try
 			{
+
 				_item = (ItemModel)itemModelBindingSource.DataSource;
 				var ch = _repository.Save(_item);
 				switch (ch)
@@ -84,7 +86,7 @@ namespace ItemStockRepoPattern.View.Forms
 			try
 			{
 				if (MessageBox.Show("are you ready to delete", "delete", MessageBoxButtons.OKCancel) !=
-				    DialogResult.OK) return;
+					DialogResult.OK) return;
 				_item = (ItemModel)itemModelBindingSource.DataSource;
 
 				var ch = _repository.Delete(_item.itemGuid);
@@ -106,6 +108,18 @@ namespace ItemStockRepoPattern.View.Forms
 				Console.WriteLine(exception);
 				throw;
 			}
+		}
+
+		private void parentGuidTextEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+		{
+			var form = new Frm_ParentItem();
+			form.ShowDialog();
+
+			var s = _repository.GetByGuid(GuidHelper.SaveGuid);
+			parentGuidTextEdit.EditValue = s.parentGuid;
+			//parentGuidTextEdit.Text = $@"{s.itemName}";
+
+			_item.parentGuid = s.parentGuid;
 		}
 	}
 }

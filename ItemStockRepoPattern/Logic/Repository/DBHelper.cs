@@ -13,9 +13,9 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			var builder = new SqlConnectionStringBuilder
 			{
-				DataSource = @"DESKTOP-LPLR64V\NEWSQL",
-				InitialCatalog = "Bills",
-				IntegratedSecurity = true
+				DataSource = Properties.Settings.Default.DataSource,
+				InitialCatalog = Properties.Settings.Default.InitialCatalog,
+				IntegratedSecurity = Properties.Settings.Default.IntegratedSecurity
 			};
 
 			return new SqlConnection(builder.ConnectionString);

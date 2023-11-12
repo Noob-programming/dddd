@@ -33,5 +33,41 @@ namespace ItemStockRepoPattern.Properties {
                 return ((string)(this["BillsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-LPLR64V\\NEWSQL")]
+        public string DataSource {
+            get {
+                return ((string)(this["DataSource"]));
+            }
+            set {
+                this["DataSource"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Bills")]
+        public string InitialCatalog {
+            get {
+                return ((string)(this["InitialCatalog"]));
+            }
+            set {
+                this["InitialCatalog"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IntegratedSecurity {
+            get {
+                return ((bool)(this["IntegratedSecurity"]));
+            }
+            set {
+                this["IntegratedSecurity"] = value;
+            }
+        }
     }
 }

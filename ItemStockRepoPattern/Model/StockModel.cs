@@ -13,7 +13,7 @@ namespace ItemStockRepoPattern.Model
 		[Display(Name = "الحالة"), StringLength(10, MinimumLength = 2, ErrorMessage = "is to long make this small > 2")]
 		public string Status { get; set; }
 
-		[Display(Name = "الكمية"), Range(0, double.MaxValue)]
+		[Display(Name = "الكمية"), Range(0, double.MaxValue), RegularEditMask(@"^\$?\d+(\.(\d{2}))?$")]
 		public decimal Quantity { get; set; }
 	}
 }

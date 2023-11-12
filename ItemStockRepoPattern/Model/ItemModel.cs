@@ -7,9 +7,7 @@ namespace ItemStockRepoPattern.Model
 	{
 		[Required]
 		[Display(Name = "item guid")]
-		public Guid itemGuid { get; set; }
-
-		[Required]
+		public Guid itemGuid { get; set; } = Guid.Empty;
 		[Display(Name = "اسم المادة")]
 		public string itemName { get; set; }
 
@@ -19,10 +17,11 @@ namespace ItemStockRepoPattern.Model
 
 		[Display(Name = "سعر الجملة")] public decimal itemPriceMany { get; set; }
 
-		[Display(Name = "التصنيف التابع")] public Guid parentGuid { get; set; }
+		[Display(Name = "التصنيف التابع")] public Guid parentGuid { get; set; } = Guid.Empty;
 
 		[Display(Name = "صنف")] public bool ISgroup { get; set; }
 
 		[Display(Name = "رقم العنصر")] public int itemCode { get; set; }
+
 	}
 }

@@ -29,6 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ItemEdit));
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
 			this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -47,7 +53,6 @@
 			this.itemPriceManyTextEdit = new DevExpress.XtraEditors.TextEdit();
 			this.ISgroupCheckEdit = new DevExpress.XtraEditors.CheckEdit();
 			this.itemCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
-			this.parentGuidTextEdit = new DevExpress.XtraEditors.LookUpEdit();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.ItemForitemGuid = new DevExpress.XtraLayout.LayoutControlItem();
@@ -58,6 +63,7 @@
 			this.ItemForparentGuid = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForISgroup = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForitemCode = new DevExpress.XtraLayout.LayoutControlItem();
+			this.parentGuidTextEdit = new DevExpress.XtraEditors.ButtonEdit();
 			this.itemModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
@@ -77,7 +83,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.itemPriceManyTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ISgroupCheckEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.parentGuidTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemGuid)).BeginInit();
@@ -88,6 +93,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.ItemForparentGuid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForISgroup)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemCode)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.parentGuidTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemModelBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -108,10 +114,10 @@
 			this.layoutControl1.Controls.Add(this.simpleButton2);
 			this.layoutControl1.Controls.Add(this.simpleButton1);
 			this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.layoutControl1.Location = new System.Drawing.Point(2, 395);
+			this.layoutControl1.Location = new System.Drawing.Point(2, 300);
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.Root = this.layoutControlGroup1;
-			this.layoutControl1.Size = new System.Drawing.Size(954, 218);
+			this.layoutControl1.Size = new System.Drawing.Size(954, 313);
 			this.layoutControl1.TabIndex = 1;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
@@ -161,7 +167,7 @@
             this.layoutControlItem2,
             this.layoutControlItem3});
 			this.layoutControlGroup1.Name = "layoutControlGroup1";
-			this.layoutControlGroup1.Size = new System.Drawing.Size(954, 218);
+			this.layoutControlGroup1.Size = new System.Drawing.Size(954, 313);
 			this.layoutControlGroup1.TextVisible = false;
 			// 
 			// layoutControlItem1
@@ -178,7 +184,7 @@
 			this.emptySpaceItem1.AllowHotTrack = false;
 			this.emptySpaceItem1.Location = new System.Drawing.Point(0, 102);
 			this.emptySpaceItem1.Name = "emptySpaceItem1";
-			this.emptySpaceItem1.Size = new System.Drawing.Size(934, 96);
+			this.emptySpaceItem1.Size = new System.Drawing.Size(934, 191);
 			this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
 			// 
 			// layoutControlItem2
@@ -214,7 +220,7 @@
 			this.dataLayoutControl1.Location = new System.Drawing.Point(2, 2);
 			this.dataLayoutControl1.Name = "dataLayoutControl1";
 			this.dataLayoutControl1.Root = this.Root;
-			this.dataLayoutControl1.Size = new System.Drawing.Size(954, 393);
+			this.dataLayoutControl1.Size = new System.Drawing.Size(954, 298);
 			this.dataLayoutControl1.TabIndex = 0;
 			this.dataLayoutControl1.Text = "dataLayoutControl1";
 			// 
@@ -286,7 +292,7 @@
 			// ISgroupCheckEdit
 			// 
 			this.ISgroupCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.itemModelBindingSource, "ISgroup", true));
-			this.ISgroupCheckEdit.Location = new System.Drawing.Point(12, 236);
+			this.ISgroupCheckEdit.Location = new System.Drawing.Point(12, 248);
 			this.ISgroupCheckEdit.Name = "ISgroupCheckEdit";
 			this.ISgroupCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ISgroupCheckEdit.Properties.Appearance.Options.UseFont = true;
@@ -310,23 +316,6 @@
 			this.itemCodeTextEdit.StyleController = this.dataLayoutControl1;
 			this.itemCodeTextEdit.TabIndex = 11;
 			// 
-			// parentGuidTextEdit
-			// 
-			this.parentGuidTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.itemModelBindingSource, "parentGuid", true));
-			this.parentGuidTextEdit.Location = new System.Drawing.Point(194, 204);
-			this.parentGuidTextEdit.Name = "parentGuidTextEdit";
-			this.parentGuidTextEdit.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.parentGuidTextEdit.Properties.Appearance.Options.UseFont = true;
-			this.parentGuidTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-			this.parentGuidTextEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemName", "اسم المادة"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("itemGuid", "item guid", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-			this.parentGuidTextEdit.Properties.NullText = "";
-			this.parentGuidTextEdit.Size = new System.Drawing.Size(748, 28);
-			this.parentGuidTextEdit.StyleController = this.dataLayoutControl1;
-			this.parentGuidTextEdit.TabIndex = 9;
-			// 
 			// Root
 			// 
 			this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -334,7 +323,7 @@
 			this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(954, 393);
+			this.Root.Size = new System.Drawing.Size(954, 298);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlGroup2
@@ -352,7 +341,7 @@
             this.ItemForitemCode});
 			this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-			this.layoutControlGroup2.Size = new System.Drawing.Size(934, 373);
+			this.layoutControlGroup2.Size = new System.Drawing.Size(934, 278);
 			// 
 			// ItemForitemGuid
 			// 
@@ -420,7 +409,7 @@
 			this.ItemForparentGuid.Control = this.parentGuidTextEdit;
 			this.ItemForparentGuid.Location = new System.Drawing.Point(0, 192);
 			this.ItemForparentGuid.Name = "ItemForparentGuid";
-			this.ItemForparentGuid.Size = new System.Drawing.Size(934, 32);
+			this.ItemForparentGuid.Size = new System.Drawing.Size(934, 44);
 			this.ItemForparentGuid.Text = "parent Guid";
 			this.ItemForparentGuid.TextLocation = DevExpress.Utils.Locations.Left;
 			this.ItemForparentGuid.TextSize = new System.Drawing.Size(170, 21);
@@ -428,9 +417,9 @@
 			// ItemForISgroup
 			// 
 			this.ItemForISgroup.Control = this.ISgroupCheckEdit;
-			this.ItemForISgroup.Location = new System.Drawing.Point(0, 224);
+			this.ItemForISgroup.Location = new System.Drawing.Point(0, 236);
 			this.ItemForISgroup.Name = "ItemForISgroup";
-			this.ItemForISgroup.Size = new System.Drawing.Size(934, 149);
+			this.ItemForISgroup.Size = new System.Drawing.Size(934, 42);
 			this.ItemForISgroup.Text = "ISgroup";
 			this.ItemForISgroup.TextSize = new System.Drawing.Size(0, 0);
 			this.ItemForISgroup.TextVisible = false;
@@ -446,6 +435,22 @@
 			this.ItemForitemCode.Text = "item Code";
 			this.ItemForitemCode.TextLocation = DevExpress.Utils.Locations.Left;
 			this.ItemForitemCode.TextSize = new System.Drawing.Size(170, 21);
+			// 
+			// parentGuidTextEdit
+			// 
+			this.parentGuidTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.itemModelBindingSource, "parentGuid", true));
+			this.parentGuidTextEdit.Location = new System.Drawing.Point(194, 204);
+			this.parentGuidTextEdit.Name = "parentGuidTextEdit";
+			this.parentGuidTextEdit.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.parentGuidTextEdit.Properties.Appearance.Options.UseFont = true;
+			editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+			this.parentGuidTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+			this.parentGuidTextEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+			this.parentGuidTextEdit.Size = new System.Drawing.Size(748, 40);
+			this.parentGuidTextEdit.StyleController = this.dataLayoutControl1;
+			this.parentGuidTextEdit.TabIndex = 9;
+			this.parentGuidTextEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.parentGuidTextEdit_ButtonClick);
 			// 
 			// itemModelBindingSource
 			// 
@@ -478,7 +483,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.itemPriceManyTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ISgroupCheckEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.parentGuidTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemGuid)).EndInit();
@@ -489,6 +493,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.ItemForparentGuid)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForISgroup)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemCode)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.parentGuidTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemModelBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
@@ -525,6 +530,6 @@
 		private DevExpress.XtraLayout.LayoutControlItem ItemForparentGuid;
 		private DevExpress.XtraLayout.LayoutControlItem ItemForISgroup;
 		private DevExpress.XtraLayout.LayoutControlItem ItemForitemCode;
-		private DevExpress.XtraEditors.LookUpEdit parentGuidTextEdit;
+		private DevExpress.XtraEditors.ButtonEdit parentGuidTextEdit;
 	}
 }

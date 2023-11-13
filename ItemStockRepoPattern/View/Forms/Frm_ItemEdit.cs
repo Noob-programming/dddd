@@ -18,16 +18,7 @@ namespace ItemStockRepoPattern.View.Forms
 			InitializeComponent();
 		}
 
-		private void SetData()
-		{
-			var item = _repository.GetByGuid(GuidHelper.SaveGuid);
-			itemModelBindingSource.DataSource = item;
-			var p = _repository.GetByGuid(item.parentGuid);
-			parentGuidTextEdit.EditValue = p.parentGuid;
-			//parentGuidTextEdit.Text = p.itemName;
 
-
-		}
 
 		private void Frm_ItemEdit_Load(object sender, EventArgs e)
 		{
@@ -38,15 +29,21 @@ namespace ItemStockRepoPattern.View.Forms
 		private void AddMember()
 		{
 			itemModelBindingSource.DataSource = new ItemModel();
-
 		}
+
+
 
 		private void simpleButton1_Click(object sender, EventArgs e)
 		{
 			try
 			{
 
+				DataRepository.SavedItem.ParentGuid = (Guid)parentGuidTextEdit.Tag;
+
+
+				itemModelBindingSource.DataSource = DataRepository.SavedItem;
 				_item = (ItemModel)itemModelBindingSource.DataSource;
+				// DataRepository.SavedItem;
 				var ch = _repository.Save(_item);
 				switch (ch)
 				{
@@ -85,11 +82,12 @@ namespace ItemStockRepoPattern.View.Forms
 		{
 			try
 			{
-				if (MessageBox.Show("are you ready to delete", "delete", MessageBoxButtons.OKCancel) !=
-					DialogResult.OK) return;
+				if (MessageBox.Show(@"are you ready to delete", @"delete",
+						MessageBoxButtons.OKCancel) != DialogResult.OK)
+					return;
 				_item = (ItemModel)itemModelBindingSource.DataSource;
 
-				var ch = _repository.Delete(_item.itemGuid);
+				var ch = _repository.Delete(_item.ItemGuid);
 				switch (ch)
 				{
 					case 0:
@@ -110,16 +108,34 @@ namespace ItemStockRepoPattern.View.Forms
 			}
 		}
 
+
+		private void SetData()
+		{
+			var item = _repository.GetByGuid(GuidHelper.SaveGuid);
+			DataRepository.SavedItem = item;
+
+			itemModelBindingSource.DataSource = DataRepository.SavedItem;
+			var p = _repository.GetByGuid(item.ParentGuid);
+
+			parentGuidTextEdit.Text = p.ItemName;
+			parentGuidTextEdit.Tag = p.ItemGuid;
+		}
+
 		private void parentGuidTextEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
 		{
 			var form = new Frm_ParentItem();
 			form.ShowDialog();
 
-			var s = _repository.GetByGuid(GuidHelper.SaveGuid);
-			parentGuidTextEdit.EditValue = s.parentGuid;
-			//parentGuidTextEdit.Text = $@"{s.itemName}";
+			var p = _repository.GetByGuid(GuidHelper.SaveGuid);
 
-			_item.parentGuid = s.parentGuid;
+			parentGuidTextEdit.Text = p.ItemName;
+			parentGuidTextEdit.Tag = p.ItemGuid;
+
 		}
 	}
+	public static class DataRepository
+	{
+		public static ItemModel SavedItem { get; set; }
+	}
+
 }

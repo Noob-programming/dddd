@@ -17,9 +17,9 @@ namespace ItemStockRepoPattern.Logic.Repository
 			{
 				return DbHelper.GetDataTable("TB_Item_GetParentData").ChangeList(x => new ItemModel
 				{
-					itemGuid = new Guid(x["itemguid"].ToString()),
-					itemName = x["itemName"].ToString(),
-					parentGuid = new Guid(x["parentGuid"].ToString())
+					ItemGuid = new Guid(x["itemguid"].ToString()),
+					ItemName = x["itemName"].ToString(),
+					ParentGuid = new Guid(x["parentGuid"].ToString())
 				});
 			}
 			catch (Exception e)
@@ -66,13 +66,13 @@ namespace ItemStockRepoPattern.Logic.Repository
 				return DbHelper.GetDataTable("TB_item_GET", param).ChangeForType(
 					reader => new ItemModel
 					{
-						itemGuid = new Guid(reader["itemGuid"].ToString()),
-						itemCode = Convert.ToInt32(reader["itemcode"].ToString()),
-						itemName = reader["itemName"].ToString(),
-						itemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
-						itemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
-						itemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
-						parentGuid = new Guid(reader["parentGuid"].ToString()),
+						ItemGuid = new Guid(reader["itemGuid"].ToString()),
+						ItemCode = Convert.ToInt32(reader["itemcode"].ToString()),
+						ItemName = reader["itemName"].ToString(),
+						ItemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
+						ItemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
+						ItemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
+						ParentGuid = new Guid(reader["parentGuid"].ToString()),
 						ISgroup = Convert.ToBoolean(reader["ISGroup"].ToString())
 					});
 			}
@@ -91,13 +91,13 @@ namespace ItemStockRepoPattern.Logic.Repository
 					DbHelper.GetDataTable("TB_item_GET").ChangeList(reader =>
 						new ItemModel
 						{
-							itemGuid = new Guid(reader["itemGuid"].ToString()),
-							itemCode = Convert.ToInt32(reader["itemcode"].ToString()),
-							itemName = reader["itemName"].ToString(),
-							itemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
-							itemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
-							itemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
-							parentGuid = new Guid(reader["parentGuid"].ToString()),
+							ItemGuid = new Guid(reader["itemGuid"].ToString()),
+							ItemCode = Convert.ToInt32(reader["itemcode"].ToString()),
+							ItemName = reader["itemName"].ToString(),
+							ItemPrice = Convert.ToDecimal(reader["itemPrice"].ToString()),
+							ItemPriceMany = Convert.ToDecimal(reader["itemPriceMany"].ToString()),
+							ItemPriceSingle = Convert.ToDecimal(reader["itemPriceSingle"].ToString()),
+							ParentGuid = new Guid(reader["parentGuid"].ToString()),
 							ISgroup = Convert.ToBoolean(reader["ISGroup"].ToString())
 						});
 			}
@@ -125,43 +125,43 @@ namespace ItemStockRepoPattern.Logic.Repository
 					{
 						ParameterName = "@ItemGuid",
 						DbType = DbType.Guid,
-						Value = item.itemGuid
+						Value = item.ItemGuid
 					},
 					new SqlParameter
 					{
 						ParameterName = "@ItemCode",
 						DbType = DbType.Int32,
-						Value = item.itemCode
+						Value = item.ItemCode
 					},
 					new SqlParameter
 					{
 						ParameterName = "@ItemName",
 						DbType = DbType.String,
-						Value = item.itemName
+						Value = item.ItemName
 					},
 					new SqlParameter
 					{
 						ParameterName = "@ParentGuid",
 						DbType = DbType.Guid,
-						Value = item.parentGuid
+						Value = item.ParentGuid
 					},
 					new SqlParameter
 					{
 						ParameterName = "@itemPrice",
 						DbType = DbType.Decimal,
-						Value = item.itemPrice
+						Value = item.ItemPrice
 					},
 					new SqlParameter
 					{
 						ParameterName = "@itemPriceSingle",
 						DbType = DbType.Decimal,
-						Value = item.itemPriceSingle
+						Value = item.ItemPriceSingle
 					},
 					new SqlParameter
 					{
 						ParameterName = "@itemPriceMany",
 						DbType = DbType.Decimal,
-						Value = item.itemPriceMany
+						Value = item.ItemPriceMany
 					},
 					new SqlParameter
 					{

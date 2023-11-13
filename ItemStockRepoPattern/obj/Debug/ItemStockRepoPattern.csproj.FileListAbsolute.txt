@@ -91,3 +91,4 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\D
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_Login.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.XtraForm1.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_ParentItem.resources
+C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.FromsIn.resources

@@ -21,7 +21,7 @@ namespace ItemStockRepoPattern.View.Forms
 			form.ShowDialog();
 
 			var s = item.GetByGuid(GuidHelper.SaveGuid);
-			buttonEdit1.EditValue = $@"{s.itemName}";
+			buttonEdit1.EditValue = $@"{s.ItemName}";
 
 		}
 

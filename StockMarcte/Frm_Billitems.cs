@@ -1,17 +1,18 @@
 ﻿using System;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace StockMarcte
 {
-	public partial class Frm_Billitems : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_Billitems : XtraForm
 	{
 		public Frm_Billitems()
 		{
 			InitializeComponent();
 		}
 
-		private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+		private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
 		{
-
 		}
 
 		private void Frm_Billitems_Load(object sender, EventArgs e)
@@ -21,22 +22,22 @@ namespace StockMarcte
 			GetData();
 		}
 
-		void LookBill()
+		private void LookBill()
 		{
 			LUpBillGuid.Properties.DataSource = DbHelper.GetData("");
-
 		}
 
-		void LookItem()
+		private void LookItem()
 		{
 			LUpitemGuid.Properties.DataSource = DbHelper.GetData("");
 		}
 
-		void GetData()
+		private void GetData()
 		{
 			gridControl1.DataSource = DbHelper.GetData("TB_BillItem_GET");
 		}
 	}
+
 	/*BillitemGuid	uniqueidentifier	Unchecked
 	   BillitemID	int	Unchecked
 	   BillGuid	uniqueidentifier	Checked

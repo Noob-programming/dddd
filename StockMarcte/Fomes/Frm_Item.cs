@@ -1,8 +1,9 @@
 ﻿using System;
+using DevExpress.XtraEditors;
 
 namespace StockMarcte.Fomes
 {
-	public partial class Frm_Item : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_Item : XtraForm
 	{
 		public Frm_Item()
 		{
@@ -13,12 +14,10 @@ namespace StockMarcte.Fomes
 
 		private void simpleButton4_Click(object sender, EventArgs e)
 		{
-
 		}
 
 		private void Frm_Item_Load(object sender, EventArgs e)
 		{
-
 		}
 	}
 }

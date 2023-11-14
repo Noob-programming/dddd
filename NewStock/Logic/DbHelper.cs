@@ -9,14 +9,14 @@ namespace NewStock.Logic
 	{
 		public static SqlCommand Command;
 		public static SqlParameter Parameters;
+
 		private static SqlConnection Connection()
 		{
-
-			SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder
+			var builder = new SqlConnectionStringBuilder
 			{
 				DataSource = @"DESKTOP-LPLR64V\NEWSQL",
 				InitialCatalog = "Bills",
-				IntegratedSecurity = true,
+				IntegratedSecurity = true
 			};
 
 			return new SqlConnection(builder.ConnectionString);

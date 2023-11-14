@@ -1,4 +1,5 @@
-﻿using NewStock.Exten;
+﻿using DevExpress.XtraEditors;
+using NewStock.Exten;
 using NewStock.Logic;
 using NewStock.Logic.Services;
 using NewStock.Model;
@@ -8,54 +9,47 @@ using System.Windows.Forms;
 
 namespace NewStock.Forms
 {
-	public partial class Frm_ItemForms : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_ItemForms : XtraForm
 	{
 		public Frm_ItemForms()
 		{
 			InitializeComponent();
-
 		}
 
-		void LookUpdater()
+		private void LookUpdater()
 		{
-
 			var r = ItemService.GetParent()
 				.ChangeList(x => new
 				{
 					itemGuid = new Guid(x["itemGuid"].ToString()),
 					ParentGuid = new Guid(x["parentGuid"].ToString()),
-					itemName = x["itemName"].ToString(),
+					itemName = x["itemName"].ToString()
 				});
 			txtparentguid.Properties.DataSource = r;
 			txtparentguid.Properties.ValueMember = "itemGuid";
 			txtparentguid.Properties.DisplayMember = "itemName";
-
-
-
 		}
 
 		/*System.Data.DataRowView*/
 
-		private void Frm_ItemForms_Load(object sender, System.EventArgs e)
+		private void Frm_ItemForms_Load(object sender, EventArgs e)
 		{
 			LookUpdater();
-			SetData(ItemService.GetData(SaveGuid.guidSave).
-				ChangeForItem(x => new ItemModel
-				{
-					itemGuid = Guid.Parse(x["itemGuid"].ToString()),
-					itemCode = Convert.ToInt32(x["itemcode"].ToString()),
-					itemName = x["itemName"].ToString(),
-					itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
-					itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
-					itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
-					parentGuid = Guid.Parse(x["parentGuid"].ToString()),
-					isGroup = Convert.ToBoolean(x["ISGroup"].ToString())
-				}));
-
+			SetData(ItemService.GetData(SaveGuid.guidSave).ChangeForItem(x => new ItemModel
+			{
+				itemGuid = Guid.Parse(x["itemGuid"].ToString()),
+				itemCode = Convert.ToInt32(x["itemcode"].ToString()),
+				itemName = x["itemName"].ToString(),
+				itemPrice = Convert.ToDecimal(x["itemPrice"].ToString()),
+				itemPriceMany = Convert.ToDecimal(x["itemPriceMany"].ToString()),
+				itemPriceSingle = Convert.ToDecimal(x["itemPriceSingle"].ToString()),
+				parentGuid = Guid.Parse(x["parentGuid"].ToString()),
+				isGroup = Convert.ToBoolean(x["ISGroup"].ToString())
+			}));
 		}
 
 
-		void SetData(ItemModel dt)
+		private void SetData(ItemModel dt)
 		{
 			txtGuid.Text = dt.itemGuid.ToString();
 			txtCode.Text = dt.itemCode.ToString();
@@ -69,9 +63,9 @@ namespace NewStock.Forms
 			Group.Checked = dt.isGroup;
 		}
 
-		ItemModel Preprocess()
+		private ItemModel Preprocess()
 		{
-			return new ItemModel()
+			return new ItemModel
 			{
 				parentGuid = new Guid(txtparentguid.EditValue.ToString()),
 				itemCode = Convert.ToInt32(txtCode.Text),
@@ -88,7 +82,7 @@ namespace NewStock.Forms
 		{
 			try
 			{
-				bool check = ItemService.IsItem(item: Preprocess());
+				var check = ItemService.IsItem(Preprocess());
 
 				if (!check)
 				{
@@ -119,7 +113,7 @@ namespace NewStock.Forms
 		{
 			try
 			{
-				bool check = ItemService.IsDelete(SaveGuid.guidSave);
+				var check = ItemService.IsDelete(SaveGuid.guidSave);
 
 				if (!check)
 				{
@@ -133,15 +127,12 @@ namespace NewStock.Forms
 					LookUpdater();
 					MessageBox.Show(@"Delete");
 				}
-
 			}
 			catch (Exception exception)
 			{
 				MessageBox.Show($@"{exception}");
 				throw;
 			}
-
-
 		}
 	}
 }

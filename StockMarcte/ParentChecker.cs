@@ -16,7 +16,6 @@
 		//		var childer = parent.Where(x => x.parentGuid == x.itemGuid);
 
 
-
 		//		return childer;
 		//	*/
 		//		var res = dt.ToBillList(x => new

@@ -52,7 +52,6 @@ namespace StockMarcte
 		}
 
 
-
 		public static DataTable GetData(string sql)
 		{
 			var dt = new DataTable();

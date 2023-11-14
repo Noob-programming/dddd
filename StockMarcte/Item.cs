@@ -1,60 +1,58 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
-using DataTable = System.Data.DataTable;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace StockMarcte
 {
-	public partial class Item : DevExpress.XtraEditors.XtraForm
+	public partial class Item : XtraForm
 	{
-		Guid parseguid(string guid)
-		{
-			return string.IsNullOrEmpty(guid) ? Guid.Empty : Guid.Parse(guid);
-		}
-
-		void FillLockUpData(DataTable dt)
-		{
-			var res = dt.ToBillList(x => new
-			{
-				itemGuid = Guid.Parse(x["itemGuid"].ToString()),
-				ParentGuid = parseguid(x["parentGuid"].ToString()),
-				itemName = x["itemName"].ToString(),
-
-			});
-			parentguid.Properties.DataSource = res;
-			parentguid.Properties.DisplayMember = "itemName";
-			parentguid.Properties.ValueMember = "itemGuid";
-
-
-		}
-
-		private void GetData()
-		{
-			BindingSource source = new BindingSource();
-			var sos = DbHelper.GetData("TB_item_GET");
-
-			source.DataSource = sos;
-			gridControl1.DataSource = source;
-
-			FillLockUpData(sos);
-
-		}
+		private readonly Items item = new Items();
 
 		public Item()
 		{
 			InitializeComponent();
 		}
 
+		private Guid parseguid(string guid)
+		{
+			return string.IsNullOrEmpty(guid) ? Guid.Empty : Guid.Parse(guid);
+		}
+
+		private void FillLockUpData(DataTable dt)
+		{
+			var res = dt.ToBillList(x => new
+			{
+				itemGuid = Guid.Parse(x["itemGuid"].ToString()),
+				ParentGuid = parseguid(x["parentGuid"].ToString()),
+				itemName = x["itemName"].ToString()
+			});
+			parentguid.Properties.DataSource = res;
+			parentguid.Properties.DisplayMember = "itemName";
+			parentguid.Properties.ValueMember = "itemGuid";
+		}
+
+		private void GetData()
+		{
+			var source = new BindingSource();
+			var sos = DbHelper.GetData("TB_item_GET");
+
+			source.DataSource = sos;
+			gridControl1.DataSource = source;
+
+			FillLockUpData(sos);
+		}
+
 		private void Item_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'billsdata.TB_Item' table. You can move, or remove it, as needed.
-			this.tB_ItemTableAdapter1.Fill(this.billsdata.TB_Item);
+			tB_ItemTableAdapter1.Fill(billsdata.TB_Item);
 			// TODO: This line of code loads data into the 'billsDataSet1.TB_Item' table. You can move, or remove it, as needed.
 			// this.tB_ItemTableAdapter.Fill(this.billsDataSet1.TB_Item);
 			GetData();
 		}
-
-
-		private Items item = new Items();
 
 		private void simpleButton1_Click(object sender, EventArgs e)
 		{
@@ -75,12 +73,11 @@ namespace StockMarcte
 				item.isgroup = isgroup.IsOn;
 
 
-				bool re = DbHelper.ExcuteData("TB_Item_OnlySave",
+				var re = DbHelper.ExcuteData("TB_Item_OnlySave",
 					() => Executable.parameterItem(item, DbHelper.cmd));
 
 				if (re) GetData();
 				MessageBox.Show(re ? @"Save" : @"Error");
-
 			}
 			catch (Exception exception)
 			{
@@ -90,13 +87,12 @@ namespace StockMarcte
 
 		private bool CheckitemGuid()
 		{
-			bool sameGuid = item.ParentGuid.TestGuid(item.itemGuid);
+			var sameGuid = item.ParentGuid.TestGuid(item.itemGuid);
 			return sameGuid;
 		}
 
-		private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+		private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
 		{
-
 			try
 			{
 				txtGuid.Text = gridView1.GetFocusedRowCellValue("itemGuid").ToString();
@@ -110,7 +106,6 @@ namespace StockMarcte
 
 					isgroup.IsOn = true;
 				else isgroup.IsOn = false;
-
 			}
 			catch (Exception exception)
 			{
@@ -119,11 +114,10 @@ namespace StockMarcte
 			}
 		}
 
-		private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+		private void gridView1_RowClick(object sender, RowClickEventArgs e)
 		{
 			try
 			{
-
 				txtGuid.Text = gridView1.GetFocusedRowCellValue("itemGuid").ToString();
 				itemcode.Text = gridView1.GetFocusedRowCellValue("itemcode").ToString();
 				itemname.Text = gridView1.GetFocusedRowCellValue("itemName").ToString();
@@ -133,16 +127,12 @@ namespace StockMarcte
 				parentguid.EditValue = gridView1.GetFocusedRowCellValue("parentGuid").ToString();
 
 				isgroup.IsOn = bool.Parse(gridView1.GetFocusedRowCellValue("ISGroup").ToString());
-
-
 			}
 			catch (Exception exception)
 			{
 				MessageBox.Show($@"{exception}");
-
 			}
 		}
-
 
 
 		private void simpleButton2_Click(object sender, EventArgs e)
@@ -153,8 +143,8 @@ namespace StockMarcte
 					item.itemGuid = Guid.Empty;
 				else item.itemGuid = Guid.Parse(txtGuid.Text);
 
-				bool check = DbHelper.ExcuteData("TB_Item_Delete",
-					(() => Executable.parmeteterItemDelete(item, DbHelper.cmd)));
+				var check = DbHelper.ExcuteData("TB_Item_Delete",
+					() => Executable.parmeteterItemDelete(item, DbHelper.cmd));
 				GetData();
 				MessageBox.Show(check ? "done delete" : "error delete");
 			}
@@ -174,10 +164,9 @@ namespace StockMarcte
 			itempricesingel.Text = string.Empty;
 			itempricemany.Text = string.Empty;
 			parentguid.EditValue = string.Empty;
-
 		}
 
-		private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+		private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
 		{
 			txtGuid.Text = gridView1.GetFocusedRowCellValue("itemGuid").ToString();
 			itemcode.Text = gridView1.GetFocusedRowCellValue("itemcode").ToString();
@@ -189,7 +178,6 @@ namespace StockMarcte
 			isgroup.IsOn = bool.Parse(gridView1.GetFocusedRowCellValue("ISGroup").ToString());
 		}
 	}
-
 
 
 	public class Items

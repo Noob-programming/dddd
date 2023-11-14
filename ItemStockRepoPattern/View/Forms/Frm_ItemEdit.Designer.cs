@@ -29,12 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ItemEdit));
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
 			this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -46,6 +46,7 @@
 			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
 			this.itemGuidTextEdit = new DevExpress.XtraEditors.TextEdit();
+			this.itemModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.itemNameTextEdit = new DevExpress.XtraEditors.TextEdit();
 			this.itemPriceTextEdit = new DevExpress.XtraEditors.TextEdit();
 			this.itemPriceSingleTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -55,14 +56,13 @@
 			this.parentGuidTextEdit = new DevExpress.XtraEditors.ButtonEdit();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.ItemForitemGuid = new DevExpress.XtraLayout.LayoutControlItem();
-			this.ItemForitemName = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForitemPrice = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForitemPriceSingle = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForitemPriceMany = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForparentGuid = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForISgroup = new DevExpress.XtraLayout.LayoutControlItem();
 			this.ItemForitemCode = new DevExpress.XtraLayout.LayoutControlItem();
-			this.itemModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.ItemForitemName = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -74,6 +74,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
 			this.dataLayoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.itemGuidTextEdit.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemModelBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemPriceTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemPriceSingleTextEdit.Properties)).BeginInit();
@@ -83,14 +84,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.parentGuidTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemGuid)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.ItemForitemName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemPrice)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemPriceSingle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemPriceMany)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForparentGuid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForISgroup)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemCode)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.itemModelBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ItemForitemName)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -101,7 +101,7 @@
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(958, 411);
+			this.panelControl1.Size = new System.Drawing.Size(958, 396);
 			this.panelControl1.TabIndex = 1;
 			// 
 			// layoutControl1
@@ -110,10 +110,10 @@
 			this.layoutControl1.Controls.Add(this.simpleButton2);
 			this.layoutControl1.Controls.Add(this.simpleButton1);
 			this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.layoutControl1.Location = new System.Drawing.Point(2, 284);
+			this.layoutControl1.Location = new System.Drawing.Point(2, 304);
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.Root = this.layoutControlGroup1;
-			this.layoutControl1.Size = new System.Drawing.Size(954, 125);
+			this.layoutControl1.Size = new System.Drawing.Size(954, 90);
 			this.layoutControl1.TabIndex = 1;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
@@ -121,7 +121,7 @@
 			// 
 			this.simpleButton3.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.simpleButton3.Appearance.Options.UseFont = true;
-			this.simpleButton3.Location = new System.Drawing.Point(12, 80);
+			this.simpleButton3.Location = new System.Drawing.Point(12, 46);
 			this.simpleButton3.Name = "simpleButton3";
 			this.simpleButton3.Size = new System.Drawing.Size(930, 30);
 			this.simpleButton3.StyleController = this.layoutControl1;
@@ -133,9 +133,9 @@
 			// 
 			this.simpleButton2.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.simpleButton2.Appearance.Options.UseFont = true;
-			this.simpleButton2.Location = new System.Drawing.Point(12, 46);
+			this.simpleButton2.Location = new System.Drawing.Point(12, 12);
 			this.simpleButton2.Name = "simpleButton2";
-			this.simpleButton2.Size = new System.Drawing.Size(930, 30);
+			this.simpleButton2.Size = new System.Drawing.Size(463, 30);
 			this.simpleButton2.StyleController = this.layoutControl1;
 			this.simpleButton2.TabIndex = 5;
 			this.simpleButton2.Text = "Add";
@@ -145,9 +145,9 @@
 			// 
 			this.simpleButton1.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.simpleButton1.Appearance.Options.UseFont = true;
-			this.simpleButton1.Location = new System.Drawing.Point(12, 12);
+			this.simpleButton1.Location = new System.Drawing.Point(479, 12);
 			this.simpleButton1.Name = "simpleButton1";
-			this.simpleButton1.Size = new System.Drawing.Size(930, 30);
+			this.simpleButton1.Size = new System.Drawing.Size(463, 30);
 			this.simpleButton1.StyleController = this.layoutControl1;
 			this.simpleButton1.TabIndex = 4;
 			this.simpleButton1.Text = "Save";
@@ -159,36 +159,36 @@
 			this.layoutControlGroup1.GroupBordersVisible = false;
 			this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem2});
 			this.layoutControlGroup1.Name = "layoutControlGroup1";
-			this.layoutControlGroup1.Size = new System.Drawing.Size(954, 125);
+			this.layoutControlGroup1.Size = new System.Drawing.Size(954, 90);
 			this.layoutControlGroup1.TextVisible = false;
 			// 
 			// layoutControlItem1
 			// 
 			this.layoutControlItem1.Control = this.simpleButton1;
-			this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+			this.layoutControlItem1.Location = new System.Drawing.Point(467, 0);
 			this.layoutControlItem1.Name = "layoutControlItem1";
-			this.layoutControlItem1.Size = new System.Drawing.Size(934, 34);
+			this.layoutControlItem1.Size = new System.Drawing.Size(467, 34);
 			this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem1.TextVisible = false;
 			// 
 			// layoutControlItem2
 			// 
 			this.layoutControlItem2.Control = this.simpleButton2;
-			this.layoutControlItem2.Location = new System.Drawing.Point(0, 34);
+			this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem2.Name = "layoutControlItem2";
-			this.layoutControlItem2.Size = new System.Drawing.Size(934, 34);
+			this.layoutControlItem2.Size = new System.Drawing.Size(467, 34);
 			this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem2.TextVisible = false;
 			// 
 			// layoutControlItem3
 			// 
 			this.layoutControlItem3.Control = this.simpleButton3;
-			this.layoutControlItem3.Location = new System.Drawing.Point(0, 68);
+			this.layoutControlItem3.Location = new System.Drawing.Point(0, 34);
 			this.layoutControlItem3.Name = "layoutControlItem3";
-			this.layoutControlItem3.Size = new System.Drawing.Size(934, 37);
+			this.layoutControlItem3.Size = new System.Drawing.Size(934, 36);
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem3.TextVisible = false;
 			// 
@@ -207,7 +207,7 @@
 			this.dataLayoutControl1.Location = new System.Drawing.Point(2, 2);
 			this.dataLayoutControl1.Name = "dataLayoutControl1";
 			this.dataLayoutControl1.Root = this.Root;
-			this.dataLayoutControl1.Size = new System.Drawing.Size(954, 282);
+			this.dataLayoutControl1.Size = new System.Drawing.Size(954, 302);
 			this.dataLayoutControl1.TabIndex = 0;
 			this.dataLayoutControl1.Text = "dataLayoutControl1";
 			// 
@@ -221,6 +221,10 @@
 			this.itemGuidTextEdit.Size = new System.Drawing.Size(698, 28);
 			this.itemGuidTextEdit.StyleController = this.dataLayoutControl1;
 			this.itemGuidTextEdit.TabIndex = 4;
+			// 
+			// itemModelBindingSource
+			// 
+			this.itemModelBindingSource.DataSource = typeof(ItemStockRepoPattern.Model.ItemModel);
 			// 
 			// itemNameTextEdit
 			// 
@@ -279,7 +283,7 @@
 			// ISgroupCheckEdit
 			// 
 			this.ISgroupCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.itemModelBindingSource, "ISgroup", true));
-			this.ISgroupCheckEdit.Location = new System.Drawing.Point(12, 204);
+			this.ISgroupCheckEdit.Location = new System.Drawing.Point(12, 216);
 			this.ISgroupCheckEdit.Name = "ISgroupCheckEdit";
 			this.ISgroupCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ISgroupCheckEdit.Properties.Appearance.Options.UseFont = true;
@@ -293,7 +297,7 @@
 			// itemCodeTextEdit
 			// 
 			this.itemCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.itemModelBindingSource, "itemCode", true));
-			this.itemCodeTextEdit.Location = new System.Drawing.Point(244, 233);
+			this.itemCodeTextEdit.Location = new System.Drawing.Point(244, 245);
 			this.itemCodeTextEdit.Name = "itemCodeTextEdit";
 			this.itemCodeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.itemCodeTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -311,10 +315,10 @@
 			this.parentGuidTextEdit.Name = "parentGuidTextEdit";
 			this.parentGuidTextEdit.Properties.Appearance.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.parentGuidTextEdit.Properties.Appearance.Options.UseFont = true;
-			editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+			editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
 			this.parentGuidTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", "", null, DevExpress.Utils.ToolTipAnchor.Default)});
-			this.parentGuidTextEdit.Size = new System.Drawing.Size(698, 28);
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", "", null, DevExpress.Utils.ToolTipAnchor.Default)});
+			this.parentGuidTextEdit.Size = new System.Drawing.Size(698, 40);
 			this.parentGuidTextEdit.StyleController = this.dataLayoutControl1;
 			this.parentGuidTextEdit.TabIndex = 9;
 			this.parentGuidTextEdit.Tag = "";
@@ -334,7 +338,7 @@
             this.ItemForitemCode,
             this.ItemForitemName});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(954, 282);
+			this.Root.Size = new System.Drawing.Size(954, 302);
 			this.Root.TextVisible = false;
 			// 
 			// ItemForitemGuid
@@ -348,17 +352,6 @@
 			this.ItemForitemGuid.Text = "item Guid";
 			this.ItemForitemGuid.TextLocation = DevExpress.Utils.Locations.Left;
 			this.ItemForitemGuid.TextSize = new System.Drawing.Size(220, 21);
-			// 
-			// ItemForitemName
-			// 
-			this.ItemForitemName.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ItemForitemName.AppearanceItemCaption.Options.UseFont = true;
-			this.ItemForitemName.Control = this.itemNameTextEdit;
-			this.ItemForitemName.Location = new System.Drawing.Point(0, 32);
-			this.ItemForitemName.Name = "ItemForitemName";
-			this.ItemForitemName.Size = new System.Drawing.Size(934, 32);
-			this.ItemForitemName.TextLocation = DevExpress.Utils.Locations.Left;
-			this.ItemForitemName.TextSize = new System.Drawing.Size(220, 21);
 			// 
 			// ItemForitemPrice
 			// 
@@ -400,14 +393,14 @@
 			this.ItemForparentGuid.Control = this.parentGuidTextEdit;
 			this.ItemForparentGuid.Location = new System.Drawing.Point(0, 160);
 			this.ItemForparentGuid.Name = "ItemForparentGuid";
-			this.ItemForparentGuid.Size = new System.Drawing.Size(934, 32);
+			this.ItemForparentGuid.Size = new System.Drawing.Size(934, 44);
 			this.ItemForparentGuid.TextLocation = DevExpress.Utils.Locations.Left;
 			this.ItemForparentGuid.TextSize = new System.Drawing.Size(220, 21);
 			// 
 			// ItemForISgroup
 			// 
 			this.ItemForISgroup.Control = this.ISgroupCheckEdit;
-			this.ItemForISgroup.Location = new System.Drawing.Point(0, 192);
+			this.ItemForISgroup.Location = new System.Drawing.Point(0, 204);
 			this.ItemForISgroup.Name = "ItemForISgroup";
 			this.ItemForISgroup.Size = new System.Drawing.Size(934, 29);
 			this.ItemForISgroup.Text = "ISgroup";
@@ -419,21 +412,28 @@
 			this.ItemForitemCode.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ItemForitemCode.AppearanceItemCaption.Options.UseFont = true;
 			this.ItemForitemCode.Control = this.itemCodeTextEdit;
-			this.ItemForitemCode.Location = new System.Drawing.Point(0, 221);
+			this.ItemForitemCode.Location = new System.Drawing.Point(0, 233);
 			this.ItemForitemCode.Name = "ItemForitemCode";
-			this.ItemForitemCode.Size = new System.Drawing.Size(934, 41);
+			this.ItemForitemCode.Size = new System.Drawing.Size(934, 49);
 			this.ItemForitemCode.TextLocation = DevExpress.Utils.Locations.Left;
 			this.ItemForitemCode.TextSize = new System.Drawing.Size(220, 21);
 			// 
-			// itemModelBindingSource
+			// ItemForitemName
 			// 
-			this.itemModelBindingSource.DataSource = typeof(ItemStockRepoPattern.Model.ItemModel);
+			this.ItemForitemName.AppearanceItemCaption.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ItemForitemName.AppearanceItemCaption.Options.UseFont = true;
+			this.ItemForitemName.Control = this.itemNameTextEdit;
+			this.ItemForitemName.Location = new System.Drawing.Point(0, 32);
+			this.ItemForitemName.Name = "ItemForitemName";
+			this.ItemForitemName.Size = new System.Drawing.Size(934, 32);
+			this.ItemForitemName.TextLocation = DevExpress.Utils.Locations.Left;
+			this.ItemForitemName.TextSize = new System.Drawing.Size(220, 21);
 			// 
 			// Frm_ItemEdit
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(958, 411);
+			this.ClientSize = new System.Drawing.Size(958, 396);
 			this.Controls.Add(this.panelControl1);
 			this.Name = "Frm_ItemEdit";
 			this.Text = "Frm_ItemEdit";
@@ -449,6 +449,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
 			this.dataLayoutControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.itemGuidTextEdit.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemModelBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemPriceTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemPriceSingleTextEdit.Properties)).EndInit();
@@ -458,14 +459,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.parentGuidTextEdit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemGuid)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.ItemForitemName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemPrice)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemPriceSingle)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemPriceMany)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForparentGuid)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForISgroup)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemForitemCode)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.itemModelBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ItemForitemName)).EndInit();
 			this.ResumeLayout(false);
 
 		}

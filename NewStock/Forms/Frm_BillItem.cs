@@ -1,10 +1,12 @@
-﻿using NewStock.Logic;
+﻿using System;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using NewStock.Logic;
 using NewStock.Logic.Services;
-using System;
 
 namespace NewStock.Forms
 {
-	public partial class Frm_BillItem : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_BillItem : XtraForm
 	{
 		public Frm_BillItem()
 		{
@@ -16,16 +18,16 @@ namespace NewStock.Forms
 			SetData();
 		}
 
-		void SetData()
+		private void SetData()
 		{
 			gridControl1.DataSource = BillItemService.GetData("TB_BillItem_GET");
 		}
 
-		private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+		private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
 		{
 			SaveGuid.guidSave = SaveGuid.guidSave = new Guid
 				(gridView1.GetFocusedRowCellValue("BillitemGuid").ToString());
-			Frm_BillItem frm = new Frm_BillItem();
+			var frm = new Frm_BillItem();
 			frm.ShowDialog();
 			frm.Close();
 			SetData();

@@ -170,18 +170,6 @@
     <Compile Include="View\Forms\Frm_StockItem.Designer.cs">
       <DependentUpon>Frm_StockItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\FromsIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\FromsIn.Designer.cs">
-      <DependentUpon>FromsIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\XtraForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\XtraForm1.Designer.cs">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\Forms\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,12 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Frm_StockItem.resx">
       <DependentUpon>Frm_StockItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\FromsIn.resx">
-      <DependentUpon>FromsIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\XtraForm1.resx">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="BillsData.xsc">

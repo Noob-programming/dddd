@@ -1,4 +1,5 @@
-﻿using NewStock.Exten;
+﻿using DevExpress.XtraEditors;
+using NewStock.Exten;
 using NewStock.Logic;
 using NewStock.Logic.Services;
 using NewStock.Model;
@@ -7,8 +8,12 @@ using System.Windows.Forms;
 
 namespace NewStock.Forms
 {
-	public partial class Frm_Bills : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_Bills : XtraForm
 	{
+		private BillModel _billModel;
+
+		private bool _check;
+
 		public Frm_Bills()
 		{
 			InitializeComponent();
@@ -25,11 +30,8 @@ namespace NewStock.Forms
 					billdate = (DateTime)x["BillDate"],
 					notes = x["Notes"].ToString(),
 					billType = Convert.ToBoolean(x["Type"].ToString() == "Sell")
-
 				}));
 		}
-
-		private bool _check = false;
 
 		private void SetData(BillModel itemModel)
 		{
@@ -39,8 +41,6 @@ namespace NewStock.Forms
 			dataBill.DateTime = itemModel.billdate;
 			tsType.IsOn = itemModel.billType;
 		}
-
-		private BillModel _billModel;
 
 		private void simpleButton1_Click(object sender, EventArgs e)
 		{
@@ -69,7 +69,6 @@ namespace NewStock.Forms
 
 		private void simpleButton3_Click(object sender, EventArgs e)
 		{
-
 			SaveGuid.guidSave = _billModel.billGuid;
 			_check = BillService.IsDelete(SaveGuid.guidSave);
 

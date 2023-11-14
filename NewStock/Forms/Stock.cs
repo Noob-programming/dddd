@@ -1,4 +1,6 @@
-﻿using NewStock.Logic;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using NewStock.Logic;
 using NewStock.Logic.Services;
 using NewStock.Model;
 using System;
@@ -6,8 +8,12 @@ using System.Windows.Forms;
 
 namespace NewStock.Forms
 {
-	public partial class Stock : DevExpress.XtraEditors.XtraForm
+	public partial class Stock : XtraForm
 	{
+		private bool _check;
+
+		private readonly StockModel stock;
+
 		public Stock()
 		{
 			InitializeComponent();
@@ -20,21 +26,18 @@ namespace NewStock.Forms
 			FillLookUp();
 		}
 
-		void FillLookUp()
+		private void FillLookUp()
 		{
 			var data = StockService.FillLookUp("TB_Item_GetItemandName");
 			lookupitem.Properties.DataSource = data;
 			lookupitem.Properties.DisplayMember = "itemName";
 			lookupitem.Properties.ValueMember = "itemGuid";
-
 		}
 
 		private void GetData()
 		{
 			gridControl1.DataSource = StockService.GetData();
 		}
-
-		private StockModel stock;
 
 		private void simpleButton1_Click(object sender, EventArgs e)
 		{
@@ -44,12 +47,9 @@ namespace NewStock.Forms
 			_check = StockService.SaveStock(stock);
 			GetData();
 			MessageBox.Show(_check ? @"Save Data" : "Error");
-
 		}
 
-		private bool _check;
-
-		private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+		private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
 		{
 			lookupitem.EditValue = gridView1.GetFocusedRowCellValue("itemGuid").ToString();
 			txtQuintity.Text = gridView1.GetFocusedRowCellValue("Quintity").ToString();
@@ -72,6 +72,4 @@ namespace NewStock.Forms
 			MessageBox.Show(_check ? @"Delete Done" : @"Error delete");
 		}
 	}
-
-
 }

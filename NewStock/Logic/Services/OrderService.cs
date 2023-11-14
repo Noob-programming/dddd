@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace NewStock.Logic.Services
@@ -10,7 +9,6 @@ namespace NewStock.Logic.Services
 		{
 			try
 			{
-
 				return false;
 			}
 			catch (Exception e)
@@ -19,6 +17,5 @@ namespace NewStock.Logic.Services
 				throw;
 			}
 		}
-
 	}
 }

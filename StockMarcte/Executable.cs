@@ -5,7 +5,6 @@ namespace StockMarcte
 {
 	public static class Executable
 	{
-
 		public static void parameterItem(Items item, SqlCommand command)
 		{
 			command.Parameters.Add("@ItemGuid", SqlDbType.UniqueIdentifier).Value
@@ -34,7 +33,10 @@ namespace StockMarcte
 			command.Parameters.Add("@Quin", SqlDbType.Decimal).Value = stock.quintitiy;
 		}
 
-		public static void parmeterdelete(Stock stock, SqlCommand cmd) => cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value = stock.guid;
+		public static void parmeterdelete(Stock stock, SqlCommand cmd)
+		{
+			cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value = stock.guid;
+		}
 
 
 		public static void parmterBill(Bills bill, SqlCommand command)
@@ -57,11 +59,14 @@ namespace StockMarcte
 
 
 		public static void ParameterDelete(Bills bill, SqlCommand cmd)
-			=> cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier)
+		{
+			cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier)
 				.Value = bill.Billguid;
+		}
 
 		public static void parmeteterItemDelete(Items stock, SqlCommand cmd)
-			=> cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value = stock.itemGuid;
-
+		{
+			cmd.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value = stock.itemGuid;
+		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using ItemStockRepoPattern.Properties;
 
 namespace ItemStockRepoPattern.Logic.Repository
 {
@@ -13,9 +14,9 @@ namespace ItemStockRepoPattern.Logic.Repository
 		{
 			var builder = new SqlConnectionStringBuilder
 			{
-				DataSource = Properties.Settings.Default.DataSource,
-				InitialCatalog = Properties.Settings.Default.InitialCatalog,
-				IntegratedSecurity = Properties.Settings.Default.IntegratedSecurity
+				DataSource = Settings.Default.DataSource,
+				InitialCatalog = Settings.Default.InitialCatalog,
+				IntegratedSecurity = Settings.Default.IntegratedSecurity
 			};
 
 			return new SqlConnection(builder.ConnectionString);

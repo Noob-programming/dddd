@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using ItemStockRepoPattern.Logic.Extension;
 using ItemStockRepoPattern.Logic.Repository;
 using ItemStockRepoPattern.Model;
@@ -13,11 +14,11 @@ namespace ItemStockRepoPattern.View.Forms
 		private ItemModel _item = new ItemModel();
 
 
+
 		public Frm_ItemEdit()
 		{
 			InitializeComponent();
 		}
-
 
 
 		private void Frm_ItemEdit_Load(object sender, EventArgs e)
@@ -31,19 +32,11 @@ namespace ItemStockRepoPattern.View.Forms
 			itemModelBindingSource.DataSource = new ItemModel();
 		}
 
-
-
 		private void simpleButton1_Click(object sender, EventArgs e)
 		{
 			try
 			{
-
-				DataRepository.SavedItem.ParentGuid = (Guid)parentGuidTextEdit.Tag;
-
-
-				itemModelBindingSource.DataSource = DataRepository.SavedItem;
 				_item = (ItemModel)itemModelBindingSource.DataSource;
-				// DataRepository.SavedItem;
 				var ch = _repository.Save(_item);
 				switch (ch)
 				{
@@ -112,30 +105,29 @@ namespace ItemStockRepoPattern.View.Forms
 		private void SetData()
 		{
 			var item = _repository.GetByGuid(GuidHelper.SaveGuid);
-			DataRepository.SavedItem = item;
 
-			itemModelBindingSource.DataSource = DataRepository.SavedItem;
+
+			itemModelBindingSource.DataSource = item;
+
 			var p = _repository.GetByGuid(item.ParentGuid);
 
-			parentGuidTextEdit.Text = p.ItemName;
-			parentGuidTextEdit.Tag = p.ItemGuid;
+			p.ParentGuid = p.ItemGuid;
+			parentGuidTextEdit.Tag = p.ParentGuid;
+
+			//parentGuidTextEdit.Text = p.ItemName;
 		}
 
-		private void parentGuidTextEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+		private void parentGuidTextEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
 		{
 			var form = new Frm_ParentItem();
 			form.ShowDialog();
 
 			var p = _repository.GetByGuid(GuidHelper.SaveGuid);
 
-			parentGuidTextEdit.Text = p.ItemName;
-			parentGuidTextEdit.Tag = p.ItemGuid;
+			p.ParentGuid = p.ItemGuid;
+			parentGuidTextEdit.Tag = p.ParentGuid;
 
+			//	parentGuidTextEdit.Text = p.ItemName;
 		}
 	}
-	public static class DataRepository
-	{
-		public static ItemModel SavedItem { get; set; }
-	}
-
 }

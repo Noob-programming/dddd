@@ -1,6 +1,6 @@
-﻿using ItemStockRepoPattern.View.Forms;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using ItemStockRepoPattern.View.Forms;
 
 namespace ItemStockRepoPattern
 {

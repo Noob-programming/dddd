@@ -8,11 +8,11 @@ namespace NewStock.Exten
 	{
 		public static T ChangeForItem<T>
 			(this DataTable soures, Func<DataRow, T> selector)
-		where T : class
+			where T : class
 		{
 			foreach (DataRow dr in soures.Rows)
 			{
-				T item = selector(dr);
+				var item = selector(dr);
 				return item;
 			}
 
@@ -21,18 +21,16 @@ namespace NewStock.Exten
 
 		public static List<T> ChangeList<T>
 			(this DataTable soures, Func<DataRow, T> selector)
-
-		where T : class
+			where T : class
 		{
-			List<T> data = new List<T>();
+			var data = new List<T>();
 			foreach (DataRow dr in soures.Rows)
 			{
-				T item = selector(dr);
+				var item = selector(dr);
 				data.Add(item);
-
 			}
+
 			return data;
 		}
 	}
-
 }

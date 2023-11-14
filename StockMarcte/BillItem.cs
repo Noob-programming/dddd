@@ -10,7 +10,6 @@ namespace StockMarcte
 		private readonly Bills bills = new Bills();
 
 
-
 		public BillItem()
 		{
 			InitializeComponent();
@@ -61,11 +60,11 @@ namespace StockMarcte
 
 		private void simpleButton2_Click(object sender, EventArgs e)
 		{
-			Billcode.Text = String.Empty;
-			DateBill.Text = String.Empty;
-			txtNotes.Text = String.Empty;
+			Billcode.Text = string.Empty;
+			DateBill.Text = string.Empty;
+			txtNotes.Text = string.Empty;
 			toggleSwitch1.IsOn = false;
-			txtguid.Text = String.Empty;
+			txtguid.Text = string.Empty;
 		}
 	}
 }

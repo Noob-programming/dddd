@@ -1,8 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using ItemStockRepoPattern.Logic.Repository;
 using ItemStockRepoPattern.Model;
-using System;
-using System.Windows.Forms;
 
 namespace ItemStockRepoPattern.View.Forms
 {
@@ -70,7 +70,7 @@ namespace ItemStockRepoPattern.View.Forms
 			try
 			{
 				if (MessageBox.Show("are you ready to delete", "delete", MessageBoxButtons.OKCancel) !=
-					DialogResult.OK) return;
+				    DialogResult.OK) return;
 				var res = (StockModel)stockModelBindingSource.DataSource;
 				var re = _stockReposition.Delete(res.ItemGuid);
 				switch (re)

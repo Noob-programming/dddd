@@ -4,7 +4,6 @@ namespace NewStock.Model
 {
 	public class BillItemModel
 	{
-
 		public Guid BillitemGuid { get; set; }
 		public int BillitemID { get; set; }
 		public Guid BillGuid { get; set; }

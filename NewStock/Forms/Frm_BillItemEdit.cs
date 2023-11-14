@@ -1,14 +1,19 @@
-﻿using NewStock.Logic;
+﻿using DevExpress.XtraEditors;
+using NewStock.Logic;
 using NewStock.Logic.Services;
 using NewStock.Model;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace NewStock.Forms
 {
-	public partial class Frm_BillItemEdit : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_BillItemEdit : XtraForm
 	{
+		private bool _check;
+
+
+		private readonly BillItemModel model;
+
 		public Frm_BillItemEdit()
 		{
 			InitializeComponent();
@@ -20,13 +25,9 @@ namespace NewStock.Forms
 			LookUpFill();
 		}
 
-
-
-		private BillItemModel model;
-
 		private void LookUpFill()
 		{
-			DataTable data = DbHelper.GetData("TB_Item_GetItemandName", () => { });
+			var data = DbHelper.GetData("TB_Item_GetItemandName", () => { });
 			LookUpItem.Properties.DataSource = data;
 			LookUpItem.Properties.DisplayMember = "itemName";
 			LookUpItem.Properties.ValueMember = "itemGuid";
@@ -37,7 +38,6 @@ namespace NewStock.Forms
 			LookUpBill.Properties.DataSource = data;
 			LookUpBill.Properties.DisplayMember = "Billcode";
 			LookUpBill.Properties.ValueMember = "BillGuid";
-
 		}
 
 		private void simpleButton1_Click(object sender, EventArgs e)
@@ -52,7 +52,8 @@ namespace NewStock.Forms
 				model.ItemGuid = new Guid(LookUpItem.EditValue.ToString());
 
 				model.BillitemGuid = string.IsNullOrEmpty(txtGuid.EditValue.ToString())
-					? Guid.Empty : new Guid(txtGuid.EditValue.ToString());
+					? Guid.Empty
+					: new Guid(txtGuid.EditValue.ToString());
 				_check = BillItemService.SaveData(model);
 				MessageBox.Show(_check ? @"Save Done" : @"Error Save");
 				ClearField();
@@ -64,7 +65,6 @@ namespace NewStock.Forms
 			}
 		}
 
-		private bool _check;
 		private void simpleButton2_Click(object sender, EventArgs e)
 		{
 			ClearField();
@@ -101,7 +101,6 @@ namespace NewStock.Forms
 				MessageBox.Show($@"{exception}");
 				throw;
 			}
-
 		}
 	}
 }

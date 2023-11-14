@@ -7,7 +7,6 @@ namespace NewStock.Logic.Services
 {
 	public static class ItemService
 	{
-
 		private static void ParameterItem(ItemModel item, SqlCommand command, SqlParameter parameter)
 		{
 			parameter.ParameterName = "@return";
@@ -107,23 +106,30 @@ namespace NewStock.Logic.Services
 
 			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
 				= item;
-
-
 		}
 
 		public static bool IsDelete(Guid item)
-			=> DbHelper.ExcuteData("TB_Item_Delete",
-					() => ParmeterDelete(item, DbHelper.Command, DbHelper.Parameters));
+		{
+			return DbHelper.ExcuteData("TB_Item_Delete",
+				() => ParmeterDelete(item, DbHelper.Command, DbHelper.Parameters));
+		}
 
 
 		public static DataTable GetData(Guid guid = default)
-			=> DbHelper.GetData("TB_item_GET",
+		{
+			return DbHelper.GetData("TB_item_GET",
 				() => SelectParameter(guid, DbHelper.Command));
-		private static void SelectParameter(Guid guid, SqlCommand command)
-			=> command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
-				= guid;
+		}
 
-		public static DataTable GetParent() =>
-			DbHelper.GetData("TB_Item_GetParentData", () => { });
+		private static void SelectParameter(Guid guid, SqlCommand command)
+		{
+			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
+				= guid;
+		}
+
+		public static DataTable GetParent()
+		{
+			return DbHelper.GetData("TB_Item_GetParentData", () => { });
+		}
 	}
 }

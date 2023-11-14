@@ -1,14 +1,16 @@
-﻿using NewStock.Model;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using NewStock.Model;
 
 namespace NewStock.Logic.Services
 {
 	public static class BillItemService
 	{
 		public static DataTable GetData(string sql)
-		=> DbHelper.GetData(sql, () => { });
+		{
+			return DbHelper.GetData(sql, () => { });
+		}
 
 
 		private static void SetParameter(BillItemModel model,
@@ -36,14 +38,15 @@ namespace NewStock.Logic.Services
 
 			command.Parameters.Add
 				("@Price", SqlDbType.Decimal).Value = model.Price;
-
 		}
 
 		public static bool SaveData(BillItemModel model)
-			=> DbHelper.ExcuteData("TB_BillItem_Save",
+		{
+			return DbHelper.ExcuteData("TB_BillItem_Save",
 				() => SetParameter(model, DbHelper.Command, DbHelper.Parameters));
+		}
 
-		static void SetParameterDelete(Guid guid, SqlCommand
+		private static void SetParameterDelete(Guid guid, SqlCommand
 			command, SqlParameter parameter)
 		{
 			parameter.ParameterName = "@return";
@@ -53,11 +56,12 @@ namespace NewStock.Logic.Services
 
 			command.Parameters.Add
 				("@BillitemGUID", SqlDbType.UniqueIdentifier).Value = guid;
-
 		}
 
-		public static bool DeleteOrder(Guid orderGuid) =>
-			DbHelper.ExcuteData("TB_BillItem_Delete", () =>
+		public static bool DeleteOrder(Guid orderGuid)
+		{
+			return DbHelper.ExcuteData("TB_BillItem_Delete", () =>
 				SetParameterDelete(orderGuid, DbHelper.Command, DbHelper.Parameters));
+		}
 	}
 }

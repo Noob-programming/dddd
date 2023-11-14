@@ -10,12 +10,11 @@ namespace StockMarcte
 			(this DataTable dt, Func<DataRow, T> selector)
 			where T : class
 		{
-
-			List<T> daList = new List<T>();
+			var daList = new List<T>();
 
 			foreach (DataRow v in dt.Rows)
 			{
-				T item = selector(v);
+				var item = selector(v);
 				daList.Add(item);
 			}
 

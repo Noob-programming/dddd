@@ -1,19 +1,18 @@
-﻿using NewStock.Logic;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using NewStock.Logic;
 
 namespace NewStock.Forms
 {
-	public partial class Frm_Item : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_Item : XtraForm
 	{
 		public Frm_Item()
 		{
 			InitializeComponent();
-
-
 		}
 
-		void SetData()
+		private void SetData()
 		{
 			try
 			{
@@ -33,7 +32,6 @@ namespace NewStock.Forms
 			form.ShowDialog();
 			form.Close();
 			SetData();
-
 		}
 
 		private void Frm_Item_Load(object sender, EventArgs e)

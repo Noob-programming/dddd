@@ -7,7 +7,6 @@ namespace StockMarcte
 {
 	public partial class Form1 : XtraForm
 	{
-
 		private readonly Stock stock = new Stock();
 
 		public Form1()
@@ -22,6 +21,7 @@ namespace StockMarcte
 			lookUpEdit1.Properties.DisplayMember = "itemName";
 			lookUpEdit1.Properties.ValueMember = "itemGuid";
 		}
+
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			getdata();
@@ -40,8 +40,9 @@ namespace StockMarcte
 		{
 			try
 			{
-				stock.guid = string.IsNullOrEmpty(lookUpEdit1.EditValue.ToString()) ?
-					Guid.Empty : Guid.Parse(lookUpEdit1.EditValue.ToString());
+				stock.guid = string.IsNullOrEmpty(lookUpEdit1.EditValue.ToString())
+					? Guid.Empty
+					: Guid.Parse(lookUpEdit1.EditValue.ToString());
 				stock.quintitiy = Convert.ToDecimal(txtQuintity.Text);
 				stock.status = bool.Parse(status.EditValue.ToString()) ? "OUT" : "IN";
 				var re = DbHelper.ExcuteData("TB_StockItem_Save", () => Executable.parmterStock(stock, DbHelper.cmd));
@@ -51,6 +52,7 @@ namespace StockMarcte
 					getdata();
 					LookupDateFill();
 				}
+
 				MessageBox.Show(re ? "save" : "error");
 			}
 			catch (Exception exception)
@@ -64,9 +66,6 @@ namespace StockMarcte
 		{
 			var res = DbHelper.GetData("TB_Stock_Get");
 			gridControl1.DataSource = res;
-
-
-
 		}
 
 		private void simpleButton2_Click(object sender, EventArgs e)
@@ -77,6 +76,7 @@ namespace StockMarcte
 				getdata();
 				LookupDateFill();
 			}
+
 			MessageBox.Show(re ? "save" : "error");
 		}
 

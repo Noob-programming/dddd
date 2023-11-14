@@ -1,7 +1,7 @@
-﻿using NewStock.Model;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using NewStock.Model;
 
 namespace NewStock.Logic.Services
 {
@@ -43,22 +43,25 @@ namespace NewStock.Logic.Services
 
 			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
 				= item;
-
-
 		}
 
 		public static bool IsDelete(Guid item)
-			=> DbHelper.ExcuteData("TB_Bill_Delete",
+		{
+			return DbHelper.ExcuteData("TB_Bill_Delete",
 				() => ParmeterDelete(item, DbHelper.Command, DbHelper.Parameters));
+		}
 
 
 		public static DataTable GetData(Guid guid = default)
-			=> DbHelper.GetData("TB_Bill_GET",
+		{
+			return DbHelper.GetData("TB_Bill_GET",
 				() => SelectParameter(guid, DbHelper.Command));
+		}
+
 		private static void SelectParameter(Guid guid, SqlCommand command)
-			=> command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
+		{
+			command.Parameters.Add("@guid", SqlDbType.UniqueIdentifier).Value
 				= guid;
-
-
+		}
 	}
 }

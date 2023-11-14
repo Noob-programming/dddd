@@ -1,11 +1,11 @@
-﻿using ItemStockRepoPattern.Logic.Extension;
-using System;
+﻿using System;
+using DevExpress.XtraEditors;
+using ItemStockRepoPattern.Logic.Extension;
 
 namespace ItemStockRepoPattern.View.Forms
 {
-	public partial class Frm_ParentItem : DevExpress.XtraEditors.XtraForm
+	public partial class Frm_ParentItem : XtraForm
 	{
-
 		public Frm_ParentItem()
 		{
 			InitializeComponent();

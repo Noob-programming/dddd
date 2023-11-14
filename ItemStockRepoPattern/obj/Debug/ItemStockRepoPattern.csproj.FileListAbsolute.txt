@@ -89,6 +89,4 @@ C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\D
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.XtraDiagram.v23.1.xml
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\bin\Debug\DevExpress.Diagram.v23.1.Core.xml
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_Login.resources
-C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.XtraForm1.resources
 C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.Frm_ParentItem.resources
-C:\Users\rbygs\OneDrive\سطح المكتب\itemStock\ItemStockRepoPattern\obj\Debug\ItemStockRepoPattern.View.Forms.FromsIn.resources
